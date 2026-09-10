@@ -1,0 +1,24 @@
+# Credenciales
+.env
+
+# Entorno
+venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Datos derivados: se reconstruyen corriendo los notebooks 01 y 02.
+# El corpus MedQuAD original es publico, asi que versionarlos solo suma peso.
+data/*.parquet
+data/*.jsonl
+
+# Pesos del modelo. adapter_model.safetensors son 264 MB y GitHub rechaza
+# cualquier archivo por encima de 100 MB. Se reconstruye con el notebook 03.
+app/adapter/*.safetensors
+app/adapter/tokenizer.json
+
+# Checkpoints del entrenamiento: ~775 MB cada uno. Sirven para reanudar el
+# notebook 03 sin repetir 48 minutos, pero no tienen por que viajar al repo.
+checkpoints/
+
+# Resultados de medicion SI se versionan (data/*.csv y data/*.json): son la
+# evidencia de las tablas que citan los documentos.

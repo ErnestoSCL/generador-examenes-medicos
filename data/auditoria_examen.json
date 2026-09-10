@@ -1,0 +1,231 @@
+{
+ "tema": "Asthma",
+ "contadores": {
+  "preguntas generadas": 16,
+  "rechazadas por forma": "0 (0%)",
+  "rechazadas por verificacion": "0 (0%)",
+  "segundos por generacion": 0.65
+ },
+ "preguntas": [
+  {
+   "pregunta": "¿Qué factores pueden empeorar los síntomas de la asma?",
+   "correcta": "La exposición a ácaros y polen",
+   "incorrectas": [
+    "El ejercicio físico regular",
+    "La ingesta de alimentos saludables",
+    "La exposición al frío extremo"
+   ],
+   "dificultad": "media",
+   "tema": "Asma",
+   "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/asthma",
+   "fuente": "NHLBI",
+   "fragmento": "National Heart, Lung, and Blood Institute's (NHLBI's) \"Asthma Action Plan\" for a sample plan. Avoid Things That Can Worsen Your Asthma Many common things (called asthma triggers) can set off or worsen your asthma symptoms. Once you know what these things are, you can take steps to control many of them. (For more information about asthma triggers, go to \"What Are the Signs and Symptoms of Asthma?\") For example, exposure to pollens or air pollution might make your asthma worse."
+  },
+  {
+   "pregunta": "¿Cuál es una consecuencia de la inflamación en las vías respiratorias en asmáticos?",
+   "correcta": "El aumento de la producción de mucosidad puede empeorar los síntomas.",
+   "incorrectas": [
+    "La inflamación causa una disminución del flujo sanguíneo en los pulmones.",
+    "Los síntomas siempre son severos y requieren cirugía.",
+    "La mucosidad se convierte en líquido claro y no afecta las vías respiratorias."
+   ],
+   "dificultad": "media",
+   "tema": "Asma",
+   "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/asthma",
+   "fuente": "NHLBI",
+   "fragmento": "The swelling also can worsen, making the airways even narrower. Cells in the airways might make more mucus than usual. Mucus is a sticky, thick liquid that can further narrow the airways. This chain reaction can result in asthma symptoms. Symptoms can happen each time the airways are inflamed. Asthma Sometimes asthma symptoms are mild and go away on their own or after minimal treatment with asthma medicine. Other times, symptoms continue to get worse."
+  },
+  {
+   "pregunta": "¿Cuál es el propósito principal de la prueba de broncoprovocación?",
+   "correcta": "Medir la sensibilidad de las vías respiratorias.",
+   "incorrectas": [
+    "Determinar la presencia de infecciones pulmonares.",
+    "Evaluar la función cardíaca del paciente.",
+    "Identificar niveles de oxígeno en sangre."
+   ],
+   "dificultad": "media",
+   "tema": "Asma",
+   "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/asthma",
+   "fuente": "NHLBI",
+   "fragmento": "Other Tests Your doctor may recommend other tests if he or she needs more information to make a diagnosis. Other tests may include: Allergy testing to find out which allergens affect you, if any. A test to measure how sensitive your airways are. This is called a bronchoprovocation (brong-KO-prav-eh-KA-shun) test."
+  },
+  {
+   "pregunta": "¿Cuál es una recomendación para manejar la asma?",
+   "correcta": "Realizar actividades físicas y hablar con el médico.",
+   "incorrectas": [
+    "Evitar cualquier tipo de actividad física.",
+    "No realizar chequeos regulares para la asma.",
+    "Ignorar los síntomas de la asma."
+   ],
+   "dificultad": "media",
+   "tema": "Asma",
+   "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/asthma",
+   "fuente": "NHLBI",
+   "fragmento": "Physical activity is an important part of a healthy lifestyle. Talk with your doctor about medicines that can help you stay active. Keep track of your asthma symptoms and level of control. Get regular checkups for your asthma. For more details about how to prevent asthma symptoms and attacks, go to \"How Is Asthma Treated and Controlled?\""
+  },
+  {
+   "pregunta": "¿Cuál es el mejor método para diagnosticar la asma?",
+   "correcta": "Prueba de función pulmonar y examen físico",
+   "incorrectas": [
+    "Solo los síntomas presentados por el paciente",
+    "Un simple análisis de sangre",
+    "La opinión de un médico sin pruebas"
+   ],
+   "dificultad": "media",
+   "tema": "Asma",
+   "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/asthma",
+   "fuente": "NHLBI",
+   "fragmento": "Not all people who have asthma have these symptoms. Likewise, having these symptoms doesn't always mean that you have asthma. The best way to diagnose asthma for certain is to use a lung function test, a medical history (including type and frequency of symptoms), and a physical exam. The types of asthma symptoms you have, how often they occur, and how severe they are may vary over time. Sometimes your symptoms may just annoy you."
+  },
+  {
+   "pregunta": "¿Cuál es una teoría sobre la causa de la asma?",
+   "correcta": "La hipótesis de higiene sugiere que la asma puede ser causada por factores ambientales.",
+   "incorrectas": [
+    "La asma es siempre hereditaria y no tiene otras causas.",
+    "La asma se debe solo a alergias alimentarias.",
+    "La falta de ejercicio provoca la asma en todos los casos."
+   ],
+   "dificultad": "media",
+   "tema": "Asma",
+   "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/asthma",
+   "fuente": "NHLBI",
+   "fragmento": "Some factors may be more likely to cause asthma in some people than in others. Researchers continue to explore what causes asthma. The \"Hygiene Hypothesis\" One theory researchers have for what causes asthma is the \"hygiene hypothesis."
+  },
+  {
+   "pregunta": "¿Cuál de los siguientes factores aumenta el riesgo de desarrollar asma?",
+   "correcta": "Tener alergias o eccema",
+   "incorrectas": [
+    "Ser mayor de 18 años",
+    "No tener antecedentes familiares",
+    "Vivir en una zona rural"
+   ],
+   "dificultad": "media",
+   "tema": "Asma",
+   "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/asthma",
+   "fuente": "NHLBI",
+   "fragmento": "Asthma affects people of all ages, but it most often starts during childhood. In the United States, more than 22 million people are known to have asthma. Nearly 6 million of these people are children. Young children who often wheeze and have respiratory infectionsas well as certain other risk factorsare at highest risk of developing asthma that continues beyond 6 years of age. The other risk factors include having allergies, eczema (an allergic skin condition), or parents who have asthma."
+  },
+  {
+   "pregunta": "¿Cuál es el primer tipo de medicamento para aliviar síntomas de asma?",
+   "correcta": "Medicamentos inalados de acción rápida",
+   "incorrectas": [
+    "Antibióticos orales",
+    "Medicamentos antiinflamatorios",
+    "Inhaladores de corticoides"
+   ],
+   "dificultad": "media",
+   "tema": "Asma",
+   "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/asthma",
+   "fuente": "NHLBI",
+   "fragmento": "This helps ensure that youre getting enough medicine to relieve your asthma symptoms, but not so much that it causes dangerous side effects. Quick-Relief Medicines All people who have asthma need quick-relief medicines to help relieve asthma symptoms that may flare up. Inhaled short-acting beta2-agonists are the first choice for quick relief. These medicines act quickly to relax tight muscles around your airways when you're having a flareup."
+  },
+  {
+   "pregunta": "¿Cuál es una recomendación para mujeres embarazadas con asma?",
+   "correcta": "Controlar la enfermedad para oxígeno adecuado",
+   "incorrectas": [
+    "Usar solo broncodilatadores",
+    "Evitar el uso de esteroides inhalados",
+    "No informar sobre otros medicamentos"
+   ],
+   "dificultad": "media",
+   "tema": "Asma",
+   "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/asthma",
+   "fuente": "NHLBI",
+   "fragmento": "Be sure to tell your doctor about all of the medicines you take, including over-the-counter medicines. Older adults may develop weak bones from using inhaled corticosteroids, especially at high doses. Talk with your doctor about taking calcium and vitamin D pills, as well as other ways to help keep your bones strong. Pregnant Women Pregnant women who have asthma need to control the disease to ensure a good supply of oxygen to their babies."
+  },
+  {
+   "pregunta": "¿Cuál es el objetivo principal en el manejo de la asma?",
+   "correcta": "Usar la menor cantidad de medicamentos necesarios.",
+   "incorrectas": [
+    "Tomar siempre la dosis máxima de medicamentos.",
+    "Evitar cualquier tipo de atención médica.",
+    "No seguir ningún plan de acción para la asma."
+   ],
+   "dificultad": "media",
+   "tema": "Asma",
+   "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/asthma",
+   "fuente": "NHLBI",
+   "fragmento": "If your control is very good, you might be able to take less medicine. The goal is to use the least amount of medicine needed to control your asthma. Emergency Care Most people who have asthma, including many children, can safely manage their symptoms by following their asthma action plans. However, you might need medical attention at times."
+  }
+ ],
+ "auditoria": [
+  {
+   "n": 1,
+   "fallos": [
+    "la correcta no esta en el fragmento"
+   ],
+   "defecto": "la opcion correcta no esta explicitamente respaldada por el fragmento"
+  },
+  {
+   "n": 2,
+   "fallos": [],
+   "defecto": "ninguno"
+  },
+  {
+   "n": 3,
+   "fallos": [],
+   "defecto": "ninguno"
+  },
+  {
+   "n": 4,
+   "fallos": [],
+   "defecto": "ninguno"
+  },
+  {
+   "n": 5,
+   "fallos": [],
+   "defecto": "ninguno"
+  },
+  {
+   "n": 6,
+   "fallos": [
+    "error de traduccion"
+   ],
+   "defecto": "La traducción de 'hygiene hypothesis' no menciona factores ambientales explícitamente."
+  },
+  {
+   "n": 7,
+   "fallos": [],
+   "defecto": "ninguno"
+  },
+  {
+   "n": 8,
+   "fallos": [
+    "error de traduccion"
+   ],
+   "defecto": "La traducción de 'inhaled short-acting beta2-agonists' debería ser 'agonistas beta2 de acción corta inhalados', no 'medicamentos inalados de acción rápida'"
+  },
+  {
+   "n": 9,
+   "fallos": [],
+   "defecto": "ninguno"
+  },
+  {
+   "n": 10,
+   "fallos": [],
+   "defecto": "ninguno"
+  }
+ ],
+ "sonda_verificador": [
+  {
+   "caso": "navegacion (caso real de la app)",
+   "veredicto": "aprueba",
+   "acierta": false
+  },
+  {
+   "caso": "correcta inventada",
+   "veredicto": "RECHAZA: la respuesta correcta no esta en el fragmento",
+   "acierta": true
+  },
+  {
+   "caso": "tema equivocado",
+   "veredicto": "RECHAZA: la respuesta correcta no esta en el fragmento; la pregunta no corresponde al tema",
+   "acierta": true
+  },
+  {
+   "caso": "control: pregunta sana",
+   "veredicto": "aprueba",
+   "acierta": true
+  }
+ ]
+}

@@ -1,0 +1,346 @@
+{
+ "0.7": {
+  "generadas": 32,
+  "paso_forma": 31,
+  "juzgadas": 31,
+  "sin_defectos": 27,
+  "filas": [
+   {
+    "pregunta": "¿Cuál de los siguientes síntomas es común en la asma?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el propósito principal del uso del medidor de flujo máximo?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una posible consecuencia de la inflamación de las vías respiratorias en la asma?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre el diagnóstico de asma es correcta?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una teoría sobre la causa de la asma?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una recomendación importante para manejar la asma?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Quiénes deben conocer el plan de acción para la asma?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Qué tratamiento se puede considerar para tumores hormonales negativos en mujeres?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el propósito de descubrir mutaciones genéticas en cáncer de mama?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el propósito de inyectar una sustancia radiactiva cerca del tumor mamario?",
+    "tema": "Cáncer de mama",
+    "fallos": [
+     "traduccion"
+    ]
+   },
+   {
+    "pregunta": "¿Cuál es el efecto del tratamiento hormonal solo con estrógenos en mujeres posmenopáusicas?",
+    "tema": "Cáncer de mama",
+    "fallos": [
+     "distractor cierto"
+    ]
+   },
+   {
+    "pregunta": "¿Cuál factor aumenta el riesgo de cáncer de mama?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una ventaja de usar catéteres para la terapia de cáncer de mama?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es la recomendación de algunos médicos para mujeres tras tratar el cáncer de mama?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Qué porcentaje del cáncer de mama es hereditario?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una característica clave de la rigidez en la enfermedad de Parkinson?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": [
+     "traduccion"
+    ]
+   },
+   {
+    "pregunta": "¿Cuál es el objetivo principal de la terapia con células madre en la enfermedad de Parkinson?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una consecuencia del acumulo de proteínas en la enfermedad de Parkinson?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál de los siguientes síntomas es común en el parkinsonismo juvenil?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el método principal para diagnosticar la enfermedad de Parkinson?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el propósito principal de la estimulación cerebral profunda?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre la enfermedad de Parkinson es correcta?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre la enfermedad de Parkinson es correcta?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Por qué es importante la detección temprana de la diabetes?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el beneficio a largo plazo de la pérdida de peso y ejercicio regular?",
+    "tema": "Diabetes",
+    "fallos": [
+     "sin respaldo",
+     "traduccion"
+    ]
+   },
+   {
+    "pregunta": "¿Cuándo se recomienda comprobar los niveles de glucosa en sangre?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el riesgo asociado a la diabetes según la edad?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una característica de la diabetes tipo 1?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál de los siguientes factores aumenta el riesgo de diabetes tipo 2?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una buena manera de controlar la diabetes?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es la característica principal de la prediabetes?",
+    "tema": "Diabetes",
+    "fallos": []
+   }
+  ]
+ },
+ "1.0": {
+  "generadas": 32,
+  "paso_forma": 31,
+  "juzgadas": 31,
+  "sin_defectos": 27,
+  "filas": [
+   {
+    "pregunta": "¿Cuál de los siguientes síntomas es característico de la asma?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el propósito principal del uso del medidor de flujo máximo?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál de los siguientes factores puede empeorar los síntomas de la asma?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Qué enfermedad puede presentar síntomas similares a la asma?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál de las siguientes afirmaciones es cierta sobre la hipótesis de higiene?",
+    "tema": "Asma",
+    "fallos": [
+     "sin respaldo"
+    ]
+   },
+   {
+    "pregunta": "¿Cuál es una posible causa de asma ocupacional?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una recomendación para manejar la asma adecuadamente?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Quiénes deben conocer el plan de acción para la asma?",
+    "tema": "Asma",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Qué tratamiento puede ser necesario para tumores hormonales negativos en mujeres?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el propósito principal de la investigación sobre mutaciones genéticas en cáncer de mama?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el propósito principal del procedimiento descrito?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el efecto de la terapia hormonal solo con estrógenos en mujeres posmenopáusicas?",
+    "tema": "Cáncer de mama",
+    "fallos": [
+     "distractor cierto"
+    ]
+   },
+   {
+    "pregunta": "¿Cuál factor aumenta el riesgo de cáncer de mama?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es la ventaja principal de usar catéteres radiactivos en el tratamiento del cáncer de mama?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es la recomendación para las mujeres tratadas por cáncer de mama?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Qué porcentaje de cáncer de mama es hereditario?",
+    "tema": "Cáncer de mama",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Qué caracteriza la rigidez en la enfermedad de Parkinson?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el objetivo principal de la terapia con células madre en la enfermedad de Parkinson?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una posible consecuencia del acumulo de proteínas en la enfermedad de Parkinson?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una característica común del parkinsonismo juvenil?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el método principal para diagnosticar la enfermedad de Parkinson?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": [
+     "distractor cierto"
+    ]
+   },
+   {
+    "pregunta": "¿Cuál es el propósito principal de la estimulación cerebral profunda (DBS)?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre la enfermedad de Parkinson es correcta?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre la enfermedad de Parkinson es correcta?",
+    "tema": "Enfermedad de Parkinson",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una razón importante para la detección temprana de diabetes?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es un beneficio del ejercicio y la pérdida de peso?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Qué frecuencia se recomienda comprobar los niveles de glucosa en sangre?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es el riesgo asociado a la diabetes según la edad?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es la característica principal de la diabetes tipo 1?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una forma efectiva para gestionar la diabetes?",
+    "tema": "Diabetes",
+    "fallos": []
+   },
+   {
+    "pregunta": "¿Cuál es una característica de la diabetes tipo 2?",
+    "tema": "Diabetes",
+    "fallos": [
+     "sin respaldo",
+     "traduccion"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,1363 @@
+[
+ {
+  "uid": "NIDDK_0000211-8_14281__15",
+  "pregunta": "¿Cuál es una opción de tratamiento para la incontinencia urinaria?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000159-4_14350__1",
+  "pregunta": "¿Qué indica un alto número de glóbulos rojos en la orina?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0001103-1_4290__1",
+  "pregunta": "¿Cuál es una posible consecuencia de la microdeleción 9q22.3?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000623-1_5097__3",
+  "pregunta": "¿Cuál de las siguientes características es común en la atresia esofágica?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000446-3_2678__0",
+  "pregunta": "¿Cuál es la causa del síndrome mano-pie-genital?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NHLBI_0000077-6_12365__3",
+  "pregunta": "¿Cuál de los siguientes síntomas es característico del shock?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NHLBI_0000038-7_12311__7",
+  "pregunta": "¿Cuál es el método más confiable para diagnosticar chILD?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0003039-3_8344__0",
+  "pregunta": "¿Cuál es un enfoque razonable en el manejo de la hipocondroplasia?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NHLBI_0000079-8_12619__0",
+  "pregunta": "¿Cuál es una recomendación para prevenir complicaciones en la trombocitopenia inmune?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NHLBI_0000001-3_12241__0",
+  "pregunta": "¿Qué significa que la deficiencia de antitripsina alfa-1 sea hereditaria?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CANCERGOV_0000024_9-2_11748__6",
+  "pregunta": "¿Cuál es un efecto del consumo de betel quid o gutka?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CANCERGOV_0000039_1-6_11798__3",
+  "pregunta": "¿Cómo se forma un tumor metastásico en el cuerpo?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000979-1_964__2",
+  "pregunta": "¿Qué características se asocian con el síndrome TAR?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0000536-3_8975__0",
+  "pregunta": "¿Cuál de los siguientes factores puede desencadenar la hepatitis autoinmune?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIHSENIORHEALTH_0000005-17_13729__0",
+  "pregunta": "¿Cuál es la característica del trastorno de ansiedad generalizada en adultos?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000107-1_2296__0",
+  "pregunta": "¿Cuál de las siguientes características es más común en el síndrome de Baraitser-Winter?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000782-4_4934__1",
+  "pregunta": "¿Cómo se hereda la heterotopía periventricular ligada al cromosoma X?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000288-3_1561__1",
+  "pregunta": "¿Cuál es una consecuencia de la deficiencia de dihidropirimidina deshidrogenasa?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000196-1_4171__1",
+  "pregunta": "¿Cuáles son características faciales comunes en individuos con estas anomalías?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001490-1_5967__0",
+  "pregunta": "¿Cuál es una característica típica del arachnodactyly contractual congénito (CCA)?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CANCERGOV_0000036_1-6_11650__16",
+  "pregunta": "¿Cuál es una consecuencia de la terapia de radiación en hombres?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000141-5_14759__3",
+  "pregunta": "¿Qué puede ocasionar una falla renal total?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0003595-1_6877__1",
+  "pregunta": "¿Cuáles son las características asociadas a la enfermedad por depósito de cadenas ligeras?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001276-5_9366__1",
+  "pregunta": "¿Cuál es la utilidad del método FISH en genética?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000002-5_14235__0",
+  "pregunta": "¿Cuál es la causa más común de la enfermedad de Addison?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000115-6_14445__2",
+  "pregunta": "¿Cuál es la función principal de los medicamentos antivirales en la infección por CMV?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000269-3_2514__3",
+  "pregunta": "¿Cuál es una posible consecuencia de la acumulación de ácidos grasos en la deficiencia de proteína D-bifuncional?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001323-5_5400__2",
+  "pregunta": "¿Cuál es una característica del intercambio de plasma?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000265-1_10944__2",
+  "pregunta": "¿Qué se necesita para que un niño tenga enfermedad de Tay-Sachs?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000129-2_10840__0",
+  "pregunta": "¿Cuál es una opción de tratamiento para pacientes con FMD leve?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CDC_0000214-2_13915__2",
+  "pregunta": "¿Cuántas infestaciones de piojos ocurren anualmente en niños de 3 a 11 años?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0005049-5_8749__1",
+  "pregunta": "¿Cuál es la razón para considerar el trasplante de hígado en la hiperoxaluria primaria tipo 2?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CANCERGOV_0000004_6-8_11899__18",
+  "pregunta": "¿Cuál es el propósito del trasplante de células madre después de la quimioterapia?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000124-1_11198__0",
+  "pregunta": "¿Cuál de los siguientes síntomas es característico del síndrome de Fahr?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NHLBI_0000139-1_12435__4",
+  "pregunta": "¿Cuál es la característica principal de las personas con el tipo 3 de VWD?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001072-4_10038__0",
+  "pregunta": "¿Cuál es un método para diagnosticar la xantomatosis cerebrotendinosa?",
+  "veredicto": {
+   "respaldo": false,
+   "distractor_verdadero": true,
+   "unica_respuesta": false,
+   "comentario": "La respuesta correcta no está respaldada; el fragmento menciona niveles de 'cholestanol', no 'colesterol'. Además, 'evaluación de síntomas psicológicos' podría ser defendible como parte de 'características clínicas'."
+  }
+ },
+ {
+  "uid": "NIDDK_0000083-8_14594__2",
+  "pregunta": "¿Qué se requiere antes de realizar la prueba mencionada?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0004919-1_5674__1",
+  "pregunta": "¿Cuál de las siguientes afirmaciones es cierta sobre las deficiencias en el almacenamiento de plaquetas?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NHLBI_0000112-4_12486__0",
+  "pregunta": "¿Cuál de los siguientes factores aumenta el riesgo de síndrome de dificultad respiratoria en recién nacidos?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0000700-4_7906__0",
+  "pregunta": "¿Cuál es la forma más común de herencia del BVMD?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000241-4_2520__0",
+  "pregunta": "¿Cuál es el patrón de herencia del síndrome de Cornelia de Lange?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0003662-1_9442__0",
+  "pregunta": "¿Cuál de los siguientes síntomas es característico del síndrome de dolor lumbar hematuria?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000136-4_2742__0",
+  "pregunta": "¿Cómo se hereda el síndrome BOR/BO?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000001-5_14160__1",
+  "pregunta": "¿Cuál es el propósito de la prueba de tolerancia a la glucosa en el diagnóstico de acromegalia?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000040-4_11100__0",
+  "pregunta": "¿Cuál es el enfoque principal de la investigación sobre la miotonía congénita?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000276-3_1867__0",
+  "pregunta": "¿Cuál es la causa de la enfermedad DRPLA?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NHLBI_0000038-8_12312__1",
+  "pregunta": "¿Cuál es el objetivo principal de la terapia de oxígeno en niños?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001350-4_7883__0",
+  "pregunta": "¿Cómo se hereda la citrulinemia tipo I?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CDC_0000432-6_14120__0",
+  "pregunta": "¿Cuál es el tratamiento recomendado para infecciones por gusanos?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "MPLUSHEALTHTOPICS_0000151-1_13591__1",
+  "pregunta": "¿Cuáles son algunos factores de riesgo que se pueden reducir?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0000760-1_6251__0",
+  "pregunta": "¿Cuál es el tratamiento más común para el blefaroespasmo esencial benigno?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CDC_0000008-5_14092__0",
+  "pregunta": "¿Cuál es el enfoque principal del tratamiento para la enfermedad mencionada?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0002825-5_5389__0",
+  "pregunta": "¿Cuál es un tratamiento efectivo para la intolerancia a la fructosa (HFI)?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000138-2_10910__0",
+  "pregunta": "¿Cuál es un objetivo principal del tratamiento para niños con GAN?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0000676-1_7385__0",
+  "pregunta": "¿Cuál de los siguientes síntomas es característico de la parálisis de Bell?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000181-6_14830__9",
+  "pregunta": "¿Cuál de las siguientes afirmaciones sobre la enfermedad renal en el síndrome de Alagille es correcta?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001158-3_8935__0",
+  "pregunta": "¿Cuál es la causa principal del cholesteatoma?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0002675-1_6698__0",
+  "pregunta": "¿Cuál es la causa principal de la enfermedad de Graves?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000141-6_14760__4",
+  "pregunta": "¿Cuál es el riesgo asociado a la aplicación de una exploración con radionúclidos?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0003077-4_9929__2",
+  "pregunta": "¿Cuál es la probabilidad de que un hijo herede una mutación de HPP dominante autosómico?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000997-2_46__0",
+  "pregunta": "¿Cuál es la relación entre la edad materna y la trisomía 18?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0000261-5_6890__2",
+  "pregunta": "¿Cuál de las siguientes afirmaciones es verdadera sobre el síndrome de Alport?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000412-1_479__2",
+  "pregunta": "¿Qué puede desencadenar una crisis hemolítica en personas con deficiencia de GPI?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000245-3_3897__0",
+  "pregunta": "¿Cuál es el efecto de las mutaciones en el gen HRAS en el síndrome de Costello?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000075-1_1614__6",
+  "pregunta": "¿Qué trastornos tienen un mayor riesgo en adultos con dificultades sociales?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "MPLUSHEALTHTOPICS_0000269-1_13170__2",
+  "pregunta": "¿Cuál es una forma de controlar la diabetes tipo 2?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000193-2_11546__0",
+  "pregunta": "¿Cuál es el enfoque principal del tratamiento para la microcefalia?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CANCERGOV_0000027_1-7_12203__0",
+  "pregunta": "¿Qué factor no influye en el pronóstico del cáncer de mama?",
+  "veredicto": {
+   "respaldo": false,
+   "distractor_verdadero": false,
+   "unica_respuesta": false,
+   "comentario": "La opción marcada como correcta está respaldada por el fragmento, ya que el tamaño del tumor es parte de la etapa del cáncer, que sí influye en el pronóstico."
+  }
+ },
+ {
+  "uid": "GHR_0000978-3_1243__0",
+  "pregunta": "¿Cuál es la función principal de la enzima TPMT?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CDC_0000254-4_14026__0",
+  "pregunta": "¿Cuál es el método utilizado para el diagnóstico temprano de la enfermedad?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000348-1_459__1",
+  "pregunta": "¿Cuál es una posible consecuencia de la reducción del suministro sanguíneo en la retina?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CDC_0000415-2_13963__0",
+  "pregunta": "¿Qué porcentaje de la población de EE. UU. ha estado infectada por Toxoplasma?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000203-1_10__1",
+  "pregunta": "¿Cómo afectan los colobomas a la visión según su tipo?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000155-2_11328__0",
+  "pregunta": "¿Cuál es el tratamiento principal para la hidrocefalia normotensiva idiopática?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000063-2_10803__0",
+  "pregunta": "¿Cuál es el tratamiento ideal para la mielinólisis?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0004331-1_9693__0",
+  "pregunta": "¿Cuál es una característica de la hemocromatosis neonatal?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "MPLUSHEALTHTOPICS_0000678-1_13207__2",
+  "pregunta": "¿Cuál es una función de los desfibriladores implantables (ICD)?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0004097-6_10517__1",
+  "pregunta": "¿Qué tipo de medicamentos pueden necesitar algunas personas con MCTD?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0004441-3_9462__0",
+  "pregunta": "¿Cuál es una característica del hemangioma congénito no involutivo (NICH)?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0005428-5_9301__0",
+  "pregunta": "¿Cuál es una característica del síndrome de Rotor?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": true,
+   "unica_respuesta": false,
+   "comentario": "La opción sobre reacciones adversas a medicamentos comunes es defendible según el fragmento."
+  }
+ },
+ {
+  "uid": "NHLBI_0000028-3_12248__0",
+  "pregunta": "¿Cuál de los siguientes factores aumenta el riesgo de shock cardiogénico?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIHSENIORHEALTH_0000061-3_13752__3",
+  "pregunta": "¿Qué indica un resultado positivo en la prueba de anticuerpos de citrulina?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001898-3_6272__1",
+  "pregunta": "¿Cuál es la consecuencia de las mutaciones en COL7A1?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0004337-6_10299__0",
+  "pregunta": "¿Cuál es una posible recomendación para bebés con dificultades para alimentarse?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CANCERGOV_0000037_3-2_11745__13",
+  "pregunta": "¿Cuál de los siguientes factores no afecta el riesgo de cáncer colorrectal?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": true,
+   "unica_respuesta": false,
+   "comentario": "El consumo de estatinas también se menciona como un factor que no afecta el riesgo de cáncer colorrectal."
+  }
+ },
+ {
+  "uid": "GHR_0000139-3_2094__0",
+  "pregunta": "¿Cuál es la función del gen CYLD en el síndrome de Brooke-Spiegler?",
+  "veredicto": {
+   "respaldo": false,
+   "distractor_verdadero": true,
+   "unica_respuesta": false,
+   "comentario": "La opción correcta no está explícitamente respaldada y hay un distractor verdadero."
+  }
+ },
+ {
+  "uid": "GARD_0003054-3_6608__0",
+  "pregunta": "¿Cuál es una recomendación para pacientes con glándulas sudoríparas anormales?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0003142-3_7795__0",
+  "pregunta": "¿Cuál de las siguientes afirmaciones es cierta sobre la telangiectasia retiniana juxtafoveal idiopática (IJT)?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000030-3_11551__0",
+  "pregunta": "¿Cuál es el mayor peligro asociado a las malformaciones arteriovenosas (AVM)?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0002439-2_6344__3",
+  "pregunta": "¿Qué porcentaje de personas con ataxia de Friedreich desarrolla diabetes mellitus?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0005865-1_7252__0",
+  "pregunta": "¿Cuál es una característica de la deformidad de Sprengel?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000192-9_14925__0",
+  "pregunta": "¿Cómo se denominan los casos de hepatitis viral no atribuibles a los virus comunes?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000693-1_2754__1",
+  "pregunta": "¿Cuál es la diferencia principal entre los tipos de síndrome de pterigion múltiple?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000171-2_10737__0",
+  "pregunta": "¿Cuál es el tratamiento más efectivo para el síndrome de KTS?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001553-3_6833__1",
+  "pregunta": "¿Cuál es la causa genética de la sinostosis radio-ulnar congénita en algunos casos?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CANCERGOV_0000013_3-4_12014__0",
+  "pregunta": "¿Cuál es un posible tratamiento para la leucemia mielomonocítica juvenil?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000916-1_2541__4",
+  "pregunta": "¿Qué se observa en los individuos afectados durante un examen ocular?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000120-10_14614__7",
+  "pregunta": "¿Cuál es la principal indicación para un trasplante intestinal?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0000372-1_6460__1",
+  "pregunta": "¿Cuál es un tratamiento común para casos leves de LP atrófico anular?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0000037-4_9642__0",
+  "pregunta": "¿Cuál es el método principal para confirmar el diagnóstico de achalasia?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000174-1_10556__0",
+  "pregunta": "¿Cuál es la principal causa de la enfermedad Kuru?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0002046-4_8079__2",
+  "pregunta": "¿Qué significa la penetrancia reducida en el síndrome EEC?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000130-10_14667__0",
+  "pregunta": "¿Cuáles son los principales síntomas de la enfermedad de Hirschsprung?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "MPLUSHEALTHTOPICS_0000327-1_13309__1",
+  "pregunta": "¿Cuál es la enfermedad endocrina más común en Estados Unidos?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0002417-3_5709__0",
+  "pregunta": "¿Cuál es la causa principal del síndrome del cromosoma X frágil?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000844-4_2132__0",
+  "pregunta": "¿Cómo se hereda el PHA1 cuando es causado por mutaciones en el gen NR3C2?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0001033-3_2342__1",
+  "pregunta": "¿Cuál es una posible consecuencia de las mutaciones en la proteína de Werner?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000234-2_4612__0",
+  "pregunta": "¿Cuál es la prevalencia del trastorno de movimientos espejo congénitos?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NHLBI_0000109-8_12578__5",
+  "pregunta": "¿Cuál es un tratamiento para la hipertensión pulmonar de grupo 2?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001461-1_10266__1",
+  "pregunta": "¿Cómo se heredan generalmente las distrofias retinianas conus (CRDs)?",
+  "veredicto": {
+   "respaldo": false,
+   "distractor_verdadero": false,
+   "unica_respuesta": false,
+   "comentario": "La respuesta correcta no está explícitamente respaldada y hay más de una forma de herencia mencionada en el fragmento."
+  }
+ },
+ {
+  "uid": "NIDDK_0000013-6_14287__2",
+  "pregunta": "¿Cuál es un efecto negativo del yodo en personas con enfermedad autoinmune tiroidea?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0004740-3_8281__0",
+  "pregunta": "¿Qué causa la enfermedad de Parkinson según el fragmento?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000134-2_11110__1",
+  "pregunta": "¿Cuál es un tratamiento ineficaz para el daño cerebral severo?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000057-1_14547__0",
+  "pregunta": "¿Qué problemas pueden surgir por tener glucosa alta en sangre por mucho tiempo?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000209-4_11359__0",
+  "pregunta": "¿Cuál es el objetivo principal de la investigación sobre miopatía tirotoxica?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0000277-6_6971__0",
+  "pregunta": "¿Cuál es un aspecto importante del tratamiento de la amelogenesis imperfecta?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": true,
+   "unica_respuesta": false,
+   "comentario": "La atención emocional también es mencionada como importante en el fragmento."
+  }
+ },
+ {
+  "uid": "NINDS_0000060-4_10866__1",
+  "pregunta": "¿Cuál es la función del camino de señalización Rhoa/ROCK en los vasos sanguíneos?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000590-3_4282__0",
+  "pregunta": "¿Cuál es la función principal de la proteína Spred-1?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0005612-3_10448__0",
+  "pregunta": "¿Cuál es el enfoque principal en el manejo de la sialidosis?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000092-2_11159__0",
+  "pregunta": "¿Cuál es una forma efectiva de reducir la transmisión del virus CMV?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000165-5_14357__6",
+  "pregunta": "¿Cuál es un tratamiento común para el síndrome urémico hemolítico?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000920-3_1596__0",
+  "pregunta": "¿Qué gen se considera clave en el síndrome de Smith-Magenis?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIHSENIORHEALTH_0000002-21_13671__0",
+  "pregunta": "¿Cuál de los siguientes es un indicio de un posible problema con el alcohol en adultos mayores?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000369-1_4434__1",
+  "pregunta": "¿Qué síntomas experimentan las personas con anemia de Fanconi?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0005201-2_10047__0",
+  "pregunta": "¿Cuál es una característica del queratoderma palmoplantar punteado tipo 1?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000131-2_14652__1",
+  "pregunta": "¿Cuál es una causa del bajo nivel de lactasa en el intestino delgado?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": true,
+   "unica_respuesta": false,
+   "comentario": "La opción sobre infecciones también es cierta según el fragmento."
+  }
+ },
+ {
+  "uid": "GHR_0000525-1_3177__2",
+  "pregunta": "¿Cuál es un riesgo asociado con la colestasis intrahepática del embarazo?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NHLBI_0000002-1_12253__2",
+  "pregunta": "¿Cuál es la función principal de los glóbulos rojos?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NIDDK_0000216-3_14212__0",
+  "pregunta": "¿Qué puede indicar un riñón agrandado en un recién nacido?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000526-1_2823__0",
+  "pregunta": "¿Cuáles son los síntomas iniciales de la miopatía por varillas intranucleares?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000094-1_2551__3",
+  "pregunta": "¿Cómo se llaman las convulsiones que comienzan de forma parcial y se generalizan?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000108-3_2955__2",
+  "pregunta": "¿Cuál es la principal causa genética del síndrome de Bardet-Biedl?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001663-5_10228__1",
+  "pregunta": "¿Cuál de las siguientes afirmaciones es correcta sobre el tratamiento en etapas avanzadas de la enfermedad?",
+  "veredicto": {
+   "respaldo": false,
+   "distractor_verdadero": true,
+   "unica_respuesta": false,
+   "comentario": "La opción marcada como correcta menciona 'mialgia', que no está en el fragmento. Además, el cambio de posición sí previene úlceras, lo cual está respaldado por el fragmento."
+  }
+ },
+ {
+  "uid": "GARD_0000719-1_8017__0",
+  "pregunta": "¿Cuál de los siguientes síntomas es común en la polimicrogiria frontoparietal bilateral?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0006502-2_6112__0",
+  "pregunta": "¿Cuáles son los síntomas tempranos de la hipofosfatemia ligada al cromosoma X?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "MPLUSHEALTHTOPICS_0000817-1_13501__0",
+  "pregunta": "¿Cuál de las siguientes afirmaciones es cierta sobre el síndrome de Sjögren?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000654-3_3667__0",
+  "pregunta": "¿Cuál es la función principal de la proteína STAM binding?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "CANCERGOV_0000005_1-6_12124__6",
+  "pregunta": "¿Qué implica la metástasis en el cáncer?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0003326-1_5440__1",
+  "pregunta": "¿A qué edad se diagnostica más comúnmente la condición mencionada?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001548-1_8849__2",
+  "pregunta": "¿Cuál es la herencia de la condición causada por mutaciones en el gen UROS?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000969-3_288__0",
+  "pregunta": "¿Cuál es una consecuencia de las mutaciones en el gen ABCA1?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "MPLUSHEALTHTOPICS_0000700-1_13161__0",
+  "pregunta": "¿Cuál es un síntoma común de la úlcera péptica?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0000258-4_7950__0",
+  "pregunta": "¿Cuál es un tratamiento común para la talasemia alfa?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000053-2_11263__0",
+  "pregunta": "¿Cuál es la principal preocupación en el tratamiento de un TBI moderado o severo?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000507-1_1549__2",
+  "pregunta": "¿Cuál es una complicación común en personas con hipomielinización y cataratas congénitas?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": true,
+   "unica_respuesta": false,
+   "comentario": "La curvatura anormal de la columna también es mencionada en el fragmento."
+  }
+ },
+ {
+  "uid": "GHR_0000717-4_2162__0",
+  "pregunta": "¿Cómo se hereda generalmente la miopatía nemalínica?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000780-4_5017__1",
+  "pregunta": "¿Cuál es una característica de la herencia ligada al cromosoma X?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GHR_0000778-4_4574__0",
+  "pregunta": "¿Cómo se origina la leucemia eosinofílica crónica asociada a PDGFRB?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "NINDS_0000141-2_11324__1",
+  "pregunta": "¿Cuál es el objetivo del tratamiento en pacientes con síndrome de Guillain-Barré?",
+  "veredicto": {
+   "respaldo": true,
+   "distractor_verdadero": false,
+   "unica_respuesta": true
+  }
+ },
+ {
+  "uid": "GARD_0001959-2_7417__1",
+  "pregunta": "¿Cuáles son algunas de las complicaciones asociadas con la discapacidad intelectual?",
+  "veredicto": {
+   "respaldo": false,
+   "distractor_verdadero": false,
+   "unica_respuesta": false,
+   "comentario": "La respuesta correcta no está explícitamente respaldada por el fragmento, ya que se refiere a complicaciones asociadas con la discapacidad intelectual, no a la discapacidad en sí. Además, las anormalidades esqueléticas y contracturas articulares no se mencionan como complicaciones de la discapacidad intelectual, sino como características de los individuos afectados."
+  }
+ }
+]

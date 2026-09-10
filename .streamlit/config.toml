@@ -1,0 +1,16 @@
+# El vigilante de archivos de Streamlit recorre todos los modulos cargados para
+# recargar la app al editarla. Al recorrer transformers toca sus atributos
+# perezosos y dispara la importacion de los procesadores de imagen y video
+# (videomae, yolos, zoedepth...), que piden torchvision. torchvision no esta
+# instalado a proposito: este proyecto es de texto puro y la libreria de vision
+# son cientos de MB de peso muerto.
+#
+# El resultado eran decenas de ModuleNotFoundError en la terminal, inofensivos
+# -son inspeccion, no ejecucion- pero suficientes para tapar la salida util.
+# Apagar el vigilante los elimina. Contrapartida: al editar el codigo hay que
+# reiniciar a mano en vez de que recargue solo.
+[server]
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false

@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "simulacro",
+      "runtimeExecutable": "venv/Scripts/streamlit.exe",
+      "runtimeArgs": [
+        "run",
+        "app/app.py",
+        "--server.port",
+        "8501",
+        "--server.headless",
+        "true"
+      ],
+      "port": 8501
+    }
+  ]
+}

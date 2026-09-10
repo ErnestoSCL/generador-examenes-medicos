@@ -1,0 +1,29 @@
+# torch se instala aparte, con el indice de CUDA 12.8. Sin ese indice pip trae
+# la version de CPU y el proyecto no corre en GPU:
+#
+#   pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+#
+# La RTX 5070 Ti es Blackwell (sm_120) y necesita cu128 o superior.
+# NO se instala torchvision: el proyecto es de texto puro y la libreria de
+# vision son cientos de MB que no se usan.
+
+transformers==5.16.1
+peft==0.20.0
+accelerate==1.15.0
+datasets==5.0.1
+
+pandas==3.0.5
+pyarrow==25.0.1
+numpy==2.5.3
+scikit-learn==1.9.0
+matplotlib==3.11.1
+
+langchain-text-splitters==1.1.2
+
+streamlit==1.63.0
+
+openai==3.10.0
+python-dotenv==1.2.3
+
+jupyter==1.1.1
+nbconvert==7.17.1

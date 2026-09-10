@@ -1,0 +1,137 @@
+{
+ "modelo_base": "Qwen/Qwen3-4B-Instruct-2507",
+ "configuracion": {
+  "n": "5. rank alto r32",
+  "r": 32,
+  "alpha": 64,
+  "lr": 0.0002,
+  "mods": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "o_proj",
+   "gate_proj",
+   "up_proj",
+   "down_proj"
+  ]
+ },
+ "epocas": 2,
+ "ejemplos_entrenamiento": 3614,
+ "mejor_eval_loss": 0.35056090354919434,
+ "barrido": [
+  {
+   "configuracion": "1. referencia",
+   "entrenables_M": 33.0,
+   "eval_loss": 0.3672,
+   "json_valido": 24,
+   "estructura": 24,
+   "parecidas": 2,
+   "espanol": 24,
+   "pico_GB": 9.87,
+   "minutos": 7.0
+  },
+  {
+   "configuracion": "2. lr bajo 1e-4",
+   "entrenables_M": 33.0,
+   "eval_loss": 0.376,
+   "json_valido": 24,
+   "estructura": 24,
+   "parecidas": 2,
+   "espanol": 24,
+   "pico_GB": 9.87,
+   "minutos": 14.9
+  },
+  {
+   "configuracion": "3. lr alto 3e-4",
+   "entrenables_M": 33.0,
+   "eval_loss": 0.3639,
+   "json_valido": 24,
+   "estructura": 24,
+   "parecidas": 2,
+   "espanol": 24,
+   "pico_GB": 9.87,
+   "minutos": 7.0
+  },
+  {
+   "configuracion": "4. rank bajo r8",
+   "entrenables_M": 16.5,
+   "eval_loss": 0.3727,
+   "json_valido": 24,
+   "estructura": 24,
+   "parecidas": 3,
+   "espanol": 24,
+   "pico_GB": 9.65,
+   "minutos": 15.4
+  },
+  {
+   "configuracion": "5. rank alto r32",
+   "entrenables_M": 66.1,
+   "eval_loss": 0.3626,
+   "json_valido": 24,
+   "estructura": 24,
+   "parecidas": 2,
+   "espanol": 24,
+   "pico_GB": 10.43,
+   "minutos": 15.4
+  },
+  {
+   "configuracion": "6. solo atencion",
+   "entrenables_M": 11.8,
+   "eval_loss": 0.3834,
+   "json_valido": 24,
+   "estructura": 24,
+   "parecidas": 2,
+   "espanol": 24,
+   "pico_GB": 9.59,
+   "minutos": 15.9
+  }
+ ],
+ "base_vs_afinado": {
+  "JSON valido": {
+   "base": "60/60",
+   "afinado": "60/60"
+  },
+  "estructura completa": {
+   "base": "57/60",
+   "afinado": "60/60"
+  },
+  "opciones parecidas": {
+   "base": "3/57",
+   "afinado": "3/60"
+  },
+  "tokens de prompt": {
+   "base": 693,
+   "afinado": 135
+  },
+  "segundos": {
+   "base": 4.46,
+   "afinado": 6.61
+  }
+ },
+ "maestro_vs_alumno": {
+  "evaluadas": {
+   "maestro (gpt-4o-mini)": 145,
+   "alumno (Qwen afinado)": 139
+  },
+  "correcta respaldada": {
+   "maestro (gpt-4o-mini)": "97.2%",
+   "alumno (Qwen afinado)": "97.1%"
+  },
+  "sin distractor cierto": {
+   "maestro (gpt-4o-mini)": "97.2%",
+   "alumno (Qwen afinado)": "95.7%"
+  },
+  "una sola respuesta": {
+   "maestro (gpt-4o-mini)": "96.6%",
+   "alumno (Qwen afinado)": "94.2%"
+  },
+  "tema correcto": {
+   "maestro (gpt-4o-mini)": "83.4%",
+   "alumno (Qwen afinado)": "82.7%"
+  },
+  "SIN NINGUN DEFECTO": {
+   "maestro (gpt-4o-mini)": "79.3%",
+   "alumno (Qwen afinado)": "78.4%"
+  }
+ }
+}

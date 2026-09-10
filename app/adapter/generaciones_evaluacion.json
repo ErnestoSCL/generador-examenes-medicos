@@ -1,0 +1,1685 @@
+[
+ {
+  "tema": "Lennox-Gastaut syndrome",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/lennox-gastaut-syndrome",
+  "fragmento": "Also common are atypical absence seizures, which cause a partial or complete loss of consciousness. Additionally, many affected individuals have drop attacks, which are sudden episodes of weak muscle tone. Drop attacks can result in falls that cause serious or life-threatening injuries. Other types of seizures have been reported less frequently in people with Lennox-Gastaut syndrome. Most of the seizures associated with Lennox-Gastaut syndrome are very brief.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué tipo de episodios se asocian comúnmente con el síndrome de Lennox-Gastaut?",
+   "correcta": "Ataques de ausencia atípicos y caídas súbitas por pérdida de tono muscular.",
+   "incorrectas": [
+    "Episodios de convulsiones prolongadas con pérdida total de conciencia.",
+    "Convulsiones generalizadas con aumento de temperatura corporal.",
+    "Episodios de dolor crónico en el sistema nervioso."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de las siguientes afirmaciones es cierta sobre el síndrome de Lennox-Gastaut?",
+   "correcta": "Las convulsiones son generalmente muy breves.",
+   "incorrectas": [
+    "Los ataques de caída son comunes en todos los pacientes.",
+    "Las convulsiones son siempre prolongadas y severas.",
+    "Los ataques de ausencia son raros en este síndrome."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "primary macronodular adrenal hyperplasia",
+  "tipo": "inheritance",
+  "url": "https://ghr.nlm.nih.gov/condition/primary-macronodular-adrenal-hyperplasia",
+  "fragmento": "People with PMAH caused by ARMC5 gene mutations inherit one copy of the mutated gene in each cell. The inheritance is considered autosomal dominant because one copy of the mutated gene is sufficient to make an individual susceptible to PMAH. However, the condition develops only when affected individuals acquire another mutation in the other copy of the ARMC5 gene in certain cells of the adrenal glands. This second mutation is described as somatic.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Por qué se considera que el trastorno PMAH es heredado de forma autosómica dominante?",
+   "correcta": "Porque una copia mutada del gen ARMC5 es suficiente para hacer que una persona sea susceptible al trastorno.",
+   "incorrectas": [
+    "Porque el trastorno se transmite solo por la madre.",
+    "Porque se requieren dos copias mutadas del gen para manifestarse.",
+    "Porque el gen afectado está ubicado en el cromosoma X."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cómo se hereda la PMAH causada por mutaciones en el gen ARMC5?",
+   "correcta": "De forma autosómica dominante",
+   "incorrectas": [
+    "De forma recesiva",
+    "De forma ligada al cromosoma X",
+    "De forma mitocondrial"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Usher syndrome",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/usher-syndrome",
+  "fragmento": "Over time, these blind spots enlarge and merge to produce tunnel vision. In some cases of Usher syndrome, vision is further impaired by clouding of the lens of the eye (cataracts). Many people with retinitis pigmentosa retain some central vision throughout their lives, however. Researchers have identified three major types of Usher syndrome, designated as types I, II, and III. These types are distinguished by their severity and the age when signs and symptoms appear.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué ocurre con los puntos ciegos en el tiempo en el síndrome de Usher?",
+   "correcta": "Se agrandan y se fusionan para producir visión de túnel.",
+   "incorrectas": [
+    "Se reducen gradualmente hasta recuperarse la visión completa.",
+    "Desaparecen completamente en la infancia.",
+    "Se convierten en visión periférica estable y permanente."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de las siguientes afirmaciones es cierta sobre el síndrome de Usher?",
+   "correcta": "Existen tres tipos principales de síndrome de Usher.",
+   "incorrectas": [
+    "La ceguera total es común en todos los tipos.",
+    "La visión central se pierde en todos los casos.",
+    "Los síntomas aparecen solo en la adultez."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "osteopetrosis",
+  "tipo": "genetic changes",
+  "url": "https://ghr.nlm.nih.gov/condition/osteopetrosis",
+  "fragmento": "Bones are constantly being remodeled, and the process is carefully controlled to ensure that bones stay strong and healthy. Mutations in any of the genes associated with osteopetrosis lead to abnormal or missing osteoclasts. Without functional osteoclasts, old bone is not broken down as new bone is formed. As a result, bones throughout the skeleton become unusually dense.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué ocurre en la osteopetrosis debido a la ausencia de osteoclastos funcionales?",
+   "correcta": "Los huesos se vuelven excesivamente densos porque el hueso viejo no se degrada adecuadamente.",
+   "incorrectas": [
+    "Los huesos se vuelven más frágiles por falta de formación nueva.",
+    "El hueso se forma en exceso y se rompe fácilmente.",
+    "La densidad ósea disminuye por actividad ósea reducida."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Qué ocurre en la osteopetrosis debido a la falta de osteoclastos funcionales?",
+   "correcta": "Los huesos se vuelven anormalmente densos.",
+   "incorrectas": [
+    "Los huesos se vuelven más frágiles.",
+    "La formación de hueso nuevo se detiene.",
+    "Los huesos se vuelven más delgados."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Pityriasis lichenoides et varioliformis acuta",
+  "tipo": "exams and tests",
+  "url": "https://rarediseases.info.nih.gov/gard/9768/pityriasis-lichenoides-et-varioliformis-acuta",
+  "fragmento": "A diagnosis of pityriasis lichenoides et varioliformis acuta is often suspected based on characteristic signs and symptoms. A skin biopsy can be used to confirm the diagnosis. Additional laboratory testing may be ordered to investigate a possible cause such as an associated infection.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué procedimiento se utiliza para confirmar el diagnóstico de pityriasis lichenoides et varioliformis acuta?",
+   "correcta": "Biopsia de piel",
+   "incorrectas": [
+    "Prueba de sangre de función hepática",
+    "Radiografía de la columna",
+    "Análisis de orina"
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es el método más confiable para confirmar la pityriasis lichenoides et varioliformis acuta?",
+   "correcta": "Biopsia de piel",
+   "incorrectas": [
+    "Exámenes de sangre",
+    "Radiografías",
+    "Análisis de orina"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Congenital contractural arachnodactyly",
+  "tipo": "treatment",
+  "url": "https://rarediseases.info.nih.gov/gard/5899/congenital-contractural-arachnodactyly",
+  "fragmento": "Physical therapy for joint contractures helps increase joint mobility and ameliorate the effects of muscle hypoplasia (usually in the calf muscles). In severe cases, surgical release may be necessary. Since the kyphosis/scoliosis tends to be progressive, bracing and/or surgical correction is often needed. Consultation with an orthopedist is encouraged. Other symptoms, if present, should be addressed as they arise and in the standard manner.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué tratamiento es común para mejorar la movilidad en casos de contracturas articulares?",
+   "correcta": "Terapia física para aumentar la movilidad articular.",
+   "incorrectas": [
+    "Uso de medicamentos antinflamatorios.",
+    "Cirugía para eliminar los músculos afectados.",
+    "Aplicación de calor constante en las articulaciones."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es el objetivo principal de la terapia física para las contracturas articulares?",
+   "correcta": "Aumentar la movilidad articular y mejorar la hipoplasia muscular.",
+   "incorrectas": [
+    "Eliminar la necesidad de cirugía en todos los casos.",
+    "Corregir la escoliosis de manera permanente.",
+    "Reducir la progresión de la cifosis sin intervención."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "metachromatic leukodystrophy",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/metachromatic-leukodystrophy",
+  "fragmento": "People with the adult form of metachromatic leukodystrophy may survive for 20 to 30 years after diagnosis. During this time there may be some periods of relative stability and other periods of more rapid decline. Metachromatic leukodystrophy gets its name from the way cells with an accumulation of sulfatides appear when viewed under a microscope.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿De qué manera se caracteriza la enfermedad metacromática leucoencefálica en el microscopio?",
+   "correcta": "Los tejidos muestran una acumulación de sulfatidas que dan un aspecto metacromático.",
+   "incorrectas": [
+    "Presentan una acumulación de proteínas en las neuronas.",
+    "Los glóbulos rojos muestran cambios en su morfología.",
+    "Los tejidos presentan una coloración uniforme y homogénea."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cómo se llama la enfermedad que se caracteriza por la acumulación de sulfatidas?",
+   "correcta": "Leucodistrofia metacromática",
+   "incorrectas": [
+    "Leucodistrofia adrenoleucodistrofica",
+    "Leucodistrofia perinatal",
+    "Leucodistrofia hereditaria"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Chandler's syndrome",
+  "tipo": "treatment",
+  "url": "https://rarediseases.info.nih.gov/gard/6033/chandlers-syndrome",
+  "fragmento": "Combination drugs may be necessary for some patients. If these medications do not successfully treat the glaucoma, surgery may be indicated. Trabeculectomy may be used to treat glaucoma. In some cases, multiple procedures may be necessary. The corneal swelling associated with Chandler's syndrome may be treated through a cornea transplant. Further investigation is needed to determine the best way to manage this condition.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué procedimiento puede realizarse para tratar el glaucoma en casos donde los medicamentos no son efectivos?",
+   "correcta": "Trabeculectomía.",
+   "incorrectas": [
+    "Cirugía de catarata.",
+    "Extracción de la córnea.",
+    "Inyección de hormonas en el ojo."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es un tratamiento posible para el glaucoma?",
+   "correcta": "La trabeculectomía puede ser utilizada para tratar el glaucoma.",
+   "incorrectas": [
+    "Los medicamentos siempre son suficientes para tratar el glaucoma.",
+    "La cirugía no es necesaria en ningún caso de glaucoma.",
+    "El síndrome de Chandler no requiere tratamiento quirúrgico."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Familial osteochondritis dissecans",
+  "tipo": "exams and tests",
+  "url": "https://rarediseases.info.nih.gov/gard/4133/familial-osteochondritis-dissecans",
+  "fragmento": "A diagnosis of osteochondritis dissecans is usually suspected based on the presence of characteristic signs and symptoms. Additional testing can then be ordered to confirm the diagnosis. These test may include x-rays, magnetic resonance imaging (MRI) and/or computed tomography (CT scan). For more information about the diagnosis of osteochondritis dissecans, please click here.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué tipo de estudios de imagen se utilizan comúnmente para confirmar el diagnóstico de osteocondritis dissecans?",
+   "correcta": "Radiografías, resonancia magnética (MRI) y/o tomografía computarizada (TC)",
+   "incorrectas": [
+    "Pruebas de función hepática y renal.",
+    "Análisis de sangre de inflamación.",
+    "Ecografía abdominal y electrocardiograma."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de las siguientes pruebas se utiliza para confirmar el diagnóstico de osteocondritis disecante?",
+   "correcta": "Radiografías, resonancia magnética y tomografía computarizada.",
+   "incorrectas": [
+    "Análisis de sangre y cultivos.",
+    "Electrocardiograma y ecografía.",
+    "Ultrasonido y resonancia magnética."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Cerebral Arteriosclerosis",
+  "tipo": "information",
+  "url": "http://www.ninds.nih.gov/disorders/cerebral_arteriosclerosis/cerebral_arteriosclerosis.htm",
+  "fragmento": "Computer tomography (CT) and magnetic resonance imaging (MRI) of the brain can help reveal the presence of cerebral arteriosclerosis before ischemic strokes, hemorrhagic strokes, or vascular dementia develop.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Para qué se utilizan la tomografía computarizada (TC) y la resonancia magnética (RM) del cerebro?",
+   "correcta": "Para detectar arteriosclerosis cerebral antes del desarrollo de accidentes cerebrovasculares o demencia vascular.",
+   "incorrectas": [
+    "Para tratar enfermedades del sistema nervioso.",
+    "Para diagnosticar cáncer cerebral.",
+    "Para medir el nivel de oxígeno en el cerebro."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Qué tipo de imágenes pueden ayudar a detectar arteriosclerosis cerebral?",
+   "correcta": "Tomografía computarizada y resonancia magnética",
+   "incorrectas": [
+    "Radiografías convencionales",
+    "Ultrasonido Doppler",
+    "Tomografía por emisión de positrones"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Childhood Brain and Spinal Cord Tumors",
+  "tipo": "information",
+  "url": "https://www.cancer.gov/types/brain/patient/child-brain-treatment-pdq",
+  "fragmento": "It is at the top of the head. The cerebrum controls thinking, learning, problem solving, emotions, speech, reading, writing, and voluntary movement. - The cerebellum is in the lower back of the brain (near the middle of the back of the head). It controls movement, balance, and posture. - The brain stem connects the brain to the spinal cord. It is in the lowest part of the brain (just above the back of the neck).",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Dónde se localiza el cerebelo y qué función cumple?",
+   "correcta": "En la parte posterior inferior del cerebro, controla el movimiento, el equilibrio y la postura.",
+   "incorrectas": [
+    "En la parte superior del cerebro, controla el pensamiento y las emociones.",
+    "En la base del cerebro, regula el sueño y la temperatura corporal.",
+    "En el tronco encefálico, controla la visión y el habla."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es la función principal del cerebelo?",
+   "correcta": "Controlar el movimiento, el equilibrio y la postura.",
+   "incorrectas": [
+    "Controlar el pensamiento y el aprendizaje.",
+    "Regular el ritmo cardíaco y la respiración.",
+    "Facilitar el habla y la lectura."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Aicardi-Goutieres Syndrome Disorder",
+  "tipo": "treatment",
+  "url": "http://www.ninds.nih.gov/disorders/aicardi_goutieres/aicardi-goutieres.htm",
+  "fragmento": "Depending upon the severity of symptoms, children may require chest physiotherapy and treatment for respiratory complications. To ensure adequate nutrition and caloric intake, some infants may require special accommodations for diet and feeding. Seizures may be managed with standard anticonvulsant medications. Children should be monitored for evidence of glaucoma in the first few months of life, and later for evidence of scoliosis, diabetes, and underactive thyroid.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué tipo de seguimiento es recomendable para los niños con trastornos neurológicos en los primeros meses de vida?",
+   "correcta": "Monitoreo por signos de glaucoma.",
+   "incorrectas": [
+    "Evaluación de desarrollo motor cada tres meses.",
+    "Pruebas de inteligencia desde el nacimiento.",
+    "Control de presión arterial mensual."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es un tratamiento recomendado para complicaciones respiratorias en niños?",
+   "correcta": "Terapia física de pecho y tratamiento adecuado",
+   "incorrectas": [
+    "Anticonvulsivos para manejar convulsiones",
+    "Accomodaciones dietéticas para todos los niños",
+    "Monitoreo de diabetes en la infancia"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "mucolipidosis III alpha/beta",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/mucolipidosis-iii-alpha-beta",
+  "fragmento": "Mucolipidosis III alpha/beta is a slowly progressive disorder that affects many parts of the body. Signs and symptoms of this condition typically appear around age 3. Individuals with mucolipidosis III alpha/beta grow slowly and have short stature. They also have stiff joints and dysostosis multiplex, which refers to multiple skeletal abnormalities seen on x-ray. Many affected individuals develop low bone mineral density (osteoporosis), which weakens the bones and makes them prone to fracture.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué característica skeletal se asocia comúnmente con la mucolipidosis III alpha/beta?",
+   "correcta": "Dysostosis multiplex y baja densidad ósea (osteoporosis).",
+   "incorrectas": [
+    "Aumento de la masa muscular.",
+    "Densidad ósea elevada.",
+    "Ausencia de anomalías óseas.",
+    "Afección exclusivamente de las articulaciones blandas."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de los siguientes síntomas es característico de la mucolipidosis III alpha/beta?",
+   "correcta": "Crecimiento lento y estatura baja",
+   "incorrectas": [
+    "Fracturas óseas frecuentes",
+    "Desarrollo normal de huesos",
+    "Aparición de síntomas a la edad adulta"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Adhesions",
+  "tipo": "information",
+  "url": "https://www.nlm.nih.gov/medlineplus/adhesions.html",
+  "fragmento": "No tests are available to detect adhesions. Doctors usually find them during surgery to diagnose other problems. Some adhesions go away by themselves. If they partly block your intestines, a diet low in fiber can allow food to move easily through the affected area. If you have a complete intestinal obstruction, it is life threatening. You should get immediate medical attention and may need surgery.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué se debe hacer en caso de obstrucción intestinal completa por adhesiones?",
+   "correcta": "Buscar atención médica inmediata y considerar cirugía.",
+   "incorrectas": [
+    "Tomar un diurético para reducir el volumen intestinal.",
+    "Aplicar calor en la zona afectada para aliviar el dolor.",
+    "Seguir una dieta rica en fibra para facilitar el paso del alimento."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una posible complicación de las adherencias intestinales?",
+   "correcta": "Obstrucción intestinal completa que es peligrosa",
+   "incorrectas": [
+    "Adherencias que siempre requieren cirugía",
+    "Adherencias que no afectan la digestión",
+    "Adherencias que se detectan con análisis de sangre"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "polymicrogyria",
+  "tipo": "genetic changes",
+  "url": "https://ghr.nlm.nih.gov/condition/polymicrogyria",
+  "fragmento": "Additionally, mutations in one gene, ADGRG1, have been found to cause a severe form of the condition called bilateral frontoparietal polymicrogyria (BFPP). The ADGRG1 gene appears to be critical for the normal development of the outer layer of the brain. Researchers believe that many other genes are probably involved in the different forms of polymicrogyria.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué función tiene el gen ADGRG1 en el desarrollo cerebral?",
+   "correcta": "Es crucial para el desarrollo normal de la capa externa del cerebro.",
+   "incorrectas": [
+    "Regula la producción de hemoglobina.",
+    "Controla la digestión del alimento.",
+    "Establece el ritmo circadiano del cuerpo."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es el gen mutado asociado a la polimicrogiria frontoparietal bilateral?",
+   "correcta": "ADGRG1",
+   "incorrectas": [
+    "TP53",
+    "BRCA1",
+    "APOE"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Microhydranencephaly",
+  "tipo": "exams and tests",
+  "url": "https://rarediseases.info.nih.gov/gard/10216/microhydranencephaly",
+  "fragmento": "A diagnosis of microhydranencephaly is generally suspected based on the presence of characteristic signs and symptoms. Additional testing can then be ordered to confirm the diagnosis. This generally consists of imaging studies to evaluate the brain for structural abnormalities and severe hydrocephalus (accumulation of fluid in the brain).",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué tipo de estudios se utilizan para confirmar el diagnóstico de microencefalia hidrocefálica?",
+   "correcta": "Estudios de imagen para evaluar anomalías estructurales y hidrocefalia severa.",
+   "incorrectas": [
+    "Pruebas de función hepática.",
+    "Análisis de sangre para niveles de electrolitos.",
+    "Pruebas de coagulación sanguínea."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es el método principal para confirmar el diagnóstico de microhidroanencefalia?",
+   "correcta": "Estudios de imagen para evaluar anormalidades cerebrales",
+   "incorrectas": [
+    "Análisis de sangre para detectar infecciones",
+    "Pruebas genéticas para identificar mutaciones",
+    "Evaluación neurológica para detectar déficits"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Immune Thrombocytopenia",
+  "tipo": "exams and tests",
+  "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/itp",
+  "fragmento": "Your doctor will diagnose immune thrombocytopenia (ITP) based on your medical history, a physical exam, and test results. Your doctor will want to make sure that your low platelet count isn't due to another condition (such as an infection) or medicines you're taking (such as chemotherapy medicines or aspirin).",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué elementos utiliza un médico para diagnosticar la trombocitopenia inmune (ITP)?",
+   "correcta": "Historia clínica, examen físico y resultados de laboratorio.",
+   "incorrectas": [
+    "Prueba de sangre para detectar virus.",
+    "Radiografía de tórax.",
+    "Análisis de orina y exámenes de función hepática."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cómo se diagnostica la trombocitopenia inmune?",
+   "correcta": "Mediante historia clínica y exámenes físicos.",
+   "incorrectas": [
+    "Solo mediante análisis de sangre.",
+    "A través de un examen genético.",
+    "Por síntomas visibles únicamente."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Chronic Pain",
+  "tipo": "information",
+  "url": "http://www.ninds.nih.gov/disorders/chronic_pain/chronic_pain.htm",
+  "fragmento": "Many chronic pain conditions affect older adults. Common chronic pain complaints include headache, low back pain, cancer pain, arthritis pain, neurogenic pain (pain resulting from damage to the peripheral nerves or to the central nervous system itself), psychogenic pain (pain not due to past disease or injury or any visible sign of damage inside or outside the nervous system).",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué tipo de dolor se considera psychogénico?",
+   "correcta": "Dolor que no tiene origen en una enfermedad pasada ni en daño visible en el sistema nervioso.",
+   "incorrectas": [
+    "Dolor causado por lesiones en los nervios periféricos.",
+    "Dolor asociado a inflamación de articulaciones.",
+    "Dolor derivado de una lesión en el sistema musculoesquelético."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de las siguientes afirmaciones sobre el dolor crónico es correcta?",
+   "correcta": "El dolor crónico afecta a adultos mayores.",
+   "incorrectas": [
+    "El dolor crónico solo se presenta en jóvenes.",
+    "El dolor crónico es siempre físico.",
+    "El dolor crónico no tiene relación con la edad."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Langerhans Cell Histiocytosis",
+  "tipo": "susceptibility",
+  "url": "https://www.cancer.gov/types/langerhans/patient/langerhans-treatment-pdq",
+  "fragmento": "Anything that increases your risk of getting a disease is called a risk factor. Having a risk factor does not mean that you will get cancer; not having risk factors doesn't mean that you will not get cancer. Talk with your doctor if you think you may be at risk. Risk factors for LCH include the following: - Having a parent who was exposed to certain chemicals such as benzene. - Having a parent who was exposed to metal, granite, or wood dust in the workplace. - A family history of cancer, including LCH.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué factores aumentan el riesgo de desarrollar linfoma de células histiocíticas (LCH)?",
+   "correcta": "Tener un padre expuesto a químicos como el benceno o a polvos de metal, granito o madera en el trabajo, o tener antecedentes familiares de cáncer, incluido el LCH.",
+   "incorrectas": [
+    "Tener una dieta rica en grasas.",
+    "Vivir en zonas urbanas con alta contaminación.",
+    "Tener una enfermedad inmune activa."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de los siguientes es un factor de riesgo para el LCH?",
+   "correcta": "Tener un padre expuesto a ciertos químicos como el benceno.",
+   "incorrectas": [
+    "No tener antecedentes familiares de cáncer.",
+    "Vivir en una zona con contaminación ambiental.",
+    "Realizar actividad física regularmente."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Wilson disease",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/wilson-disease",
+  "fragmento": "The signs and symptoms of liver disease include yellowing of the skin or whites of the eyes (jaundice), fatigue, loss of appetite, and abdominal swelling. Nervous system or psychiatric problems are often the initial features in individuals diagnosed in adulthood and commonly occur in young adults with Wilson disease.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Cuál de las siguientes es una manifestación neuropsiquiátrica común en adultos con enfermedad hepática, especialmente en el caso de enfermedad de Wilson?",
+   "correcta": "Problemas nerviosos o psiquiátricos como confusión o alteraciones del estado de ánimo.",
+   "incorrectas": [
+    "Dolor abdominal agudo y fiebre.",
+    "Hemorragias en la piel.",
+    "Aumento de la producción de bilis."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuáles son los síntomas iniciales comunes de la enfermedad hepática?",
+   "correcta": "Fatiga, pérdida de apetito y hinchazón abdominal.",
+   "incorrectas": [
+    "Dolor abdominal y fiebre alta.",
+    "Pérdida de peso y sudoración excesiva.",
+    "Confusión mental y problemas de visión."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Kidney Stones in Children",
+  "tipo": "treatment",
+  "url": "http://www.niddk.nih.gov/health-information/health-topics/urologic-disease/kidney-stones-in-children/Pages/facts.aspx",
+  "fragmento": "The treatment for a kidney stone usually depends on its size and what it is made of, as well as whether it is causing symptoms of pain or obstructing the urinary tract. Small stones usually pass through the urinary tract without treatment. Still, children will often require pain control and encouragement to drink lots of fluids to help move the stone along. Pain control may consist of oral or intravenous (IV) medication, depending on the duration and severity of the pain.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué factores influyen en el tratamiento de una piedra en el riñón?",
+   "correcta": "El tamaño de la piedra, su composición y si causa dolor o obstrucción urinaria.",
+   "incorrectas": [
+    "La edad del paciente y su historial familiar.",
+    "El tipo de dieta que ha seguido el niño en los últimos meses.",
+    "La presencia de infecciones en los pulmones."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es un tratamiento común para piedras en los riñones?",
+   "correcta": "Control del dolor y aumento de líquidos",
+   "incorrectas": [
+    "Uso de cirugía en todos los casos",
+    "Administrar antibióticos siempre",
+    "Esperar sin tratamiento en todos los casos"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Ewing Sarcoma",
+  "tipo": "stages",
+  "url": "https://www.cancer.gov/types/bone/patient/ewing-treatment-pdq",
+  "fragmento": "Ewing sarcoma is described as either localized or metastatic. Localized Ewing sarcoma The cancer is found in the bone or soft tissue in which it began and may have spread to nearby tissue, including nearby lymph nodes. Metastatic Ewing sarcoma The cancer has spread from the bone or soft tissue in which it began to other parts of the body. In Ewing tumor of bone, the cancer most often spreads to the lung, other bones, and bone marrow.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿A qué órganos o tejidos suele extenderse el Ewing sarcoma en su forma metastásica?",
+   "correcta": "A los pulmones, a otras vértebras y al médula ósea.",
+   "incorrectas": [
+    "A los riñones y al hígado.",
+    "A la piel y a los ganglios linfáticos lejanos.",
+    "A los pulmones, a otras estructuras óseas y a la médula ósea."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿A qué partes del cuerpo se disemina más comúnmente el sarcoma de Ewing en el hueso?",
+   "correcta": "A los pulmones, otros huesos y médula ósea.",
+   "incorrectas": [
+    "A la piel y el sistema nervioso.",
+    "A los órganos digestivos y el hígado.",
+    "A la piel y el corazón."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "primary ciliary dyskinesia",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/primary-ciliary-dyskinesia",
+  "fragmento": "Beginning in early childhood, affected individuals develop frequent respiratory tract infections. Without properly functioning cilia in the airway, bacteria remain in the respiratory tract and cause infection. People with primary ciliary dyskinesia also have year-round nasal congestion and a chronic cough.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Por qué los individuos con disfunción ciliar primaria desarrollan infecciones respiratorias frecuentes?",
+   "correcta": "Porque las cilia no funcionan adecuadamente, lo que impide la eliminación de bacterias del tracto respiratorio.",
+   "incorrectas": [
+    "Porque tienen un sistema inmune defectuoso desde el nacimiento.",
+    "Porque no producen suficiente moco en las vías respiratorias.",
+    "Porque su sistema respiratorio carece de glóbulos rojos."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una característica común de la disquinesia ciliar primaria?",
+   "correcta": "Infecciones respiratorias frecuentes desde la infancia",
+   "incorrectas": [
+    "Congestión nasal solo en invierno",
+    "Cough que aparece solo en la adolescencia",
+    "Infecciones gastrointestinales recurrentes"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Fuchs endothelial corneal dystrophy",
+  "tipo": "information",
+  "url": "https://rarediseases.info.nih.gov/gard/10018/fuchs-endothelial-corneal-dystrophy",
+  "fragmento": "Fuchs endothelial corneal dystrophy (FECD) is an eye disease. It affects the thin layer of cells that line the back part of the cornea. This layer is called the endothelium. The disease occurs when these cells slowly start to die off. The cells help pump excess fluid out of the cornea. As more and more cells are lost, fluid begins to build up in the cornea, causing swelling and a cloudy cornea. There are several forms of the disease according to the age of onset of the symptoms and the cause.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué ocurre cuando las células del endotelio del cornea se van perdiendo en la enfermedad de Fuchs?",
+   "correcta": "Se acumula líquido en el cornea, provocando hinchazón y opacidad.",
+   "incorrectas": [
+    "Se produce un aumento de la producción de lágrimas.",
+    "La córnea se vuelve más delgada y transparente.",
+    "Se intensifica la visión nocturna."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es la causa principal de la distrofia corneal endotelial de Fuchs?",
+   "correcta": "La muerte lenta de las células del endotelio",
+   "incorrectas": [
+    "La acumulación de líquido en el ojo",
+    "La inflamación de la córnea",
+    "La falta de nutrientes en la córnea"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "tarsal-carpal coalition syndrome",
+  "tipo": "genetic changes",
+  "url": "https://ghr.nlm.nih.gov/condition/tarsal-carpal-coalition-syndrome",
+  "fragmento": "With decreased noggin function, BMPs abnormally stimulate bone formation in joint areas, where there should be no bone, causing the bone fusions seen in people with tarsal-carpal coalition syndrome. Mutations in the NOG gene are involved in several disorders with overlapping signs and symptoms.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué ocurre cuando la función de noggin se reduce en el cuerpo?",
+   "correcta": "Los factores BMP estimulan anormalmente la formación ósea en áreas donde no debería haber hueso.",
+   "incorrectas": [
+    "Se aumenta la producción de colágeno en las articulaciones.",
+    "Se produce una disminución en la movilidad de las articulaciones.",
+    "Se favorece la formación de cartílago en lugar de hueso."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Qué causa la formación anormal de hueso en el síndrome de coalescencia tarso-carpal?",
+   "correcta": "La disminución de la función de noggin",
+   "incorrectas": [
+    "La acumulación de calcio en los tejidos blandos",
+    "La falta de actividad física en los huesos",
+    "La exposición a radiaciones ionizantes"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "22q11.2 deletion syndrome",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/22q112-deletion-syndrome",
+  "fragmento": "Later in life, they are at an increased risk of developing mental illnesses such as schizophrenia, depression, anxiety, and bipolar disorder. Additionally, affected children are more likely than children without 22q11.2 deletion syndrome to have attention deficit hyperactivity disorder (ADHD) and developmental conditions such as autism spectrum disorders that affect communication and social interaction.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué trastornos mentales tienen mayor riesgo los individuos con síndrome de deletión 22q11.2 en la infancia y la edad adulta?",
+   "correcta": "Trastornos como esquizofrenia, depresión, ansiedad y trastorno bipolar.",
+   "incorrectas": [
+    "Diabetes tipo 2 y obesidad.",
+    "Trastornos del sueño y apnea.",
+    "Trastornos de la alimentación y autismo spectrum."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de las siguientes condiciones es más común en niños con síndrome de deleción 22q11.2?",
+   "correcta": "Trastorno del espectro autista",
+   "incorrectas": [
+    "Esquizofrenia",
+    "Trastorno de ansiedad",
+    "Trastorno bipolar"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "EEC syndrome",
+  "tipo": "inheritance",
+  "url": "https://rarediseases.info.nih.gov/gard/2076/eec-syndrome",
+  "fragmento": "EEC syndrome additionally shows reduced penetrance and variable expressivity. Reduced penetrance means that not all individuals with a mutation in the disease-causing gene will have signs and symptoms of the condition; however, in this condition, it has been reported that up to 93-98% of individuals with a mutation will have the condition. Variable expressivity means that there is a range of signs and symptoms that can occur in different people with the condition (i.e.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué significa la expresividad variable en un síndrome genético?",
+   "correcta": "Que diferentes personas con la misma mutación pueden presentar un rango de síntomas.",
+   "incorrectas": [
+    "Que todos los individuos con la mutación desarrollan exactamente los mismos síntomas.",
+    "Que la mutación no se manifiesta en ningún caso.",
+    "Que el síndrome solo afecta a hombres."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Qué implica la penetrancia reducida en el síndrome EEC?",
+   "correcta": "No todos los individuos con la mutación presentan síntomas.",
+   "incorrectas": [
+    "Todos los individuos con la mutación tienen síntomas.",
+    "La penetrancia reducida significa que todos los síntomas son iguales.",
+    "La penetrancia reducida indica que la enfermedad es hereditaria."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Childhood Brain Stem Glioma",
+  "tipo": "stages",
+  "url": "https://www.cancer.gov/types/brain/patient/child-glioma-treatment-pdq",
+  "fragmento": "Treatment is based on the following: - Whether the tumor is newly diagnosed or recurrent (has come back after treatment). - The type of tumor (either a diffuse intrinsic pontine glioma or a focal glioma).",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué factores influyen en el tratamiento de un tumor cerebral?",
+   "correcta": "Si es un tumor recién diagnosticado o recurrente y su tipo (difuso intrínseco del puente o focal).",
+   "incorrectas": [
+    "La edad del paciente y su historial familiar.",
+    "El color del tumor y su ubicación exacta.",
+    "La presencia de síntomas de infección o inflamación."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Qué factores influyen en el tratamiento del tumor?",
+   "correcta": "El diagnóstico reciente o recurrente del tumor.",
+   "incorrectas": [
+    "El tamaño del tumor en el paciente.",
+    "La edad del paciente al momento del diagnóstico.",
+    "La ubicación del tumor en el cuerpo."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Plasminogen activator inhibitor type 1 deficiency",
+  "tipo": "information",
+  "url": "https://rarediseases.info.nih.gov/gard/4381/plasminogen-activator-inhibitor-type-1-deficiency",
+  "fragmento": "Plasminogen activator inhibitor type 1 (PAI-1) deficiency a rare disorder that causes premature breakdown of blood clots and a moderate bleeding syndrome. While spontaneous bleeding is rare, moderate hemorrhages of the knees, elbows, nose and gums may be triggered by mild trauma. In females, menstrual bleeding is often severe. Prolonged bleeding after surgery is also common. PAI-1 deficiency is caused by homozygous or compound heterozygous mutation in the SERPINE1 gene.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué consecuencia clínica se asocia con la deficiencia del inhibidor del activador de plasmina tipo 1 (PAI-1)?",
+   "correcta": "Síndrome de hemorragia moderada, con hemorragias después de trauma o cirugía.",
+   "incorrectas": [
+    "Aumento de la coagulación sanguínea y trombosis.",
+    "Trastorno de la función hepática.",
+    "Deficiencia de plaquetas con trombocitopenia."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una característica de la deficiencia de PAI-1?",
+   "correcta": "Causa un síndrome de sangrado moderado.",
+   "incorrectas": [
+    "Provoca hemorragias severas espontáneas.",
+    "Es causada por una mutación en el gen PAI-1.",
+    "No afecta el sangrado postoperatorio."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Carnitine-acylcarnitine translocase deficiency",
+  "tipo": "treatment",
+  "url": "https://rarediseases.info.nih.gov/gard/1123/carnitine-acylcarnitine-translocase-deficiency",
+  "fragmento": "Although there is no standard treatment plan for carnitine-acylcarnitine translocase deficiency, there are treatments that have been found to be helpful in the management of this condition. Certain treatments may be helpful for some children but not others. When necessary, treatment are usually needed throughout life. Children with carnitine-acylcarnitine translocase deficiency should be followed by a metabolic doctor and a dietician in addition to their primary doctor.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué aspecto es fundamental en el manejo a largo plazo de la deficiencia de translocasa de carnitina-acylcarnitina?",
+   "correcta": "La atención continua por un médico metabólico y un dietista.",
+   "incorrectas": [
+    "La cirugía para reparar el daño hepático.",
+    "El uso de medicamentos antivirales.",
+    "La terapia de reemplazo de hormonas."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es un enfoque recomendado para manejar la deficiencia de translocasa de carnitina?",
+   "correcta": "Seguimiento por un médico metabólico y un dietista.",
+   "incorrectas": [
+    "Uso de un solo tratamiento estándar para todos.",
+    "Tratamiento solo por el médico de cabecera.",
+    "No se requiere seguimiento médico a lo largo de la vida."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Obesity Hypoventilation Syndrome",
+  "tipo": "information",
+  "url": "http://www.nhlbi.nih.gov/health/health-topics/topics/ohs",
+  "fragmento": "Obesity hypoventilation (HI-po-ven-tih-LA-shun) syndrome (OHS) is a breathing disorder that affects some obese people. In OHS, poor breathing results in too much carbon dioxide (hypoventilation) and too little oxygen in the blood (hypoxemia). OHS sometimes is called Pickwickian syndrome. Overview To understand OHS, it helps to understand how the lungs work. When you breathe, air passes through your nose and mouth into your windpipe. The air then travels to your lungs' air sacs.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué característica principal presenta el síndrome de hiperventilación obesidad (OHS)?",
+   "correcta": "Una hipoxemia y hipocapnia debido a una ventilación insuficiente.",
+   "incorrectas": [
+    "Aumento de la frecuencia cardíaca y presión arterial.",
+    "Dificultad para respirar por obstrucción de las vías respiratorias.",
+    "Aumento de la producción de oxígeno en los pulmones."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una característica del síndrome de obesidad hipopnea?",
+   "correcta": "Causa hipoxemia y hipopnea en personas obesas.",
+   "incorrectas": [
+    "Afecta solo a personas no obesas.",
+    "Mejora con la pérdida de peso.",
+    "Es un trastorno de la respiración en todos los casos."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "hereditary neuralgic amyotrophy",
+  "tipo": "genetic changes",
+  "url": "https://ghr.nlm.nih.gov/condition/hereditary-neuralgic-amyotrophy",
+  "fragmento": "Mutations in the SEPT9 gene cause hereditary neuralgic amyotrophy. The SEPT9 gene provides instructions for making a protein called septin-9, which is part of a group of proteins called septins. Septins are involved in a process called cytokinesis, which is the step in cell division when the fluid inside the cell (cytoplasm) divides to form two separate cells. The SEPT9 gene seems to be turned on (active) in cells throughout the body.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué proceso celular involucra el protein septin-9 codificado por el gen SEPT9?",
+   "correcta": "La citocinesis.",
+   "incorrectas": [
+    "La transcripción génica.",
+    "La traducción de proteínas.",
+    "La división del núcleo celular."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es la función principal del gen SEPT9?",
+   "correcta": "Proporciona instrucciones para la proteína septina-9.",
+   "incorrectas": [
+    "Regula la producción de hormonas en el cuerpo.",
+    "Inicia la división celular en células madre.",
+    "Activa la respuesta inmune en el sistema nervioso."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Kidney Stones in Children",
+  "tipo": "causes",
+  "url": "http://www.niddk.nih.gov/health-information/health-topics/urologic-disease/kidney-stones-in-children/Pages/facts.aspx",
+  "fragmento": "Some doctors believe increases in obesity rates, less active lifestyles, and diets higher in salt may be causing more children to have kidney stones. - Sometimes, a urinary tract infection can cause kidney stones to form. Some types of bacteria in the urinary tract break down ureaa waste product removed from the blood by the kidneysinto substances that form stones. - Some children have metabolic disorders that lead to kidney stones.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué factores pueden contribuir al desarrollo de piedras en los riñones en niños?",
+   "correcta": "Aumento de la obesidad, estilos de vida sedentarios, dietas ricas en sal, infecciones urinarias y trastornos metabólicos.",
+   "incorrectas": [
+    "Consumo excesivo de agua y vitaminas.",
+    "Uso de medicamentos antidepresivos.",
+    "Deficiencia de hierro en la sangre.",
+    "Exposición prolongada a rayos ultravioleta."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de las siguientes afirmaciones es cierta sobre los cálculos renales en niños?",
+   "correcta": "Las infecciones del tracto urinario pueden causar cálculos renales.",
+   "incorrectas": [
+    "La obesidad no influye en la formación de cálculos renales.",
+    "Los cálculos renales son siempre causados por deshidratación.",
+    "Los cálculos renales son un problema exclusivo de adultos."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "color vision deficiency",
+  "tipo": "genetic changes",
+  "url": "https://ghr.nlm.nih.gov/condition/color-vision-deficiency",
+  "fragmento": "In people with this condition, only S cones are functional, which leads to reduced visual acuity and poor color vision. The loss of L and M cone function also underlies the other vision problems in people with blue cone monochromacy. Some problems with color vision are not caused by gene mutations. These nonhereditary conditions are described as acquired color vision deficiencies.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué característica visual se asocia con la monocromacia por conos azules?",
+   "correcta": "Funcionamiento solo de los conos S, con pérdida de visión de colores y acuidad visual reducida.",
+   "incorrectas": [
+    "Funcionamiento normal de los conos L y M.",
+    "Visión de colores intensos y nítida.",
+    "Ausencia de conos en la retina."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una característica de la monocromacia por conos azules?",
+   "correcta": "Solo los conos S son funcionales en esta condición.",
+   "incorrectas": [
+    "La pérdida de conos L y M es irrelevante.",
+    "Los problemas de visión son siempre hereditarios.",
+    "La acuidad visual no se ve afectada."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Familial prostate cancer",
+  "tipo": "information",
+  "url": "https://rarediseases.info.nih.gov/gard/4520/familial-prostate-cancer",
+  "fragmento": "Familial prostate cancer is a cluster of prostate cancer within a family. Most cases of prostate cancer occur sporadically in people with no family history of the condition. However, approximately 5% to 10% of prostate cancer cases are believed to be primarily caused by a genetic predisposition to the condition. In many families, the underlying genetic cause is unknown; however, some of these cases are caused by changes (mutations) in the BRCA1, BRCA2, HOXB13, or several other genes.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué porcentaje de casos de cáncer de próstata se atribuye a una predisposición genética?",
+   "correcta": "Entre el 5% y el 10%",
+   "incorrectas": [
+    "Menos del 1%",
+    "Más del 20%",
+    "Exactamente el 50%"
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es la causa principal del cáncer de próstata familiar?",
+   "correcta": "Una predisposición genética hereditaria",
+   "incorrectas": [
+    "La exposición a factores ambientales",
+    "Un estilo de vida poco saludable",
+    "Infecciones virales previas"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Childhood Extracranial Germ Cell Tumors",
+  "tipo": "stages",
+  "url": "https://www.cancer.gov/types/extracranial-germ-cell/patient/germ-cell-treatment-pdq",
+  "fragmento": "The pictures are made by a computer linked to an x-ray machine. A dye may be injected into a vein or swallowed to help the organs or tissues show up more clearly. This procedure is also called computed tomography, computerized tomography, or computerized axial tomography.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué procedimiento se utiliza para obtener imágenes del cuerpo mediante rayos x y un computador?",
+   "correcta": "Tomografía computarizada",
+   "incorrectas": [
+    "Resonancia magnética",
+    "Radiografía convencional",
+    "Ecografía"
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es el propósito de inyectar un tinte en un procedimiento de tomografía?",
+   "correcta": "Ayudar a que los órganos se vean más claramente.",
+   "incorrectas": [
+    "Aumentar la dosis de radiación recibida.",
+    "Eliminar la necesidad de una máquina de rayos X.",
+    "Reducir el tiempo de la exploración médica."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Hypersomnia",
+  "tipo": "treatment",
+  "url": "http://www.ninds.nih.gov/disorders/hypersomnia/hypersomnia.htm",
+  "fragmento": "Treatment is symptomatic in nature. Stimulants, such as amphetamine, methylphenidate, and modafinil, may be prescribed. Other drugs used to treat hypersomnia include clonidine, levodopa, bromocriptine, antidepressants, and monoamine oxidase inhibitors. Changes in behavior (for example avoiding night work and social activities that delay bed time) and diet may offer some relief. Patients should avoid alcohol and caffeine.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué tipo de tratamiento se utiliza comúnmente en el manejo de la hipersomnia?",
+   "correcta": "Tratamiento sintomático con estimulantes y medicamentos como clonidina o antidepressivos.",
+   "incorrectas": [
+    "Tratamiento quirúrgico para eliminar el exceso de sueño.",
+    "Uso de ansiolíticos para reducir la ansiedad asociada.",
+    "Terapia de exposición al sol como medida principal."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de los siguientes tratamientos se utiliza para la hipersomnolencia?",
+   "correcta": "Estimulantes como amfetamina y metilfenidato.",
+   "incorrectas": [
+    "Antibióticos para infecciones bacterianas.",
+    "Antiinflamatorios no esteroides para el dolor.",
+    "Antidepresivos para la depresión."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Bell's Palsy",
+  "tipo": "information",
+  "url": "http://www.ninds.nih.gov/disorders/bells/bells.htm",
+  "fragmento": "Bells palsy can cause significant facial distortion. The exact cause of Bell's palsy isn't known, but many scientists believe that reactivation of a dormant viral infection can cause the facial nerve to swell and becomes inflamed. Several other conditions can cause facial paralysis that might be diagnosed as Bell's palsy..",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué se cree que causa la parálisis facial en el síndrome de Bell?",
+   "correcta": "La reactivación de una infección viral dormida.",
+   "incorrectas": [
+    "Una lesión en el cerebro por trauma.",
+    "Una enfermedad autoinmune del sistema nervioso.",
+    "Una infección bacteriana del oído."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una posible causa de la parálisis facial en la parálisis de Bell?",
+   "correcta": "Reactivación de una infección viral dormante.",
+   "incorrectas": [
+    "Inflamación del nervio óptico.",
+    "Lesión traumática en el cuello.",
+    "Infección bacteriana en el oído."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Langerhans Cell Histiocytosis",
+  "tipo": "information",
+  "url": "https://www.cancer.gov/types/langerhans/patient/langerhans-treatment-pdq",
+  "fragmento": "Sometimes there are mutations (changes) in LCH cells as they form. These include mutations of the BRAF gene. These changes may make the LCH cells grow and multiply quickly. This causes LCH cells to build up in certain parts of the body, where they can damage tissue or form lesions. LCH is not a disease of the Langerhans cells that normally occur in the skin. LCH may occur at any age, but is most common in young children.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué tipo de mutaciones en las células LCH pueden provocar su crecimiento excesivo y formación de lesiones?",
+   "correcta": "Mutaciones en el gen BRAF.",
+   "incorrectas": [
+    "Mutaciones en el gen de la colágena.",
+    "Mutaciones en el gen de la insulina.",
+    "Mutaciones en el gen de la hemoglobina."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una característica de las células en la enfermedad de LCH?",
+   "correcta": "Pueden mutar y crecer rápidamente debido a cambios genéticos.",
+   "incorrectas": [
+    "Son una enfermedad exclusiva de las células de Langerhans.",
+    "Solo afecta a adultos mayores.",
+    "No causan daño a los tejidos del cuerpo."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Alagille Syndrome",
+  "tipo": "complications",
+  "url": "http://www.niddk.nih.gov/health-information/health-topics/liver-disease/Alagille-Syndrome/Pages/facts.aspx",
+  "fragmento": "The complications of Alagille syndrome include liver failure, portal hypertension, and growth problems. People with Alagille syndrome usually have a combination of complications, and may not have every complication listed below. Liver failure. Over time, the decreased number of bile ducts may lead to chronic liver failure, also called end-stage liver disease. This condition progresses over months, years, or even decades.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué complicación hepática puede desarrollarse con el tiempo en pacientes con síndrome de Alagille?",
+   "correcta": "Fallo hepático crónico o enfermedad terminal del hígado.",
+   "incorrectas": [
+    "Enfermedad renal aguda.",
+    "Aumento de la presión arterial.",
+    "Insuficiencia cardíaca aguda."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de las siguientes complicaciones es característica del síndrome de Alagille?",
+   "correcta": "Insuficiencia hepática crónica",
+   "incorrectas": [
+    "Hipertensión arterial",
+    "Diabetes mellitus",
+    "Insuficiencia cardíaca"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Snyder-Robinson syndrome",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/snyder-robinson-syndrome",
+  "fragmento": "Most affected males are thin and have low muscle mass, a body type described as an asthenic habitus. Weakness or \"floppiness\" (hypotonia) typically becomes apparent in infancy, and the loss of muscle tissue continues with age. People with this condition often have difficulty walking; most have an unsteady gait. Snyder-Robinson syndrome causes skeletal problems, particularly thinning of the bones (osteoporosis) that starts in early childhood.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Cuál es una característica principal del habitus corporal en los hombres afectados por el síndrome de Snyder-Robinson?",
+   "correcta": "Corporal delgado con baja masa muscular (asthenic habitus).",
+   "incorrectas": [
+    "Aumento de peso y acumulación de grasa corporal.",
+    "Desarrollo de músculos fuertes desde la infancia.",
+    "Forma corporal robusta y muscular."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una característica común del síndrome de Snyder-Robinson?",
+   "correcta": "Causa problemas esqueléticos y osteoporosis.",
+   "incorrectas": [
+    "Afecta principalmente a personas con masa muscular alta.",
+    "Provoca debilidad muscular solo en la adultez.",
+    "No afecta la marcha ni la postura del individuo."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Overview of Kidney Disease in Children",
+  "tipo": "exams and tests",
+  "url": "http://www.niddk.nih.gov/health-information/health-topics/kidney-disease/overview-of-kidney-disease-in-children/Pages/index.aspx",
+  "fragmento": "Unlike a dipstick test for albumin, a urine albumin-to-creatinine ratiothe ratio between the amount of albumin and the amount of creatinine in urineis not affected by variation in urine concentration. Blood test. Blood drawn in a health care providers office and sent to a lab for analysis can be tested to estimate how much blood the kidneys filter each minute, called the estimated glomerular filtration rate or eGFR.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Por qué el ratio de albúmina a creatinina en orina es más confiable que el test de papel para albúmina?",
+   "correcta": "No se ve afectado por las variaciones en la concentración de la orina.",
+   "incorrectas": [
+    "Porque mide directamente la presión arterial.",
+    "Porque es un análisis más rápido y barato.",
+    "Porque detecta enfermedades hepáticas."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una ventaja de la relación albumina-creatinina en orina?",
+   "correcta": "No se ve afectada por la concentración de orina.",
+   "incorrectas": [
+    "Es más fácil de realizar que un análisis de sangre.",
+    "Mide directamente la función renal en minutos.",
+    "Requiere un hospital para su realización."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "hereditary folate malabsorption",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/hereditary-folate-malabsorption",
+  "fragmento": "The symptoms of this blood disorder may include decreased appetite, lack of energy, headaches, pale skin, and tingling or numbness in the hands and feet. People with hereditary folate malabsorption may also have a deficiency of white blood cells (leukopenia), leading to increased susceptibility to infections.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué consecuencia puede tener la deficiencia de ácido fólico en personas con malabsorción hereditaria?",
+   "correcta": "Aumento de la susceptibilidad a infecciones por debilidad de los glóbulos blancos.",
+   "incorrectas": [
+    "Aumento de la producción de glóbulos rojos.",
+    "Dolor en los músculos y articulaciones.",
+    "Problemas de coagulación sanguínea."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de los siguientes síntomas es característico de la malabsorción hereditaria de folato?",
+   "correcta": "Pérdida de apetito y falta de energía",
+   "incorrectas": [
+    "Aumento de peso y sudoración excesiva",
+    "Dolor abdominal y diarrea crónica",
+    "Fiebre alta y erupciones cutáneas"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "systemic scleroderma",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/systemic-scleroderma",
+  "fragmento": "Systemic scleroderma is an autoimmune disorder that affects the skin and internal organs. Autoimmune disorders occur when the immune system malfunctions and attacks the body's own tissues and organs. The word \"scleroderma\" means hard skin in Greek, and the condition is characterized by the buildup of scar tissue (fibrosis) in the skin and other organs. The condition is also called systemic sclerosis because the fibrosis can affect organs other than the skin.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué característica define al esclerodermia sistémica?",
+   "correcta": "Acumulación de tejido fibroso (fibrosis) en la piel y órganos internos.",
+   "incorrectas": [
+    "Aumento de la producción de glóbulos rojos.",
+    "Deterioro de las articulaciones por inflamación.",
+    "Falta de función en los músculos esqueléticos."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una característica del esclerodermia sistémica?",
+   "correcta": "Afecta la piel y órganos internos.",
+   "incorrectas": [
+    "Es una enfermedad infecciosa.",
+    "Solo afecta la piel.",
+    "No involucra tejido fibroso."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Kidney Stones in Children",
+  "tipo": "considerations",
+  "url": "http://www.niddk.nih.gov/health-information/health-topics/urologic-disease/kidney-stones-in-children/Pages/facts.aspx",
+  "fragmento": "Still, children will often require pain control and encouragement to drink lots of fluids to help move the stone along. - Children with larger stones, or stones that block urine flow and cause great pain, may need to be hospitalized for more urgent treatment.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿En qué situación un niño con piedra en la vía urinaria puede requerir hospitalización?",
+   "correcta": "Cuando la piedra es grande o bloquea el flujo urinario y causa intensa dolor.",
+   "incorrectas": [
+    "Cuando el niño solo presenta náuseas.",
+    "Cuando la piedra está en la vejiga y no causa dolor.",
+    "Cuando el niño necesita solo tomar más líquidos."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una necesidad común para los niños con piedras en los riñones?",
+   "correcta": "Control del dolor y beber muchos líquidos",
+   "incorrectas": [
+    "Hospitalización inmediata en todos los casos",
+    "No necesitan líquidos adicionales",
+    "Solo se requiere tratamiento médico"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "tetra-amelia syndrome",
+  "tipo": "inheritance",
+  "url": "https://ghr.nlm.nih.gov/condition/tetra-amelia-syndrome",
+  "fragmento": "In most of the families reported so far, tetra-amelia syndrome appears to have an autosomal recessive pattern of inheritance. Autosomal recessive inheritance means both copies of the gene in each cell have mutations. The parents of an individual with tetra-amelia syndrome each carry one copy of the mutated gene, but do not show signs and symptoms of the condition.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué tipo de herencia presenta el síndrome de tetra-amelia según el fragmento?",
+   "correcta": "Heredado de forma autosómica recesiva.",
+   "incorrectas": [
+    "Heredado de forma X ligado.",
+    "Heredado de forma dominante.",
+    "Heredado de forma mitocondrial."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es el patrón de herencia del síndrome de tetraamelia?",
+   "correcta": "Recesivo autosómico",
+   "incorrectas": [
+    "Dominante autosómico",
+    "Ligado al cromosoma X",
+    "Herencia mitocondrial"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Darier disease",
+  "tipo": "genetic changes",
+  "url": "https://ghr.nlm.nih.gov/condition/darier-disease",
+  "fragmento": "SERCA2 is expressed throughout the body; it is not clear why changes in this enzyme affect only the skin. Some researchers note that skin cells are the only cell types expressing SERCA2 that do not have a \"back-up\" enzyme for calcium transport. This dependence on the SERCA2 enzyme may make skin cells particularly vulnerable to changes in this enzyme.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Por qué las células de la piel podrían ser particularmente vulnerables a los cambios en el enzima SERCA2?",
+   "correcta": "Porque las células de la piel no tienen un enzima de respaldo para el transporte de calcio.",
+   "incorrectas": [
+    "Porque las células de la piel producen más calcio que otras células.",
+    "Porque el SERCA2 está presente en todas las células del cuerpo de forma igual.",
+    "Porque el SERCA2 solo se activa en condiciones de estrés celular."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Por qué las células de la piel son vulnerables a cambios en SERCA2?",
+   "correcta": "Porque no tienen un enzima de respaldo para el transporte de calcio.",
+   "incorrectas": [
+    "Porque expresan SERCA2 en todas las células del cuerpo.",
+    "Porque son las únicas células que no tienen SERCA2.",
+    "Porque el SERCA2 solo afecta a células musculares."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Parasites - American Trypanosomiasis (also known as Chagas Disease)",
+  "tipo": "prevention",
+  "url": "http://www.cdc.gov/parasites/chagas/",
+  "fragmento": "In endemic areas of Mexico, Central America, and South America improved housing and spraying insecticide inside housing to eliminate triatomine bugs has significantly decreased the spread of Chagas disease. Further, screening of blood donations for Chagas is another important public health tool in helping to prevent transfusion-acquired disease. Early detection and treatment of new cases, including mother-to-baby (congenital) cases, will also help reduce the burden of disease.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué medidas son efectivas para prevenir la transmisión de la enfermedad de Chagas?",
+   "correcta": "Mejorar las condiciones de vivienda,喷洒 insecticidas para eliminar los insectos triatomíneos y la screening de donaciones sanguíneas.",
+   "incorrectas": [
+    "Uso de vacunas para la enfermedad de Chagas.",
+    "Tratamiento con antibióticos en etapas tempranas.",
+    "Aislamiento de personas infectadas en hogares.",
+    "Aplicación de anticonceptivos para prevenir la transmisión materna."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una estrategia efectiva para prevenir la enfermedad de Chagas?",
+   "correcta": "Mejorar la vivienda y usar insecticidas en áreas endémicas.",
+   "incorrectas": [
+    "Aumentar la donación de sangre sin screening.",
+    "Ignorar el tratamiento de casos nuevos.",
+    "No realizar seguimiento de embarazadas."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Ewing Sarcoma",
+  "tipo": "stages",
+  "url": "https://www.cancer.gov/types/bone/patient/ewing-treatment-pdq",
+  "fragmento": "The cancer gets into the blood, travels through the blood vessels, and forms a tumor (metastatic tumor) in another part of the body. The metastatic tumor is the same type of cancer as the primary tumor. For example, if Ewing sarcoma spreads to the lung, the cancer cells in the lung are actually Ewing sarcoma cells. The disease is metastatic Ewing sarcoma, not lung cancer.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué característica tiene un tumor metastásico en relación con el tumor primario?",
+   "correcta": "Es del mismo tipo de cáncer que el tumor primario.",
+   "incorrectas": [
+    "Es un tipo de cáncer diferente, como por ejemplo cáncer de pulmón.",
+    "No tiene células cancerosas similares al tumor original.",
+    "Se forma en un órgano diferente por causa de una infección."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Qué se entiende por un tumor metastásico?",
+   "correcta": "Es un tumor del mismo tipo que el tumoral primario.",
+   "incorrectas": [
+    "Es un tumor de tipo diferente al primario.",
+    "Es un tumor que se origina en el sitio primario.",
+    "Es un tumor que no se disemina a otros órganos."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Retinoblastoma",
+  "tipo": "information",
+  "url": "https://www.cancer.gov/types/retinoblastoma/patient/retinoblastoma-treatment-pdq",
+  "fragmento": "Although retinoblastoma may occur at any age, it occurs most often in children younger than 2 years. The cancer may be in one eye (unilateral) or in both eyes (bilateral). Retinoblastoma rarely spreads from the eye to nearby tissue or other parts of the body. Cavitary retinoblastoma is a rare type of retinoblastoma in which cavities (hollow spaces) form within the tumor.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿En qué edad se presenta con mayor frecuencia el retinoblastoma?",
+   "correcta": "En niños menores de 2 años.",
+   "incorrectas": [
+    "En adultos entre 20 y 40 años.",
+    "En niños mayores de 5 años.",
+    "En adolescentes entre 13 y 18 años."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿En qué grupo de edad se presenta más comúnmente el retinoblastoma?",
+   "correcta": "En niños menores de 2 años.",
+   "incorrectas": [
+    "En adolescentes mayores de 16 años.",
+    "En adultos jóvenes de 18 a 25 años.",
+    "En personas mayores de 50 años."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Cushing's Syndrome",
+  "tipo": "information",
+  "url": "http://www.ninds.nih.gov/disorders/cushings/cushings.htm",
+  "fragmento": "In women, there may be increased growth of facial and body hair, and menstrual periods may become irregular or stop completely. Neurological symptoms include difficulties with memory and neuromuscular disorders.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué cambios pueden presentarse en el sistema reproductivo y nervioso en mujeres afectadas por una enfermedad específica?",
+   "correcta": "Aumento del crecimiento de vello facial y corporal, y alteraciones en el ciclo menstrual.",
+   "incorrectas": [
+    "Aumento de la frecuencia cardíaca y presión arterial.",
+    "Pérdida de peso significativa y anorexia.",
+    "Dolor crónico en las articulaciones y rigidez muscular."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuáles son posibles síntomas en mujeres con esta condición?",
+   "correcta": "Aumento de vello facial y menstruación irregular",
+   "incorrectas": [
+    "Dificultades para respirar y fiebre alta",
+    "Pérdida de peso y fatiga extrema",
+    "Dolor abdominal y náuseas constantes"
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "autosomal dominant hyper-IgE syndrome",
+  "tipo": "information",
+  "url": "https://ghr.nlm.nih.gov/condition/autosomal-dominant-hyper-ige-syndrome",
+  "fragmento": "(pneumatoceles) in the lungs. Recurrent skin infections and an inflammatory skin disorder called eczema are also very common in AD-HIES. These skin problems cause rashes, blisters, accumulations of pus (abscesses), open sores, and scaling. AD-HIES is characterized by abnormally high levels of an immune system protein called immunoglobulin E (IgE) in the blood. IgE normally triggers an immune response against foreign invaders in the body, particularly parasitic worms, and plays a role in allergies.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué característica inmunológica se observa comúnmente en el síndrome de hipogonadismo con defectos inmunitarios (AD-HIES)?",
+   "correcta": "Niveles anormalmente altos de inmunoglobulina E (IgE) en la sangre.",
+   "incorrectas": [
+    "Bajo nivel de anticuerpos contra virus.",
+    "Aumento de células T supresoras.",
+    "Disminución de la producción de linfocitos B."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál de las siguientes características es típica del síndrome AD-HIES?",
+   "correcta": "Niveles altos de inmunoglobulina E (IgE) en sangre.",
+   "incorrectas": [
+    "Infecciones recurrentes en el sistema nervioso.",
+    "Aumento de anticuerpos contra virus comunes.",
+    "Disminución de la respuesta inmune general."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "sickle cell disease",
+  "tipo": "genetic changes",
+  "url": "https://ghr.nlm.nih.gov/condition/sickle-cell-disease",
+  "fragmento": "In other types of sickle cell disease, just one beta-globin subunit in hemoglobin is replaced with hemoglobin S. The other beta-globin subunit is replaced with a different abnormal variant, such as hemoglobin C. For example, people with sickle-hemoglobin C (HbSC) disease have hemoglobin molecules with hemoglobin S and hemoglobin C instead of beta-globin.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué caracteriza al enfermedad de células falciformes de tipo HbSC?",
+   "correcta": "Poseen hemoglobinas S y C en lugar de beta-globina normal.",
+   "incorrectas": [
+    "Tienen solo hemoglobina S en todos los hemoglobinas.",
+    "Presentan solo hemoglobina C en sus glóbulos rojos.",
+    "No presentan alteraciones en la estructura de la hemoglobina."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Qué caracteriza a la enfermedad de células falciformes tipo HbSC?",
+   "correcta": "Contiene hemoglobina S y hemoglobina C.",
+   "incorrectas": [
+    "Solo contiene hemoglobina S.",
+    "No tiene hemoglobina C.",
+    "Es un tipo de anemia ferropénica."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Langerhans Cell Histiocytosis",
+  "tipo": "stages",
+  "url": "https://www.cancer.gov/types/langerhans/patient/langerhans-treatment-pdq",
+  "fragmento": "LCH is described as single-system disease or multisystem disease, depending on how many body systems are affected: - Single-system LCH: LCH is found in one part of an organ or body system (unifocal) or in more than one part of that organ or body system (multifocal). Bone is the most common single place for LCH to be found. - Multisystem LCH: LCH occurs in two or more organs or body systems or may be spread throughout the body. Multisystem LCH is less common than single-system LCH.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué caracteriza a la leucemia de células histiocíticas (LCH) en forma de enfermedad de un solo sistema?",
+   "correcta": "Se encuentra en una sola parte de un órgano o sistema fisiológico, o en múltiples partes del mismo.",
+   "incorrectas": [
+    "Se presenta únicamente en el sistema nervioso central.",
+    "Afecta a dos o más sistemas del cuerpo simultáneamente.",
+    "Es una enfermedad que solo se manifiesta en la médula ósea."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cómo se clasifica la enfermedad de LCH según la afectación de órganos?",
+   "correcta": "Por el número de sistemas corporales afectados.",
+   "incorrectas": [
+    "Por la ubicación geográfica del paciente.",
+    "Por el tipo de tratamiento administrado.",
+    "Por la edad del paciente al momento del diagnóstico."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "hereditary sensory and autonomic neuropathy type V",
+  "tipo": "genetic changes",
+  "url": "https://ghr.nlm.nih.gov/condition/hereditary-sensory-and-autonomic-neuropathy-type-v",
+  "fragmento": "Mutations in the NGF gene cause HSAN5. The NGF gene provides instructions for making a protein called nerve growth factor beta (NGF) that is important in the development and survival of nerve cells (neurons), including sensory neurons. The NGF protein functions by attaching (binding) to its receptors, which are found on the surface of neurons. Binding of the NGF protein to its receptor transmits signals to the cell to grow and to mature and take on specialized functions (differentiate).",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué función cumple el factor de crecimiento nervioso beta (NGF) en los neuronas?",
+   "correcta": "Promueve el crecimiento, maduración y diferenciación de las neuronas sensibles.",
+   "incorrectas": [
+    "Estimula la producción de glóbulos rojos.",
+    "Regula la temperatura corporal.",
+    "Inhibe la división celular en los nervios."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es la función principal del factor de crecimiento nervioso beta (NGF)?",
+   "correcta": "Promover el crecimiento y maduración de las neuronas.",
+   "incorrectas": [
+    "Inhibir la actividad de las neuronas sensoriales.",
+    "Destruir células nerviosas dañadas.",
+    "Regular la producción de hormonas en el cerebro."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Dysgraphia",
+  "tipo": "information",
+  "url": "http://www.ninds.nih.gov/disorders/dysgraphia/dysgraphia.htm",
+  "fragmento": "Cases of dysgraphia in adults generally occur after some trauma. In addition to poor handwriting, dysgraphia is characterized by wrong or odd spelling, and production of words that are not correct (i.e., using \"boy\" for \"child\"). The cause of the disorder is unknown, but in adults, it is usually associated with damage to the parietal lobe of the brain.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué área del cerebro suele estar dañada en adultos con disgrafía?",
+   "correcta": "El lóbulo parietal.",
+   "incorrectas": [
+    "El lóbulo frontal.",
+    "El lóbulo occipital.",
+    "El lóbulo temporal."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es una característica de la disgrafia en adultos?",
+   "correcta": "Uso incorrecto de palabras como 'boy' para 'child'.",
+   "incorrectas": [
+    "Mejoría del trazo y escritura clara.",
+    "Aumento de la velocidad en la escritura.",
+    "Producción de palabras completamente correctas."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "juvenile polyposis syndrome",
+  "tipo": "genetic changes",
+  "url": "https://ghr.nlm.nih.gov/condition/juvenile-polyposis-syndrome",
+  "fragmento": "Mutations in the BMPR1A and SMAD4 genes cause juvenile polyposis syndrome. These genes provide instructions for making proteins that are involved in transmitting chemical signals from the cell membrane to the nucleus. This type of signaling pathway allows the environment outside the cell to affect how the cell produces other proteins. The BMPR1A and SMAD4 proteins work together to help regulate the activity of particular genes and the growth and division (proliferation) of cells.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué función tienen los proteínas BMPR1A y SMAD4 en las células?",
+   "correcta": "Transmitir señales químicas desde la membrana celular al núcleo para regular la proliferación celular.",
+   "incorrectas": [
+    "Producir energía a través de la respiración celular.",
+    "Descomponer proteínas dañadas en el citoplasma.",
+    "Regulación de la temperatura corporal mediante el sistema nervioso."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es la función principal de los genes BMPR1A y SMAD4?",
+   "correcta": "Regulan la actividad de genes y el crecimiento celular.",
+   "incorrectas": [
+    "Producen hormonas para el metabolismo celular.",
+    "Transmiten señales de defensa inmune celular.",
+    "Facilitan la producción de energía en la célula."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "cryptogenic cirrhosis",
+  "tipo": "inheritance",
+  "url": "https://ghr.nlm.nih.gov/condition/cryptogenic-cirrhosis",
+  "fragmento": "Most cases of cryptogenic cirrhosis are not inherited. However, people with a family history of liver disease or autoimmune disease are at an increased risk of developing these diseases themselves, and possibly cirrhosis. In individuals with an associated keratin gene mutation, the risk of developing cryptogenic cirrhosis appears to have an autosomal dominant pattern of inheritance.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué tipo de herencia se asocia con el riesgo de desarrollar cirrosis criptogénica en individuos que tienen mutaciones en genes de queratina?",
+   "correcta": "Patrón autosómico dominante.",
+   "incorrectas": [
+    "Patrón autosómico recesivo.",
+    "Herencia X-linked.",
+    "Herencia mitocondrial."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es el patrón de herencia asociado a la cirrosis criptogénica?",
+   "correcta": "Autosomal dominante en mutaciones de genes de queratina.",
+   "incorrectas": [
+    "Herencia recesiva en todos los casos.",
+    "No hay patrón de herencia en la cirrosis.",
+    "Herencia ligada al cromosoma X."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Indigestion",
+  "tipo": "exams and tests",
+  "url": "http://www.niddk.nih.gov/health-information/health-topics/digestive-diseases/indigestion/Pages/facts.aspx",
+  "fragmento": "The doctor can look at the esophagus and stomach with the endoscope to check for any abnormalities. The doctor may perform biopsiesremoving small pieces of tissue for examination with a microscopeto look for possible damage from GERD or an infection.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué procedimiento permite al médico examinar el esófago y el estómago en busca de anomalías?",
+   "correcta": "Uso de un endoscopio.",
+   "incorrectas": [
+    "Realizar una radiografía del abdomen.",
+    "Tomar una muestra de sangre para análisis.",
+    "Aplicar medicamentos por vía oral."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es el propósito de realizar biopsias en el esófago y el estómago?",
+   "correcta": "Buscar daños por reflujo gastroesofágico (GERD) o infecciones.",
+   "incorrectas": [
+    "Eliminar tejido para análisis de sangre.",
+    "Diagnosticar enfermedades cardíacas.",
+    "Realizar un examen visual sin instrumentos."
+   ],
+   "dificultad": "media"
+  }
+ },
+ {
+  "tema": "Multiple System Atrophy with Orthostatic Hypotension",
+  "tipo": "treatment",
+  "url": "http://www.ninds.nih.gov/disorders/msa_orthostatic_hypotension/msa_orthostatic_hypotension.htm",
+  "fragmento": "There is no cure for multiple system atrophy with orthostatic hypotension. Treatment is aimed at controlling symptoms. Anti-Parkinson medication such as Sinemet may improve the general sense of well-being. Medications to elevate blood pressure while standing are often used, but may cause high blood pressure when lying down. Individuals should sleep with the head of the bed elevated. An artificial feeding tube or breathing tube may be required for problems with swallowing and breathing.",
+  "base": {
+   "apto": true,
+   "pregunta": "¿Qué objetivo principal tiene el tratamiento de la atrofia múltiple de los sistemas con hipotensión ortostática?",
+   "correcta": "Controlar los síntomas.",
+   "incorrectas": [
+    "Curar la enfermedad completamente.",
+    "Restaurar la función motora perdida.",
+    "Prevenir el desarrollo de la enfermedad en familiares."
+   ],
+   "dificultad": "media"
+  },
+  "afinado": {
+   "apto": true,
+   "pregunta": "¿Cuál es el enfoque principal del tratamiento para la atrofia multisistémica?",
+   "correcta": "Controlar los síntomas de la enfermedad.",
+   "incorrectas": [
+    "Curar la enfermedad por completo.",
+    "Aumentar la esperanza de vida del paciente.",
+    "Eliminar la necesidad de tubos de alimentación."
+   ],
+   "dificultad": "media"
+  }
+ }
+]

@@ -1,0 +1,7 @@
+configuracion,entrenables_M,eval_loss,json_valido,estructura,parecidas,espanol,pico_GB,minutos
+1. referencia,33.0,0.3672,24,24,2,24,9.87,7.0
+2. lr bajo 1e-4,33.0,0.376,24,24,2,24,9.87,14.9
+3. lr alto 3e-4,33.0,0.3639,24,24,2,24,9.87,7.0
+4. rank bajo r8,16.5,0.3727,24,24,3,24,9.65,15.4
+5. rank alto r32,66.1,0.3626,24,24,2,24,10.43,15.4
+6. solo atencion,11.8,0.3834,24,24,2,24,9.59,15.9
