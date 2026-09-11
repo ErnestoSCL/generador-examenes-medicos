@@ -10,6 +10,9 @@ __pycache__/
 # El corpus MedQuAD original es publico, asi que versionarlos solo suma peso.
 data/*.parquet
 data/*.jsonl
+# Excepcion: las 5,250 respuestas originales de gpt-4o-mini. Con ellas el
+# notebook 02 reconstruye el dataset sin llamar a la API (y sin cambiarlo).
+!data/mcq_crudo.jsonl
 
 # Pesos del modelo. adapter_model.safetensors son 264 MB y GitHub rechaza
 # cualquier archivo por encima de 100 MB. Se reconstruye con el notebook 03.
