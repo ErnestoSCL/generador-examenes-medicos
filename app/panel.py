@@ -73,6 +73,61 @@ def leer_metricas():
     return None
 
 
+RUTA_DATOS = Path(__file__).parent.parent / "data"
+ETIQUETA_AFINADO = "afinado (LoRA)"
+ETIQUETA_MAESTRO = "maestro (gpt-4o-mini)"
+ETIQUETA_C = "base C: prompt del maestro"
+
+
+def leer_comparacion():
+    """La tabla del notebook 05: el afinado contra el base con cuatro prompts.
+
+    Lee los CSV que deja ese notebook y devuelve (tabla, frase), o (None, None)
+    si no estan. La frase se arma con los numeros de la propia tabla, para que
+    no pueda quedar desactualizada respecto de ella.
+    """
+    import pandas as pd
+
+    rutas = {n: RUTA_DATOS / f"comparacion_prompts_{n}.csv"
+             for n in ("forma", "calidad", "pareadas")}
+    if not all(r.exists() for r in rutas.values()):
+        return None, None
+    forma = pd.read_csv(rutas["forma"]).set_index("variante")
+    calidad = pd.read_csv(rutas["calidad"]).set_index("modelo")
+    pvalor = pd.read_csv(rutas["pareadas"]).set_index("afinado contra")["p (McNemar exacto)"]
+
+    def p_txt(p):
+        return "< 0.0001" if p < 0.0001 else f"= {p:.2f}"
+
+    filas = []
+    for fuente, fila in calidad.iterrows():
+        tokens = forma["tokens de prompt"].get(fuente)
+        p = pvalor.get(fuente)
+        filas.append({
+            "fuente": fuente,
+            "tokens de prompt": "—" if tokens is None or pd.isna(tokens) else str(int(tokens)),
+            "estructura valida": fila["estructura valida"],
+            "sin defecto": fila["SIN DEFECTO (de los fragmentos)"],
+            "contra el afinado": "—" if p is None or pd.isna(p) else f"p {p_txt(p)}",
+        })
+    tabla = pd.DataFrame(filas).set_index("fuente")
+    orden = tabla["sin defecto"].str.rstrip("%").astype(float)
+    tabla = tabla.loc[orden.sort_values(ascending=False).index]
+
+    sd = calidad["SIN DEFECTO (de los fragmentos)"]
+    datos = (sd.get(ETIQUETA_AFINADO), sd.get(ETIQUETA_C),
+             pvalor.get(ETIQUETA_C), pvalor.get(ETIQUETA_MAESTRO))
+    frase = "150 fragmentos, prueba pareada de McNemar (notebook 05)."
+    if all(x is not None for x in datos):
+        af, c, p_c, p_m = datos
+        frase = (f"Con las reglas del maestro por escrito, el base produce preguntas sin "
+                 f"defecto en el {c} de los fragmentos; el afinado, sin leerlas, en el {af} "
+                 f"(p {p_txt(p_c)}), y no se distingue del maestro (p {p_txt(p_m)}). Frente "
+                 "a un prompt minimo con el esquema empata en contenido, pero es la unica "
+                 "variante local que nunca rompe el formato. " + frase)
+    return tabla, frase
+
+
 def ejemplos_fewshot(train_df, n=3):
     """Los ejemplos que necesita el modelo base para saber que formato producir.
 

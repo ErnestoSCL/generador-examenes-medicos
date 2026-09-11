@@ -13,7 +13,7 @@ Tres decisiones de diseno, cada una con su motivo:
    siguientes: la espera percibida es la de la primera pregunta.
 
 3. **La fuente del NIH siempre visible.** Medido con un juez externo, alrededor
-   de una de cada tres preguntas del modelo local tiene algun defecto. El enlace
+   de una de cada cuatro o cinco preguntas del modelo local tiene algun defecto. El enlace
    al documento original es la unica defensa real del estudiante: le permite
    verificar cualquier respuesta que le parezca dudosa.
 """
@@ -234,16 +234,14 @@ def bajo_el_capo():
             st.caption(f"Modelo base: {m['modelo_base']} · "
                        f"configuracion {m['configuracion'].get('n', '?')} · "
                        f"{m['epocas']} epocas sobre {m['ejemplos_entrenamiento']:,} ejemplos")
-            c1, c2 = st.columns(2)
-            with c1:
-                st.markdown("**Base con few-shot contra afinado**")
-                st.dataframe(pd.DataFrame(m["base_vs_afinado"]), use_container_width=True)
-            with c2:
-                st.markdown("**Maestro contra alumno**")
-                st.dataframe(pd.DataFrame(m["maestro_vs_alumno"]), use_container_width=True)
-            st.caption("La brecha entre maestro y alumno es el costo de la autonomia: "
-                       "cuanto se pierde a cambio de correr local, sin API y sin costo "
-                       "por consulta.")
+
+        # La evidencia del notebook 05 reemplaza a las dos tablas del 03, que
+        # comparaban con el base solo en forma y sobre 60 casos.
+        tabla, frase = panel.leer_comparacion()
+        if tabla is not None:
+            st.markdown("**El afinado contra el modelo base con cuatro prompts**")
+            st.dataframe(tabla, use_container_width=True)
+            st.caption(frase)
 
         st.divider()
         st.markdown("**Comparar los dos modelos sobre un mismo fragmento**")
@@ -255,12 +253,16 @@ def bajo_el_capo():
             with st.spinner("Generando con los dos..."):
                 salida_base, tok_base = gen.generar_con_base(
                     p0["fragmento"], p0["tema"], panel.ejemplos_fewshot(train))
+            # Tokens reales del prompt del afinado para ESTE fragmento: dependen
+            # del largo del tema y del texto (medido: 98 a 193, media 148).
+            tok_af = len(gen.tok(gen._prompt(p0["fragmento"], p0["tema"]),
+                                 add_special_tokens=False)["input_ids"])
             c1, c2 = st.columns(2)
             with c1:
                 st.markdown(f"**Base + few-shot** · {tok_base} tokens de prompt")
                 st.code(salida_base[:600], language="json")
             with c2:
-                st.markdown("**Afinado** · ~130 tokens de prompt")
+                st.markdown(f"**Afinado** · {tok_af} tokens de prompt")
                 st.code(json.dumps({
                     "pregunta": p0["pregunta"], "correcta": p0["correcta"],
                     "incorrectas": p0["incorrectas"], "dificultad": p0["dificultad"],

@@ -177,7 +177,7 @@ class Generador:
             "dificultad": d.get("dificultad", "media"),
             # La fuente viaja SIEMPRE con la pregunta: es lo que permite al
             # estudiante verificar una respuesta que le parezca dudosa, y la
-            # unica defensa real contra el ~15% de preguntas con algun defecto.
+            # unica defensa real contra el 20-25% de preguntas con algun defecto.
             "tema": fragmento["tema_es"],
             "url": fragmento["document_url"],
             "fuente": fragmento["document_source"],
