@@ -53,7 +53,7 @@ guardrails. Esta tarea no es retrieval.
 
 ## 4. Estado actual — proyecto completo (2026-09-09)
 
-**Completado:** notebooks 01, 02, 03 y 04 ejecutados con sus salidas, adaptador
+**Completado:** notebooks 01 a 05 ejecutados con sus salidas, adaptador
 entrenado, aplicación Streamlit funcionando y auditada de punta a punta.
 
 **Pendiente:** nada bloquea la entrega. Queda como mejora de medición validar
@@ -69,14 +69,16 @@ proyecto_ing_iagen/
 │   ├── muestra_api.parquet       5,250 fragmentos
 │   ├── mcq_crudo.jsonl           5,250 respuestas crudas del modelo
 │   ├── mcq_train.parquet         3,614 preguntas   (eran 3,385 antes de
-│   ├── mcq_val.parquet             462 preguntas    recalibrar los filtros)
-│   ├── mcq_test.parquet            478 preguntas
+│   ├── mcq_val.parquet             433 preguntas    recalibrar los filtros)
+│   ├── mcq_test.parquet            436 preguntas
 │   ├── temas_es.json             3,794 traducciones
 │   ├── juez_calidad.json         veredictos sobre 150 preguntas
 │   ├── barrido_hiperparametros.csv   las 6 configuraciones del notebook 03
 │   ├── barrido_generacion.csv        las 7 configuraciones del notebook 04
-│   └── auditoria_examen.json         auditoría de un examen real + sonda
-├── notebooks/  01, 02, 03, 04  (los cuatro ejecutados, con salidas)
+│   ├── auditoria_examen.json         auditoría de un examen real + sonda
+│   ├── comparacion_temperatura.json  0.7 contra 1.0, mismos fragmentos
+│   └── base_vs_afinado_*, control_formato_base.csv   notebook 05
+├── notebooks/  01 a 05  (los cinco ejecutados, con salidas)
 ├── checkpoints/  checkpoint-900 (el mejor) y checkpoint-904
 ├── app/
 │   ├── adapter/         el LoRA entrenado, 276 MB + metricas_evaluacion.json
@@ -99,6 +101,8 @@ proyecto_ing_iagen/
 | Sin defectos: alumno vs maestro | 78.4% contra 79.3% (**empate**) |
 | Auditoría de un examen real de 10 | 10/10 sin defectos tras arreglar el verificador |
 | Temperatura 0.7 contra 1.0, mismos fragmentos | 87.1% contra 87.1%: sin diferencia detectable |
+| Contenido: afinado contra base + few-shot (notebook 05) | 75.9% contra 72.6%, p = 0.73: **sin diferencia demostrable** |
+| Estructura rota: afinado contra base | 0 contra 12 de 330 generaciones |
 
 ### Entorno verificado
 
@@ -214,7 +218,7 @@ Se anotan para no volver a proponerlas:
 |---|---|
 | ~~Blackwell + `bitsandbytes` en 4-bit~~ | **descartado**: torch 2.11+cu128 soporta sm_120 nativamente y el modelo entra en bf16 (8.04 GB). No se usa cuantización |
 | ~~El adaptador de Colab no carga en local~~ | **descartado**: se entrena en local, no hay transferencia. Verificado igual que el adaptador guarda y recarga en un proceso nuevo |
-| ~~El fine-tuning no gana al base con few-shot~~ | **resuelto**: gana en estructura (60/60 vs 57/60) y sobre todo en tokens de prompt (135 vs 693). Pierde en velocidad por pregunta (6.61 s vs 4.46 s): el LoRA agrega cómputo en cada capa |
+| ~~El fine-tuning no gana al base con few-shot~~ | **resuelto**: gana en estructura (60/60 vs 57/60) y sobre todo en tokens de prompt (135 vs 693). Pierde en velocidad por pregunta (6.61 s vs 4.46 s). En contenido **no se pudo demostrar mejora** (notebook 05: 75.9% contra 72.6%, p = 0.73) |
 | ~~El prompt de generación produce basura~~ | **resuelto**: piloto de 201 y luego 5,250 fragmentos, con juez independiente |
 | `revisar_forma()` nunca se validó contra un juicio humano | se sabe que dejó de rechazar de más (el incidente de las 220), no se sabe si rechaza lo suficiente. Está medido que es ciego a lo semántico: atrapó 0 de 7 defectos |
 | El techo del 78-79% es el del maestro | se decidió **no** regenerar el dataset con gpt-4o ($15.05 medidos, medio día de trabajo). Se presenta como limitación con su costo de solución |
@@ -229,9 +233,12 @@ conocimiento mediante datos sintéticos— en lugar de esquivarla. Lo defendible
 corre local sin API, cuesta cero por consulta, cubre 32,000 chunks que nunca
 pasaron por la API, y la evaluación mide cuánto se acerca el alumno al maestro.
 
-Lo que **no** se puede afirmar: que el modelo afinado sea mejor que gpt-4o-mini.
-No lo es y no se midió contra él. Se midió contra el mismo Qwen sin afinar, que
-es la comparación que responde "¿sirvió entrenar?".
+Lo que **no** se puede afirmar: que el modelo afinado sea mejor que gpt-4o-mini
+(75.9% contra 78.2%, sin diferencia significativa), ni que escriba preguntas más
+correctas que el mismo Qwen sin afinar con few-shot (75.9% contra 72.6%,
+p = 0.73). Lo que sí se puede afirmar: prompt 5.1 veces más corto y estructura
+que no se rompe (0 fallos en 330 generaciones contra 12). Detalle en
+`INSIGHTS_Y_DECISIONES.md` §5.f.
 
 ## 10. Notas de trabajo
 

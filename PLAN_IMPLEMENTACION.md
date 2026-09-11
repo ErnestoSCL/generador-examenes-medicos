@@ -373,6 +373,25 @@ Como el barrido no mide veracidad, se midió aparte con
 
 ---
 
+# Notebook 05 — Base contra afinado en calidad
+
+Cierra una pregunta que quedó abierta: el notebook 03 comparó base y afinado solo
+en forma, y el juez comparó al afinado contra el maestro, nunca contra el base.
+
+Usa los mismos 150 fragmentos del juez del notebook 03, la misma rúbrica y
+decodificación greedy, y juzga maestro, base y afinado en la misma corrida
+(450 llamadas a `gpt-4o`, alrededor de 1 USD, ~20 minutos). Compara fragmento a
+fragmento con la prueba de McNemar, que es más potente que comparar dos
+porcentajes sueltos. La sección B hace el control de formato con el base bajo
+muestreo que le faltó al notebook 04.
+
+**Resultado:** en contenido no hay diferencia demostrable (75.9% contra 72.6%,
+p = 0.73). El afinado nunca rompe la estructura (0 contra 12 de 330
+generaciones) y usa un prompt 5 veces más corto; la robustez al muestreo también
+la tiene el base. Detalle en `INSIGHTS_Y_DECISIONES.md` §5.f.
+
+---
+
 # La aplicación
 
 ```
@@ -505,6 +524,8 @@ Qwen sin afinar, que es la comparación que responde "¿sirvió entrenar?".
    épocas, comparación base-vs-afinado y juez maestro-vs-alumno.
 6. ✅ **Notebook 04**: barrido de parámetros de generación.
 7. ✅ **Aplicación** y auditoría de un examen real con juez externo.
+8. ✅ **Notebook 05**: base con few-shot contra afinado en calidad, y
+   control de formato bajo muestreo.
 
 Se saltó el paso «prueba de humo del ciclo Colab → local» porque se decidió
 entrenar en local: no hay transferencia que probar.
@@ -514,6 +535,11 @@ entrenar en local: no hay transferencia que probar.
 El paso 3 —mirar a mano 20 preguntas de un piloto pequeño antes de escalar— fue
 el de mayor retorno de todo el proyecto. Ahí se detectó el fallo del prompt que,
 sin corregir, habría contaminado las 5,250 generaciones.
+
+La pregunta central —si el fine-tuning mejoraba el contenido frente al base con
+few-shot— se midió al final y no al principio. El notebook 03 la respondía solo
+en forma, y durante semanas los documentos presentaron el empate con el maestro
+como si respondiera esa pregunta.
 
 El paso equivalente que **faltó** fue probar la auto-verificación contra entradas
 que debía rechazar antes de darla por buena. Estuvo inerte durante toda la

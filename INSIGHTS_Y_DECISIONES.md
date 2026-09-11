@@ -444,8 +444,8 @@ mediría memorización.
   → 28,294  aptos tras el filtro sintáctico            (59%)
   →  5,250  muestreados para la API                    (estratificado)
   →  4,908  preguntas generadas                        (93.5%, USD 0.79)
-  →  4,554  aprobadas por los filtros de calidad       (93%)
-  →  3,614 train · 462 val · 478 test                  (0 fuga)
+  →  4,483  aprobadas por los filtros de calidad       (91%)
+  →  3,614 train · 433 val · 436 test                  (0 fuga)
 ```
 
 Las cifras de aprobación cambiaron a mitad del proyecto: los filtros originales
@@ -537,9 +537,13 @@ pese a eso es lo que hace aceptable la segunda época.
 | Tema correcto | 83.4% | 82.7% |
 | **Sin ningún defecto** | **79.3%** | **78.4%** |
 
-Con n≈140 por lado, 0.9 puntos está dentro del ruido. **Este es el resultado más
-defendible del proyecto:** la destilación cumplió su objetivo, que nunca fue
-superar al maestro sino igualarlo sin depender de él.
+Con n≈140 por lado, 0.9 puntos está dentro del ruido: la destilación cumplió su
+objetivo, que nunca fue superar al maestro sino igualarlo sin depender de él.
+
+> **Matiz que agregó el notebook 05 (§5.f):** el modelo base con few-shot, sin
+> entrenar, **tampoco** se distingue del maestro con esta muestra (72.6% contra
+> 78.2%, p = 0.22). El empate con el maestro no prueba por sí solo que el
+> entrenamiento mejorara el contenido.
 
 Tiene además una consecuencia práctica importante: **ningún ajuste de
 entrenamiento va a mejorar el modelo, porque está en su techo**. El único
@@ -576,8 +580,11 @@ La hipótesis de partida era una tensión entre formato y variedad:
 **Las siete dan 100% de formato válido, incluida temperatura 1.0.** Cero
 truncamientos, lo que además valida `max_new_tokens=300`.
 
-Esto es mérito directo del fine-tuning: el formato quedó tan interiorizado que el
-muestreo no lo rompe. Es un argumento a favor del afinado que no se tenía.
+**Corrección posterior (notebook 05):** aquí se atribuyó esa robustez al
+fine-tuning, pero el barrido corrió solo con el afinado, sin control. El control
+con el base y su few-shot, sobre los mismos 20 fragmentos, da 57/60 a
+temperatura 0.7 y 58/60 a 1.0, con variedad casi igual. **El base también aguanta
+el muestreo**; lo propio del afinado es no romper nunca la estructura. Ver §5.f.
 
 También confirma que greedy sería un error de producto: variedad 1.00 significa
 que el botón «otro examen del mismo tema» devolvería siempre lo mismo.
@@ -722,6 +729,99 @@ que se anunció.
 
 ---
 
+# 5.f ¿Sirvió entrenar? La comparación que faltaba
+
+El notebook 03 comparó base y afinado **solo en forma**, y el juez comparó al
+afinado contra el **maestro**, nunca contra el base. La pregunta central —¿las
+preguntas del afinado son mejores que las del base con few-shot?— no estaba
+medida, y ningún documento lo advertía.
+
+El notebook 05 la mide: los mismos 150 fragmentos del juez del notebook 03, la
+misma rúbrica, decodificación greedy, y los tres modelos juzgados en la misma
+corrida.
+
+## Contenido: sin diferencia demostrable
+
+| | maestro | base + few-shot | afinado |
+|---|---|---|---|
+| Correcta respaldada | 96.5% | 97.8% | 95.2% |
+| Sin distractor cierto | 96.5% | 96.3% | 95.2% |
+| Una sola respuesta | 95.8% | 96.3% | 94.5% |
+| Tema correcto | 83.1% | 77.0% | 82.8% |
+| **Sin ningún defecto** | **78.2%** | **72.6%** | **75.9%** |
+
+Prueba pareada (McNemar exacto) sobre los 126 fragmentos con los tres
+veredictos:
+
+| Comparación | Solo acierta el primero | Solo acierta el segundo | p |
+|---|---|---|---|
+| afinado contra base | 18 | 15 | 0.73 |
+| afinado contra maestro | 8 | 13 | 0.38 |
+| base contra maestro | 12 | 20 | 0.22 |
+
+Criterio por criterio, afinado contra base, tampoco hay nada significativo. La
+diferencia mayor, «tema correcto» (107 contra 101 de 130), da p = 0.31; en
+respaldo el base queda incluso por encima (127 contra 123, p = 0.29).
+
+**Lectura:** con esta muestra no se puede afirmar que el fine-tuning mejorara la
+corrección del contenido, ni que la empeorara. Y corrige una lectura de §5.b: el
+base sin entrenar **tampoco** se distingue del maestro, así que el empate
+alumno-maestro no era, por sí solo, evidencia de que el entrenamiento aportara
+contenido.
+
+## Forma: ahí sí hay diferencia
+
+| Medición | Base con estructura rota | Afinado |
+|---|---|---|
+| Notebook 03, greedy | 3 de 60 | 0 de 60 |
+| Notebook 05, greedy | 4 de 150 | 0 de 150 |
+| Muestreo a 0.7 y 1.0 (notebooks 04 y 05) | 5 de 120 | 0 de 120 |
+| **Total** | **12 de 330** | **0 de 330** |
+
+Los fragmentos de las tres mediciones se solapan en parte, así que no son 330
+casos independientes; pero el patrón es el mismo en las tres.
+
+## La robustez al muestreo no era mérito del fine-tuning
+
+§5.c la atribuyó al entrenamiento sin control. Con control, sobre los mismos 20
+fragmentos y 3 repeticiones:
+
+| Modelo | Temperatura | Estructura | Variedad |
+|---|---|---|---|
+| base + few-shot | 0.7 | 57/60 | 2.30 |
+| afinado | 0.7 | 60/60 | 2.30 |
+| base + few-shot | 1.0 | 58/60 | 2.65 |
+| afinado | 1.0 | 60/60 | 2.70 |
+
+El base también aguanta. La diferencia es la misma de siempre: dos o tres
+estructuras rotas de cada 60.
+
+## Ruido entre corridas
+
+El mismo afinado sobre los mismos 150 fragmentos dio 78.4% en el notebook 03 y
+75.9% en el 05; el maestro, 79.3% y 78.2%. El juez a temperatura 0 no es del todo
+determinista, y los fallos de la API —24 de 450 llamadas en el notebook 05—
+excluyen fragmentos distintos en cada corrida. **Variaciones de 2 o 3 puntos son
+ruido, no cambios.**
+
+## Qué compró el fine-tuning, en limpio
+
+| Aspecto | ¿Mejoró? | Evidencia |
+|---|---|---|
+| Corrección del contenido | no demostrable | 75.9% contra 72.6%, p = 0.73 |
+| Estructura válida | sí, de forma consistente | 0 contra 12 fallos en 330 generaciones |
+| Tamaño del prompt | sí | 137 contra 695 tokens: 5.1 veces menos |
+| Robustez al muestreo | no es mérito suyo | el base da 57-58 de 60 a 0.7 y 1.0 |
+| Velocidad | no, empeora | 1.01 s contra 0.80 s por pregunta, en lotes |
+
+**Cómo defenderlo:** el fine-tuning convirtió una tarea que necesitaba un prompt
+de 695 tokens con ejemplos en una que se resuelve con 137 y que nunca rompe el
+formato. No hizo al modelo más preciso. Presentarlo así resiste la pregunta de si
+se comparó contra el base, que la versión anterior de este documento no
+resistía.
+
+---
+
 # 6. Errores propios encontrados y corregidos
 
 Se documentan porque muestran el método, y porque un jurado que pregunte "¿cómo
@@ -775,14 +875,15 @@ roto. Lo mismo con el verificador y su contador en cero.
 
 | Limitación | Alcance |
 |---|---|
-| **~1 de cada 5 preguntas tiene algún defecto** | 78.4% sin defectos, medido con `gpt-4o` sobre 139 |
+| **~1 de cada 4 o 5 preguntas tiene algún defecto** | 78.4% sin defectos en el notebook 03, 75.9% en el 05, con los mismos fragmentos |
+| **El fine-tuning no mejoró la corrección de forma demostrable** | 75.9% contra 72.6% del base con few-shot, p = 0.73 (notebook 05) |
 | «Tema correcto» al 83% | es el techo del maestro, no una falla del alumno |
 | Ninguna pregunta de dificultad «difícil» | el modelo no usa la categoría |
 | El juez `gpt-4o` también se equivoca | marcó un error de traducción con una justificación que se contradice sola |
 | El 78.4% mide corrección factual, no utilidad pedagógica | una pregunta puede estar respaldada, ser del tema y aun así no servir |
 | `revisar_forma()` nunca se validó contra un juicio humano | se sabe que dejó de rechazar de más; no se sabe si rechaza lo suficiente |
 | El auto-verificador no detecta defectos de utilidad | su rúbrica pregunta por veracidad, no por si la pregunta sirve |
-| El afinado es **más lento** por pregunta que el base | 6.61 s contra 4.46 s: el LoRA agrega cómputo en cada capa |
+| El afinado es **más lento** por pregunta que el base | 6.61 s contra 4.46 s de a una, 1.01 s contra 0.80 s en lotes; probablemente porque el LoRA sin fusionar agrega cómputo en cada capa (no medido) |
 | Cobertura: 3,794 temas de 5,127 | los perdidos eran tablas HPO |
 | Preguntas mayormente de tipo `information` y `treatment` | consecuencia de filtrar las tablas HPO, casi todas `symptoms` |
 | No se midió si temperatura 1.0 empeora la corrección | el barrido del notebook 04 mide formato y variedad, no veracidad |
@@ -820,13 +921,25 @@ siempre su fuente del NIH con enlace al documento original**, que es la única
 defensa real del estudiante. Y en la revisión hay un botón para pedir una
 segunda opinión a `gpt-4o` sobre cualquier pregunta dudosa.
 
-**«¿Sirvió de algo el fine-tuning si el maestro ya daba 79%?»**
+**«¿Sirvió de algo el fine-tuning?»**
 
-Para correr local, sin API, sin costo por consulta, y con un prompt **5.1 veces
-más corto** (135 tokens contra 693 que necesita el modelo base con few-shot).
-La destilación no buscaba superar al maestro sino igualarlo sin depender de él.
-Además compró robustez de formato: 60/60 de JSON válido contra 57/60 del base,
-y el formato no se rompe ni siquiera a temperatura 1.0.
+Primero una distinción: «corre en local, sin API y sin costo» justifica usar un
+modelo local, no afinarlo, porque el Qwen base también corre en local. La
+comparación que decide es contra el base con few-shot, y está medida en el
+notebook 05:
+
+- **Contenido: no se pudo demostrar una mejora.** 75.9% sin defectos contra
+  72.6% del base, sobre los mismos 150 fragmentos; la prueba pareada da
+  p = 0.73, y ningún criterio por separado es significativo.
+- **Forma: sí.** El afinado no rompió la estructura en 330 generaciones; el base,
+  12 veces.
+- **Prompt: 5.1 veces más corto** (137 tokens contra 695), sin ejemplos que
+  mantener.
+- **Velocidad: empeora** (1.01 s contra 0.80 s por pregunta, en lotes).
+
+El fine-tuning convirtió una tarea que necesitaba un prompt largo con ejemplos en
+una que se resuelve con uno corto y nunca rompe el formato. No hizo al modelo más
+preciso. Decirlo así es más sólido que atribuirle lo que la medición no respalda.
 
 **«¿Por qué no usaron un modelo más nuevo?»**
 
@@ -863,5 +976,5 @@ respuestas correctas. Se puede mostrar el ejemplo comparado de §2.5.
   que aprueba deberían haberse rechazado.
 
 Es una mejora de medición, no de producto. El proyecto está completo:
-notebooks 01 a 04 ejecutados con sus salidas, adaptador entrenado y aplicación
+notebooks 01 a 05 ejecutados con sus salidas, adaptador entrenado y aplicación
 funcionando y auditada.
