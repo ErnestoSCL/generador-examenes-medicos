@@ -1,0 +1,6 @@
+afinado contra,solo acierta el afinado,solo acierta el otro,p (McNemar exacto)
+maestro (gpt-4o-mini),8,13,0.3833
+base + few-shot,22,12,0.1214
+base A: mismo prompt,115,0,0.0
+base B: + esquema,20,14,0.3915
+base C: prompt del maestro,40,10,0.0

@@ -373,22 +373,26 @@ Como el barrido no mide veracidad, se midió aparte con
 
 ---
 
-# Notebook 05 — Base contra afinado en calidad
+# Notebook 05 — El afinado contra el base con cuatro prompts
 
-Cierra una pregunta que quedó abierta: el notebook 03 comparó base y afinado solo
+Cierra la pregunta que el notebook 03 dejó abierta: comparó base y afinado solo
 en forma, y el juez comparó al afinado contra el maestro, nunca contra el base.
 
-Usa los mismos 150 fragmentos del juez del notebook 03, la misma rúbrica y
-decodificación greedy, y juzga maestro, base y afinado en la misma corrida
-(450 llamadas a `gpt-4o`, alrededor de 1 USD, ~20 minutos). Compara fragmento a
-fragmento con la prueba de McNemar, que es más potente que comparar dos
-porcentajes sueltos. La sección B hace el control de formato con el base bajo
-muestreo que le faltó al notebook 04.
+Compara el afinado con el Qwen base usando cuatro prompts: el mismo prompt corto,
+la instrucción con el esquema JSON, tres ejemplos (few-shot) y las reglas
+completas que recibió el maestro. Usa los mismos 150 fragmentos del juez del
+notebook 03, la misma rúbrica y greedy, y genera y juzga las seis fuentes
+—incluido el maestro— en una sola corrida (900 preguntas, alrededor de 2 USD,
+~25 minutos). Compara fragmento a fragmento con McNemar, contra el afinado y
+contra el maestro, y clasifica por qué se rompe cada estructura. La sección B hace
+el control de formato con muestreo que le faltó al notebook 04.
 
-**Resultado:** en contenido no hay diferencia demostrable (75.9% contra 72.6%,
-p = 0.73). El afinado nunca rompe la estructura (0 contra 12 de 330
-generaciones) y usa un prompt 5 veces más corto; la robustez al muestreo también
-la tiene el base. Detalle en `INSIGHTS_Y_DECISIONES.md` §5.f.
+Reemplazó a una primera versión que solo comparaba contra el few-shot.
+
+**Resultado:** el afinado supera con claridad al base con las reglas del maestro
+(76.7% contra 56.7%, p < 0.0001), alcanza al maestro cuando el few-shot no, y
+nunca rompe el formato; frente a un prompt mínimo con esquema empata en contenido
+(p = 0.39). Detalle en `INSIGHTS_Y_DECISIONES.md` §5.f.
 
 ---
 
@@ -524,7 +528,7 @@ Qwen sin afinar, que es la comparación que responde "¿sirvió entrenar?".
    épocas, comparación base-vs-afinado y juez maestro-vs-alumno.
 6. ✅ **Notebook 04**: barrido de parámetros de generación.
 7. ✅ **Aplicación** y auditoría de un examen real con juez externo.
-8. ✅ **Notebook 05**: base con few-shot contra afinado en calidad, y
+8. ✅ **Notebook 05**: el afinado contra el base con cuatro prompts, y
    control de formato bajo muestreo.
 
 Se saltó el paso «prueba de humo del ciclo Colab → local» porque se decidió
@@ -538,7 +542,7 @@ sin corregir, habría contaminado las 5,250 generaciones.
 
 La pregunta central —si el fine-tuning mejoraba el contenido frente al base con
 few-shot— se midió al final y no al principio. El notebook 03 la respondía solo
-en forma, y durante semanas los documentos presentaron el empate con el maestro
+en forma, y hasta el final los documentos presentaron el empate con el maestro
 como si respondiera esa pregunta.
 
 El paso equivalente que **faltó** fue probar la auto-verificación contra entradas

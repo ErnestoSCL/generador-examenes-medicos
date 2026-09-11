@@ -1,4 +1,0 @@
-modelo,estructura valida,correcta respaldada,sin distractor cierto,una sola respuesta,tema correcto,SIN DEFECTO (de las juzgadas),SIN DEFECTO (de los 150 fragmentos)
-maestro (gpt-4o-mini),142/142,96.5%,96.5%,95.8%,83.1%,78.2%,78.2%
-base + few-shot,135/139,97.8%,96.3%,96.3%,77.0%,72.6%,70.5%
-afinado (LoRA),145/145,95.2%,95.2%,94.5%,82.8%,75.9%,75.9%

@@ -1,0 +1,6 @@
+variante,tokens de prompt,JSON valido,estructura completa,descarto el fragmento (apto=false),segundos por pregunta (lotes de 8)
+afinado (LoRA),137,150/150,150/150,0,0.97
+base + few-shot,695,150/150,146/150,0,0.78
+base A: mismo prompt,137,150/150,0/150,0,0.83
+base B: + esquema,187,150/150,143/150,0,0.85
+base C: prompt del maestro,748,143/150,125/150,3,0.76

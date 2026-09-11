@@ -1,0 +1,7 @@
+modelo,estructura valida,correcta respaldada,sin distractor cierto,una sola respuesta,tema correcto,SIN DEFECTO (de las juzgadas),SIN DEFECTO (de los fragmentos)
+maestro (gpt-4o-mini),150/150,97.3%,96.7%,96.0%,82.7%,80.0%,80.0%
+afinado (LoRA),150/150,95.3%,94.7%,93.3%,82.7%,76.7%,76.7%
+base + few-shot,146/150,98.6%,97.3%,97.3%,75.3%,71.9%,70.0%
+base A: mismo prompt,0/150,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+base B: + esquema,143/150,95.8%,96.5%,96.5%,81.1%,76.2%,72.7%
+base C: prompt del maestro,125/150,92.8%,88.8%,87.2%,76.0%,68.0%,56.7%

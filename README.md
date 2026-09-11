@@ -66,7 +66,7 @@ notebooks en orden:
 | `02_dataset_mcq.ipynb` | el dataset de preguntas (USD 0,90 de API) | ~40 min |
 | `03_finetuning.ipynb` | el adaptador LoRA en `app/adapter/` | ~2 h |
 | `04_parametros_generacion.ipynb` | el barrido de muestreo | ~48 min |
-| `05_base_vs_afinado.ipynb` | base contra afinado en calidad (~USD 1 de API) | ~20 min |
+| `05_afinado_contra_base.ipynb` | el afinado contra el base con cuatro prompts (~USD 2 de API) | ~25 min |
 
 Para los notebooks 02 y 05 hace falta un `.env` en la raíz con
 `OPENAI_API_KEY=...`.
@@ -85,44 +85,48 @@ venv/Scripts/streamlit.exe run app/app.py
 
 ## Resultados
 
-### ¿Sirvió el fine-tuning? Lo que compró y lo que no
+### ¿Sirvió el fine-tuning?
 
 La comparación que decide no es contra la API, sino contra el **mismo Qwen sin
-afinar, con few-shot**, también en local. Sobre los mismos 150 fragmentos
-(notebook 05):
+afinar, en local, con el mejor prompt posible**. El notebook 05 lo compara con
+cuatro prompts sobre los mismos 150 fragmentos, con un solo juez (gpt-4o):
 
-| | base + few-shot | afinado |
-|---|---|---|
-| Estructura completa | 146/150 | **150/150** |
-| Tokens de prompt | 695 | **137** |
-| Segundos por pregunta (lotes de 8) | **0,80** | 1,01 |
-| Sin ningún defecto, según el juez gpt-4o | 72,6% | 75,9% |
+| Fuente | Tokens de prompt | Estructura válida | Sin ningún defecto | Contra el afinado |
+|---|---|---|---|---|
+| maestro (gpt-4o-mini) | — | 150/150 | 80,0% | empate, p = 0,38 |
+| **afinado** | **137** | **150/150** | **76,7%** | — |
+| base B: instrucción + esquema | 187 | 143/150 | 72,7% | empate, p = 0,39 |
+| base + few-shot | 695 | 146/150 | 70,0% | empate, p = 0,12 |
+| base C: las reglas del maestro | 748 | 125/150 | 56,7% | **afinado mejor, p < 0,0001** |
+| base A: el mismo prompt | 137 | 0/150 | 0% | **afinado mejor, p < 0,0001** |
 
-**Lo que compró, medido:** un prompt **5,1 veces más corto**, sin ejemplos que
-elegir ni mantener, y una estructura que **no se rompe**: 0 fallos en 330
-generaciones entre los notebooks 03 y 05, contra 12 del base.
+«Sin ningún defecto» cuenta como fallo cada estructura rota.
 
-**Lo que no compró:** preguntas más correctas de forma demostrable. La prueba
-pareada fragmento a fragmento da **p = 0,73**, y ningún criterio por separado es
-significativo. Tampoco velocidad: el afinado es más lento, probablemente porque
-el LoRA sin fusionar agrega cómputo en cada capa (no medido).
+**Lo que compró:**
 
-### Los tres modelos ante el mismo juez
+- **Las reglas del maestro, incorporadas.** Dárselas al base por escrito da
+  56,7% contra 76,7% del afinado (p < 0,0001): el modelo de 4B no logra
+  aplicarlas leyéndolas en el prompt.
+- **El formato.** Con el mismo prompt, el base inventa sus propias claves en las
+  150 respuestas, y ninguna variante del base mantiene la estructura siempre
+  (rompe 4, 7 y 25 de 150). El afinado no rompe ninguna.
+- **Alcanzar al maestro.** El afinado no se distingue de gpt-4o-mini (p = 0,38);
+  el base con few-shot queda por debajo (p = 0,014).
+- **Un prompt corto:** 137 tokens contra 695 del few-shot y 748 de las reglas del
+  maestro.
 
-| | maestro (gpt-4o-mini) | base + few-shot | afinado |
-|---|---|---|---|
-| Correcta respaldada | 96,5% | 97,8% | 95,2% |
-| Sin distractor cierto | 96,5% | 96,3% | 95,2% |
-| Tema correcto | 83,1% | 77,0% | 82,8% |
-| **Sin ningún defecto** | **78,2%** | **72,6%** | **75,9%** |
+**Lo que no compró:**
 
-Con esta muestra, **ninguna diferencia entre los tres es estadísticamente
-significativa** (p entre 0,22 y 0,73). El alumno no se distingue de su maestro
-—la destilación cumplió su objetivo de igualarlo sin depender de él—, pero el
-base sin entrenar tampoco.
+- Frente a un prompt mínimo con el esquema (187 tokens), **empata en contenido**
+  (p = 0,39). Ahí la ventaja del prompt es de 1,4 veces, no de 5.
+- La diferencia directa con el few-shot no es significativa (p = 0,12), aunque el
+  few-shot no alcance al maestro y el afinado sí.
+- **Velocidad:** es el más lento, con 0,97 s por pregunta contra 0,76-0,85 s del
+  base, probablemente porque el LoRA sin fusionar agrega cómputo en cada capa (no
+  medido).
 
-En una corrida anterior sobre los mismos fragmentos, el afinado dio 78,4% y el
-maestro 79,3%: variaciones de 2 o 3 puntos entre corridas son ruido.
+Entre corridas con los mismos fragmentos las cifras varían 2 o 3 puntos: el
+afinado dio 78,4% en el notebook 03 y 76,7% en el 05.
 
 ### Configuración elegida
 
@@ -143,8 +147,8 @@ repetition_penalty=1.1, max_new_tokens=300
 El barrido del notebook 04 (420 generaciones) mostró que el afinado **no pierde
 el formato en ningún punto**: las siete configuraciones dan 60/60 de JSON válido,
 incluida temperatura 1.0, con cero truncamientos. El base con few-shot también
-aguanta el muestreo (57 y 58 de 60 a temperatura 0,7 y 1,0), así que no es un
-mérito exclusivo del fine-tuning: lo que el afinado agrega es no romper nunca la
+aguanta el muestreo (58 de 60 a temperatura 0,7 y a 1,0), así que no es un mérito
+exclusivo del fine-tuning: lo que el afinado agrega es no romper nunca la
 estructura.
 
 Temperatura 1.0 da más variedad (2,70 preguntas distintas de 3, contra 2,45) sin
@@ -160,7 +164,7 @@ en la dirección equivocada.
 | Limitación | Alcance |
 |---|---|
 | Una de cada 4 o 5 preguntas tiene algún defecto | 76-78% sin defectos según la corrida |
-| El fine-tuning no mejoró la corrección de forma demostrable | 75,9% contra 72,6% del base con few-shot, p = 0,73 |
+| Frente a un buen prompt, el fine-tuning no mejora el contenido de forma demostrable | empata con el few-shot (p = 0,12) y con un prompt mínimo con esquema (p = 0,39) |
 | «Tema correcto» alrededor del 83% | es también el techo del maestro |
 | El juez mide corrección factual, no utilidad pedagógica | una pregunta puede estar respaldada y aun así no servir |
 | Ninguna pregunta de dificultad «difícil» | el modelo no usa la categoría |
@@ -195,7 +199,7 @@ que un test que siempre pasa.
 
 | Archivo | Para qué |
 |---|---|
-| [INSIGHTS_Y_DECISIONES.md](INSIGHTS_Y_DECISIONES.md) | decisiones con su evidencia, errores corregidos, preguntas previsibles del jurado |
+| [INSIGHTS_Y_DECISIONES.md](INSIGHTS_Y_DECISIONES.md) | decisiones con su evidencia, errores corregidos, guion de la exposición (§7.b) y preguntas previsibles del jurado |
 | [PLAN_IMPLEMENTACION.md](PLAN_IMPLEMENTACION.md) | diseño de cada notebook y de la aplicación |
 | [CONTEXTO_PROYECTO.md](CONTEXTO_PROYECTO.md) | estado, estructura de archivos y riesgos |
 

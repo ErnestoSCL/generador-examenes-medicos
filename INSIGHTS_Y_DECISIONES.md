@@ -540,10 +540,11 @@ pese a eso es lo que hace aceptable la segunda época.
 Con n≈140 por lado, 0.9 puntos está dentro del ruido: la destilación cumplió su
 objetivo, que nunca fue superar al maestro sino igualarlo sin depender de él.
 
-> **Matiz que agregó el notebook 05 (§5.f):** el modelo base con few-shot, sin
-> entrenar, **tampoco** se distingue del maestro con esta muestra (72.6% contra
-> 78.2%, p = 0.22). El empate con el maestro no prueba por sí solo que el
-> entrenamiento mejorara el contenido.
+> **Matiz que agregó el notebook 05 (§5.f):** en la corrida completa, el afinado
+> sigue sin distinguirse del maestro (p = 0.38), mientras que el base con few-shot
+> sí queda por debajo (p = 0.014). El empate con el maestro distingue al afinado
+> del few-shot, aunque la comparación directa entre los dos no es significativa
+> (p = 0.12).
 
 Tiene además una consecuencia práctica importante: **ningún ajuste de
 entrenamiento va a mejorar el modelo, porque está en su techo**. El único
@@ -582,8 +583,8 @@ truncamientos, lo que además valida `max_new_tokens=300`.
 
 **Corrección posterior (notebook 05):** aquí se atribuyó esa robustez al
 fine-tuning, pero el barrido corrió solo con el afinado, sin control. El control
-con el base y su few-shot, sobre los mismos 20 fragmentos, da 57/60 a
-temperatura 0.7 y 58/60 a 1.0, con variedad casi igual. **El base también aguanta
+con el base y su few-shot, sobre los mismos 20 fragmentos, da 58/60 a
+temperatura 0.7 y a 1.0, con variedad casi igual. **El base también aguanta
 el muestreo**; lo propio del afinado es no romper nunca la estructura. Ver §5.f.
 
 También confirma que greedy sería un error de producto: variedad 1.00 significa
@@ -729,96 +730,114 @@ que se anunció.
 
 ---
 
-# 5.f ¿Sirvió entrenar? La comparación que faltaba
+# 5.f ¿Sirvió entrenar? El afinado contra el base con cuatro prompts
 
 El notebook 03 comparó base y afinado **solo en forma**, y el juez comparó al
-afinado contra el **maestro**, nunca contra el base. La pregunta central —¿las
-preguntas del afinado son mejores que las del base con few-shot?— no estaba
-medida, y ningún documento lo advertía.
+afinado contra el **maestro**, nunca contra el base. La pregunta central —¿el
+afinado es mejor que el mismo Qwen sin entrenar, con el mejor prompt posible?—
+no estaba medida.
 
-El notebook 05 la mide: los mismos 150 fragmentos del juez del notebook 03, la
-misma rúbrica, decodificación greedy, y los tres modelos juzgados en la misma
-corrida.
+El notebook 05 la mide con cuatro prompts para el base: el mismo prompt corto que
+recibe el afinado (A), la instrucción con el esquema JSON (B), tres ejemplos
+(few-shot) y las reglas completas que recibió el maestro (C). Los mismos 150
+fragmentos del juez del notebook 03, la misma rúbrica, greedy, y las seis fuentes
+—incluido el maestro— generadas y juzgadas en una sola corrida: 900 preguntas y
+cero fallos del juez.
 
-## Contenido: sin diferencia demostrable
+## Resultado
 
-| | maestro | base + few-shot | afinado |
-|---|---|---|---|
-| Correcta respaldada | 96.5% | 97.8% | 95.2% |
-| Sin distractor cierto | 96.5% | 96.3% | 95.2% |
-| Una sola respuesta | 95.8% | 96.3% | 94.5% |
-| Tema correcto | 83.1% | 77.0% | 82.8% |
-| **Sin ningún defecto** | **78.2%** | **72.6%** | **75.9%** |
+| Fuente | Tokens de prompt | Estructura | Sin defecto (juzgadas) | Sin defecto (fragmentos) | Contra el afinado | Contra el maestro |
+|---|---|---|---|---|---|---|
+| maestro (`gpt-4o-mini`) | — | 150/150 | 80.0% | 80.0% | 8–13, p = 0.38 | — |
+| **afinado** | **137** | **150/150** | **76.7%** | **76.7%** | — | 8–13, p = 0.38 |
+| base B: + esquema | 187 | 143/150 | 76.2% | 72.7% | 20–14, p = 0.39 | 13–24, p = 0.10 |
+| base + few-shot | 695 | 146/150 | 71.9% | 70.0% | 22–12, p = 0.12 | 9–24, p = 0.014 |
+| base C: reglas del maestro | 748 | 125/150 | 68.0% | 56.7% | 40–10, p < 0.0001 | 7–42, p < 0.0001 |
+| base A: mismo prompt | 137 | 0/150 | — | 0.0% | 115–0, p < 0.0001 | 0–120, p < 0.0001 |
 
-Prueba pareada (McNemar exacto) sobre los 126 fragmentos con los tres
-veredictos:
+Prueba pareada de McNemar sobre los 150 fragmentos. En «contra el afinado», el
+primer número son los fragmentos donde solo acierta el afinado; en «contra el
+maestro», donde solo acierta la fuente de la fila. «Sin defecto (fragmentos)»
+cuenta como fallo cada estructura rota: es la cifra para comparar variantes.
 
-| Comparación | Solo acierta el primero | Solo acierta el segundo | p |
-|---|---|---|---|
-| afinado contra base | 18 | 15 | 0.73 |
-| afinado contra maestro | 8 | 13 | 0.38 |
-| base contra maestro | 12 | 20 | 0.22 |
+## Lo que el fine-tuning compró
 
-Criterio por criterio, afinado contra base, tampoco hay nada significativo. La
-diferencia mayor, «tema correcto» (107 contra 101 de 130), da p = 0.31; en
-respaldo el base queda incluso por encima (127 contra 123, p = 0.29).
+**1. Las reglas del maestro, incorporadas al modelo.** Dárselas al base por
+escrito (C) da 56.7% contra 76.7%, p < 0.0001. Rompe 25 estructuras —8 con una
+sola incorrecta, 7 con cuatro, 7 JSON mal anidados y 3 descartes—, ninguna por
+corte de tokens, y sus preguntas válidas también son peores (68.0%). Las reglas
+que `gpt-4o-mini` sigue sin problema desbordan al modelo de 4B.
 
-**Lectura:** con esta muestra no se puede afirmar que el fine-tuning mejorara la
-corrección del contenido, ni que la empeorara. Y corrige una lectura de §5.b: el
-base sin entrenar **tampoco** se distingue del maestro, así que el empate
-alumno-maestro no era, por sí solo, evidencia de que el entrenamiento aportara
-contenido.
+**2. El formato.** Con el mismo prompt (A), el base inventa sus propias claves
+—`opciones`, `respuesta_correcta`— en las 150 respuestas. Ninguna variante del
+base mantiene la estructura siempre (4, 7 y 25 roturas de 150); el afinado, 0.
+Las 18 listas con cuatro incorrectas no se pueden rescatar: en ninguna la cuarta
+es la correcta repetida.
 
-## Forma: ahí sí hay diferencia
+**3. Alcanzar al maestro.** El afinado no se distingue de `gpt-4o-mini`
+(p = 0.38); el base con few-shot queda por debajo (p = 0.014), resultado que
+sobrevive a la corrección de Holm por las cinco comparaciones contra el maestro.
 
-| Medición | Base con estructura rota | Afinado |
-|---|---|---|
-| Notebook 03, greedy | 3 de 60 | 0 de 60 |
-| Notebook 05, greedy | 4 de 150 | 0 de 150 |
-| Muestreo a 0.7 y 1.0 (notebooks 04 y 05) | 5 de 120 | 0 de 120 |
-| **Total** | **12 de 330** | **0 de 330** |
+**4. Un prompt corto:** 137 tokens contra 695 del few-shot y 748 de las reglas
+del maestro.
 
-Los fragmentos de las tres mediciones se solapan en parte, así que no son 330
-casos independientes; pero el patrón es el mismo en las tres.
+## Lo que no compró
+
+- **Frente a un prompt mínimo con el esquema (B), empate en contenido**: 72.7%
+  contra 76.7%, p = 0.39, y B tampoco se distingue del maestro (p = 0.10). Ahí la
+  ventaja del prompt es 137 contra 187 tokens: 1.4 veces, no 5. Lo que B no iguala
+  es la estructura: rompe 7 de 150.
+- **Frente al few-shot, la diferencia directa no es significativa** (p = 0.12).
+  Que el afinado alcance al maestro y el few-shot no, no equivale a que el afinado
+  supere al few-shot.
+- **Velocidad:** es el más lento, 0.97 s por pregunta contra 0.76-0.85 s del base.
+
+## Una cifra que no hay que usar
+
+En «tema correcto» el afinado supera al few-shot con p = 0.04. Es una de 16
+pruebas criterio por criterio, no sobrevive a ninguna corrección por comparaciones
+múltiples, y en la primera versión del notebook 05 la misma comparación dio
+p = 0.31.
 
 ## La robustez al muestreo no era mérito del fine-tuning
 
 §5.c la atribuyó al entrenamiento sin control. Con control, sobre los mismos 20
-fragmentos y 3 repeticiones:
+fragmentos, 3 repeticiones y semilla fija:
 
 | Modelo | Temperatura | Estructura | Variedad |
 |---|---|---|---|
-| base + few-shot | 0.7 | 57/60 | 2.30 |
+| base + few-shot | 0.7 | 58/60 | 2.40 |
 | afinado | 0.7 | 60/60 | 2.30 |
-| base + few-shot | 1.0 | 58/60 | 2.65 |
+| base + few-shot | 1.0 | 58/60 | 2.55 |
 | afinado | 1.0 | 60/60 | 2.70 |
 
-El base también aguanta. La diferencia es la misma de siempre: dos o tres
-estructuras rotas de cada 60.
+## Correcciones que dejó esta comparación
+
+- La primera versión del notebook 05 comparaba solo contra el few-shot, perdió 24
+  de 450 veredictos por fallos de la API, y concluía que el base con few-shot
+  tampoco se distinguía del maestro (p = 0.22). Con la corrida completa, sin
+  veredictos perdidos, sí se distingue (p = 0.014).
+- El «prompt cinco veces más corto» vale frente al few-shot y frente a las reglas
+  del maestro, no frente a un prompt mínimo con esquema.
 
 ## Ruido entre corridas
 
-El mismo afinado sobre los mismos 150 fragmentos dio 78.4% en el notebook 03 y
-75.9% en el 05; el maestro, 79.3% y 78.2%. El juez a temperatura 0 no es del todo
-determinista, y los fallos de la API —24 de 450 llamadas en el notebook 05—
-excluyen fragmentos distintos en cada corrida. **Variaciones de 2 o 3 puntos son
-ruido, no cambios.**
+El mismo afinado sobre los mismos 150 fragmentos dio 78.4% en el notebook 03,
+75.9% en la primera versión del 05 y 76.7% en la actual; el maestro, 79.3%, 78.2%
+y 80.0%. **Variaciones de 2 o 3 puntos son ruido, no cambios.**
 
 ## Qué compró el fine-tuning, en limpio
 
 | Aspecto | ¿Mejoró? | Evidencia |
 |---|---|---|
-| Corrección del contenido | no demostrable | 75.9% contra 72.6%, p = 0.73 |
-| Estructura válida | sí, de forma consistente | 0 contra 12 fallos en 330 generaciones |
-| Tamaño del prompt | sí | 137 contra 695 tokens: 5.1 veces menos |
-| Robustez al muestreo | no es mérito suyo | el base da 57-58 de 60 a 0.7 y 1.0 |
-| Velocidad | no, empeora | 1.01 s contra 0.80 s por pregunta, en lotes |
-
-**Cómo defenderlo:** el fine-tuning convirtió una tarea que necesitaba un prompt
-de 695 tokens con ejemplos en una que se resuelve con 137 y que nunca rompe el
-formato. No hizo al modelo más preciso. Presentarlo así resiste la pregunta de si
-se comparó contra el base, que la versión anterior de este documento no
-resistía.
+| Contenido frente a las reglas del maestro por escrito | **sí, con claridad** | 76.7% contra 56.7%, p < 0.0001 |
+| Contenido frente al few-shot | no demostrable | 76.7% contra 70.0%, p = 0.12 |
+| Contenido frente a un prompt mínimo con esquema | empate | 76.7% contra 72.7%, p = 0.39 |
+| Alcanzar al maestro | **sí; el few-shot no** | p = 0.38 contra p = 0.014 |
+| Estructura válida | **sí, siempre** | 0 roturas; el base rompe 4, 7 o 25 de 150 según el prompt |
+| Tamaño del prompt | sí, salvo frente al prompt mínimo | 137 contra 695 y 748; contra 187, 1.4 veces |
+| Robustez al muestreo | no es mérito suyo | el base da 58/60 a 0.7 y a 1.0 |
+| Velocidad | no, empeora | 0.97 s contra 0.76-0.85 s por pregunta |
 
 ---
 
@@ -875,15 +894,15 @@ roto. Lo mismo con el verificador y su contador en cero.
 
 | Limitación | Alcance |
 |---|---|
-| **~1 de cada 4 o 5 preguntas tiene algún defecto** | 78.4% sin defectos en el notebook 03, 75.9% en el 05, con los mismos fragmentos |
-| **El fine-tuning no mejoró la corrección de forma demostrable** | 75.9% contra 72.6% del base con few-shot, p = 0.73 (notebook 05) |
+| **~1 de cada 4 o 5 preguntas tiene algún defecto** | 78.4% sin defectos en el notebook 03, 76.7% en el 05, con los mismos fragmentos |
+| **Frente a un buen prompt, el fine-tuning no mejora el contenido de forma demostrable** | empata con el few-shot (p = 0.12) y con un prompt mínimo con esquema (p = 0.39); solo supera con claridad al base con las reglas del maestro por escrito |
 | «Tema correcto» al 83% | es el techo del maestro, no una falla del alumno |
 | Ninguna pregunta de dificultad «difícil» | el modelo no usa la categoría |
 | El juez `gpt-4o` también se equivoca | marcó un error de traducción con una justificación que se contradice sola |
 | El 78.4% mide corrección factual, no utilidad pedagógica | una pregunta puede estar respaldada, ser del tema y aun así no servir |
 | `revisar_forma()` nunca se validó contra un juicio humano | se sabe que dejó de rechazar de más; no se sabe si rechaza lo suficiente |
 | El auto-verificador no detecta defectos de utilidad | su rúbrica pregunta por veracidad, no por si la pregunta sirve |
-| El afinado es **más lento** por pregunta que el base | 6.61 s contra 4.46 s de a una, 1.01 s contra 0.80 s en lotes; probablemente porque el LoRA sin fusionar agrega cómputo en cada capa (no medido) |
+| El afinado es **más lento** por pregunta que el base | 6.61 s contra 4.46 s de a una, 0.97 s contra 0.76-0.85 s en lotes; probablemente porque el LoRA sin fusionar agrega cómputo en cada capa (no medido) |
 | Cobertura: 3,794 temas de 5,127 | los perdidos eran tablas HPO |
 | Preguntas mayormente de tipo `information` y `treatment` | consecuencia de filtrar las tablas HPO, casi todas `symptoms` |
 | No se midió si temperatura 1.0 empeora la corrección | el barrido del notebook 04 mide formato y variedad, no veracidad |
@@ -893,20 +912,25 @@ roto. Lo mismo con el verificador y su contador en cero.
 # 7.b Cómo sustentar el fine-tuning en la exposición
 
 La pregunta que decide la exposición es «¿por qué fue bueno usar fine-tuning?».
-La respuesta tiene que resistir el notebook 05, que muestra que el afinado **no**
-escribe preguntas más correctas que el base con few-shot. Por eso la defensa se
-apoya solo en lo que sí se midió.
+La respuesta tiene que resistir el notebook 05, que muestra que el afinado empata
+en contenido con un prompt mínimo bien diseñado y no supera de forma
+significativa al few-shot. Por eso la defensa se apoya solo en lo que sí se midió.
 
-## Las cuatro ventajas medidas
+## Las ventajas medidas
 
 | Ventaja | Evidencia | Dónde |
 |---|---|---|
-| **El comportamiento vive en los pesos, no en el prompt** | 137 tokens de prompt contra 695 del base con few-shot: 5.1 veces menos, sin ejemplos que elegir ni mantener | notebook 05 |
-| **Formato fiable** | 0 estructuras rotas en 330 generaciones, contra 12 del base; en la app, cada estructura rota es una generación perdida | notebooks 03, 04 y 05 |
-| **Calidad al nivel del maestro, en local** | 75.9% sin defectos contra 78.2% de `gpt-4o-mini`, sin diferencia significativa (p = 0.38), sin API ni costo por consulta | notebook 05 |
+| **Las reglas del maestro, incorporadas al modelo** | dárselas al base por escrito da 56.7% sin defecto; al afinado, sin leerlas, 76.7% (p < 0.0001) | notebook 05 |
+| **El formato, aprendido** | con el mismo prompt, el base inventa sus propias claves en 150 de 150; ninguna variante del base mantiene la estructura siempre y el afinado sí | notebook 05 |
+| **Alcanza al maestro, en local** | no se distingue de `gpt-4o-mini` (p = 0.38); el base con few-shot queda por debajo (p = 0.014) | notebook 05 |
+| **Prompt corto** | 137 tokens contra 695 del few-shot y 748 de las reglas del maestro | notebook 05 |
 | **Un especialista sin perder el generalista** | el mismo peso genera con el LoRA encendido y verifica con el LoRA apagado | §5.d |
 
-La cuarta es la más interesante de contar, porque salió de un fallo real. El
+La primera es la más fuerte, porque responde a la alternativa obvia: «¿por qué no
+darle al modelo pequeño las mismas instrucciones que al grande?». Se probó, y el
+de 4B no puede con ellas.
+
+La última es la más interesante de contar, porque salió de un fallo real. El
 afinado se especializó tanto que dejó de saber verificar: aprobaba preguntas
 rotas a propósito. Pero el LoRA es un módulo de 276 MB que se enciende y se
 apaga, así que el modelo base sigue intacto debajo. **Un fine-tuning completo
@@ -916,42 +940,62 @@ habría reemplazado al modelo base; el LoRA le agregó una habilidad.**
 
 > Afinamos Qwen3-4B con LoRA para que la tarea —leer un fragmento médico en
 > inglés y escribir una pregunta en español con un formato fijo— quedara en los
-> pesos y no en el prompt. El modelo escribe preguntas del mismo nivel que
-> `gpt-4o-mini`, su maestro, corriendo en local, con un prompt cinco veces más
-> corto y sin romper nunca el formato. No lo presentamos como más preciso que el
-> modelo base: lo medimos y no lo es. Lo presentamos como un sistema más simple y
-> más fiable.
+> pesos y no en el prompt. La prueba decisiva fue darle al modelo base, sin
+> entrenar, las mismas reglas que recibió `gpt-4o-mini` al generar nuestros datos:
+> produce una pregunta sin defectos en el 57% de los fragmentos. El afinado, sin
+> leer ninguna regla, en el 77%, y no se distingue del maestro. Corre en local,
+> usa un prompt cinco veces más corto y nunca rompe el formato. No lo presentamos
+> como más preciso que cualquier prompt: frente a uno mínimo y bien diseñado,
+> empata en contenido. Lo presentamos como la forma de que un modelo pequeño haga
+> de manera fiable lo que por prompt no logra.
 
 ## Preguntas y respuestas preparadas
 
 **«¿Y comparado con el base con few-shot?»**
-En contenido empatan: 75.9% contra 72.6%, prueba pareada p = 0.73. La ventaja es
-operativa: prompt cinco veces más corto y formato sin fallos.
+76.7% contra 70.0%: la diferencia directa no es significativa (p = 0.12). Pero el
+few-shot queda por debajo del maestro (p = 0.014) y el afinado no; además usa 695
+tokens de prompt contra 137 y rompe la estructura 4 de 150 veces. No decir que el
+afinado lo supera: decir que lo iguala sin ejemplos y sin romper el formato.
+
+**«¿Probaron sin ejemplos, solo con instrucciones?»**
+Sí, de dos formas. Con las reglas completas del maestro, el base cae a 56.7%
+(p < 0.0001 frente al afinado). Con un prompt mínimo con el esquema, 187 tokens,
+empata en contenido (72.7%, p = 0.39), pero rompe la estructura 7 de 150 veces.
+
+**«¿Entonces con un buen prompt bastaba?»**
+Para el contenido, casi: el prompt mínimo empata. Pero no garantiza el formato, y
+con las reglas completas —lo que se le da a un modelo grande— el de 4B no puede.
+El fine-tuning traslada el comportamiento del maestro al modelo pequeño sin
+depender de cómo se escriba el prompt.
 
 **«¿El afinado es mejor en algún aspecto del contenido?»**
-La única diferencia a su favor es «tema correcto» (82.8% contra 77.0%), pero con
-p = 0.31 es una tendencia, no un resultado. Mencionarla solo si la preguntan, y
-con esa salvedad.
+La única diferencia a su favor frente al few-shot es «tema correcto» (p = 0.04),
+pero es una de 16 pruebas, no sobrevive a la corrección por comparaciones
+múltiples y no se repitió en la corrida anterior. Mencionarla solo si la
+preguntan, y con esa salvedad.
 
 **«¿Es más rápido?»**
-No: 1.01 s contra 0.80 s por pregunta en lotes. La explicación probable es que el
-LoRA sin fusionar agrega cómputo en cada capa. Fusionarlo seguramente eliminaría
-esa diferencia, pero se perdería el modelo base que hace de verificador. Es una
-hipótesis y un compromiso de diseño, **no un dato medido**: presentarlo así.
+No: 0.97 s por pregunta contra 0.76-0.85 s del base, en lotes. La explicación
+probable es que el LoRA sin fusionar agrega cómputo en cada capa. Fusionarlo
+seguramente eliminaría esa diferencia, pero se perdería el modelo base que hace
+de verificador. Es una hipótesis y un compromiso de diseño, **no un dato medido**.
 
 **«¿Entonces para qué entrenar?»**
-Para sacar la tarea del prompt y ponerla en los pesos: el sistema queda más
-simple, el formato no falla, y cada consulta cuesta cero, con la misma calidad
-que el modelo que generó los datos.
+Para sacar la tarea del prompt y ponerla en los pesos: el modelo pequeño hace lo
+que por instrucciones no logra, alcanza al maestro, no rompe el formato y cada
+consulta cuesta cero.
 
 ## Lo que no hay que afirmar
 
-- Que el afinado escribe preguntas más correctas que el base.
-- Que la robustez del formato bajo muestreo se debe al fine-tuning: el base
-  también la tiene (§5.f).
+- Que el afinado escribe preguntas más correctas que el base con cualquier
+  prompt: empata con el few-shot y con el prompt mínimo.
+- Que el prompt es «cinco veces más corto» sin decir frente a qué: frente al
+  prompt mínimo con esquema es 1.4 veces.
+- Que la robustez del formato bajo muestreo se debe al fine-tuning (§5.f).
 - Que el afinado es más rápido.
+- Que mejora «tema correcto».
 
-Las tres se caen con los propios notebooks del proyecto, y un jurado que los lea
+Todas se caen con los propios notebooks del proyecto, y un jurado que los lea
 vería la contradicción. La versión honesta es también la más sólida: demuestra
 que se midió en lugar de suponer.
 
@@ -990,23 +1034,20 @@ segunda opinión a `gpt-4o` sobre cualquier pregunta dudosa.
 
 **«¿Sirvió de algo el fine-tuning?»**
 
-Primero una distinción: «corre en local, sin API y sin costo» justifica usar un
-modelo local, no afinarlo, porque el Qwen base también corre en local. La
-comparación que decide es contra el base con few-shot, y está medida en el
-notebook 05:
+«Corre en local» justifica usar un modelo local, no afinarlo: el Qwen base
+también corre en local. Lo que decide es compararlo con el base usando el mejor
+prompt posible, y el notebook 05 lo hace con cuatro:
 
-- **Contenido: no se pudo demostrar una mejora.** 75.9% sin defectos contra
-  72.6% del base, sobre los mismos 150 fragmentos; la prueba pareada da
-  p = 0.73, y ningún criterio por separado es significativo.
-- **Forma: sí.** El afinado no rompió la estructura en 330 generaciones; el base,
-  12 veces.
-- **Prompt: 5.1 veces más corto** (137 tokens contra 695), sin ejemplos que
-  mantener.
-- **Velocidad: empeora** (1.01 s contra 0.80 s por pregunta, en lotes).
+- Con las reglas del maestro por escrito, el base da 56.7% sin defecto; el
+  afinado, 76.7% (p < 0.0001).
+- Con un prompt mínimo con el esquema, empatan en contenido (72.7%, p = 0.39),
+  pero el base rompe la estructura 7 de 150 veces; el afinado, nunca.
+- Con few-shot, 70.0% (p = 0.12 frente al afinado), y a diferencia del afinado no
+  alcanza al maestro (p = 0.014).
 
-El fine-tuning convirtió una tarea que necesitaba un prompt largo con ejemplos en
-una que se resuelve con uno corto y nunca rompe el formato. No hizo al modelo más
-preciso. Decirlo así es más sólido que atribuirle lo que la medición no respalda.
+El fine-tuning incorporó al modelo el formato y las reglas del maestro. No lo hizo
+más preciso que el mejor prompt: lo hizo fiable sin depender del prompt. El guion
+completo está en §7.b.
 
 **«¿Por qué no usaron un modelo más nuevo?»**
 

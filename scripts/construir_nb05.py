@@ -1,8 +1,8 @@
-"""Arma el notebook 05: base con few-shot contra afinado, en CALIDAD.
+"""Arma el notebook 05: el afinado contra el modelo base con cuatro prompts.
 
-Cierra el hueco central del proyecto. El notebook 03 comparo base y afinado
-solo en forma; el juez comparo al afinado contra el maestro, nunca contra el
-base. Este notebook responde "sirvio entrenar?" en contenido.
+La version anterior del 05 comparaba el afinado solo contra el base con few-shot.
+Esta agrega tres variantes sin ejemplos, y genera y juzga todo en una sola
+corrida para que el notebook se sostenga solo.
 """
 import io
 import json
@@ -20,37 +20,46 @@ def code(texto):
 
 
 md(r"""
-# 05 - Base con few-shot contra afinado: ¿las preguntas son mejores?
+# 05 - ¿Sirvió el fine-tuning? El afinado contra el modelo base con cuatro prompts
 
-El notebook 03 comparó el modelo base con el afinado **solo en forma**: JSON
-válido, estructura, tokens de prompt y velocidad. La calidad del contenido la
-midió un juez, pero contra el **maestro** (`gpt-4o-mini`), nunca contra el base.
-
-Eso dejaba sin responder, en contenido, la pregunta central del proyecto:
+El notebook 03 comparó el modelo base con el afinado **solo en forma**. La calidad
+del contenido la midió un juez, pero contra el **maestro** (`gpt-4o-mini`), nunca
+contra el base. Eso dejaba sin responder la pregunta central del proyecto:
 **¿sirvió entrenar?**
 
-La distinción importa. «Corre en local, sin API y sin costo» no justifica el
-fine-tuning: justifica usar un modelo local, y el Qwen base también corre en
-local. Lo que justifica el fine-tuning es superar al **base con few-shot**, en
-las mismas condiciones.
+«Corre en local, sin API y sin costo» no justifica el fine-tuning: justifica usar
+un modelo local, y el Qwen base también corre en local. Lo que justifica el
+fine-tuning es superar al base **con el mejor prompt que se le pueda dar**. Por eso
+se lo compara con cuatro prompts distintos:
+
+| Variante | Instrucción | Esquema JSON | Reglas del maestro | Ejemplos | Qué pone a prueba |
+|---|---|---|---|---|---|
+| **afinado** | corta | aprendido | no | no | — |
+| base + few-shot | corta | implícito en los ejemplos | no | 3 | la línea de base clásica |
+| base A | corta | no | no | no | lo que aprendió el fine-tuning: recibe **el mismo prompt** que el afinado |
+| base B | corta | **sí** | no | no | el prompt mínimo con el que el base sabe qué claves usar: la prueba más dura para el argumento del prompt corto |
+| base C | la del maestro | **sí** | **sí** | no | exactamente las instrucciones que recibió `gpt-4o-mini` al generar el dataset: lo que se usaría sin entrenar |
 
 ## Diseño
 
 | Decisión | Por qué |
 |---|---|
-| Los **mismos 150 fragmentos** que juzgó el notebook 03 (`random_state=13` sobre el test) | comparable con el 78.4%, y nunca vistos en el entrenamiento |
+| Los **mismos 150 fragmentos** que juzgó el notebook 03 (`random_state=13` sobre el test) | comparable con sus cifras, y nunca vistos en el entrenamiento |
 | La **misma rúbrica** y el mismo juez (`gpt-4o`, temperatura 0) | que la diferencia sea del modelo, no de la vara |
-| Decodificación **greedy**, como en el notebook 03 | que la diferencia no sea azar de muestreo |
-| El base recibe los **mismos 3 ejemplos** de few-shot que en el notebook 03 | sin ellos no sabría qué formato devolver y la comparación sería trivial |
-| El maestro se vuelve a juzgar **en la misma corrida** | tres modelos, un juez, los mismos fragmentos |
-| **Prueba pareada** (McNemar) | los dos modelos responden sobre los mismos fragmentos: se compara fragmento a fragmento, que es más potente que comparar dos porcentajes sueltos |
+| Decodificación **greedy** | que la diferencia no sea azar de muestreo |
+| El few-shot usa los **mismos 3 ejemplos** que el notebook 03 | comparable con lo medido antes |
+| **Todo se genera y se juzga en esta corrida**, incluido el maestro | seis fuentes, un juez, los mismos fragmentos; el notebook no depende de resultados guardados por otro |
+| **Prueba pareada** (McNemar) | todos responden sobre los mismos fragmentos: se compara fragmento a fragmento |
 
-La sección B verifica además una afirmación del notebook 04 que quedó sin
-control: que la robustez del formato bajo muestreo es mérito del fine-tuning.
+La sección B hace el control de formato bajo muestreo que le faltó al notebook 04.
+
+*Reemplaza una versión anterior de este notebook, que solo comparaba el afinado
+contra el base con few-shot.*
 """)
 
 code(r'''
 import json, re, time, unicodedata
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -65,12 +74,15 @@ MODELO = "Qwen/Qwen3-4B-Instruct-2507"
 SEMILLA = 42
 LOTE = 8
 MAX_NEW = 300
+torch.manual_seed(SEMILLA)
 
 # Identica a la del entrenamiento (notebook 03) y a la de la aplicacion.
 INSTRUCCION = (
     "Eres un docente de medicina. A partir del FRAGMENTO escribe UNA pregunta "
     "de opcion multiple en espanol neutro. Responde SOLO con JSON."
 )
+# El prompt con el que gpt-4o-mini genero el dataset (notebook 02).
+MAESTRO = json.load(open("../scripts/prompt_v2.json", encoding="utf-8"))["prompt"]
 
 train_df = pd.read_parquet(DATA / "mcq_train.parquet")
 test_df = pd.read_parquet(DATA / "mcq_test.parquet")
@@ -112,27 +124,35 @@ def sin_acentos(s):
                    if unicodedata.category(c) != "Mn")
 
 
+# Variante B: la instruccion corta mas el esquema, sin reglas ni ejemplos.
+ESQUEMA = (INSTRUCCION + " Usa exactamente esta forma:\n"
+           '{"apto": true, "pregunta": "...", "correcta": "...", '
+           '"incorrectas": ["...", "...", "..."], "dificultad": "facil|media|dificil"}')
+
 # Los mismos 3 ejemplos que recibio el base en el notebook 03.
 ejemplos = train_df.sample(3, random_state=SEMILLA)
+FEWSHOT = []
+for _, e in ejemplos.iterrows():
+    FEWSHOT.append({"role": "user", "content": "FRAGMENTO:\n" + e["chunk_text"]})
+    FEWSHOT.append({"role": "assistant", "content": json.dumps({
+        "apto": True, "pregunta": e["pregunta"], "correcta": e["correcta"],
+        "incorrectas": list(e["incorrectas"]), "dificultad": e["dificultad"]},
+        ensure_ascii=False)})
 
 
-def prompt_afinado(fragmento):
-    return tok.apply_chat_template(
-        [{"role": "system", "content": INSTRUCCION},
-         {"role": "user", "content": "FRAGMENTO:\n" + fragmento}],
-        tokenize=False, add_generation_prompt=True)
-
-
-def prompt_base(fragmento):
-    msgs = [{"role": "system", "content": INSTRUCCION}]
-    for _, e in ejemplos.iterrows():
-        msgs.append({"role": "user", "content": "FRAGMENTO:\n" + e["chunk_text"]})
-        msgs.append({"role": "assistant", "content": json.dumps({
-            "apto": True, "pregunta": e["pregunta"], "correcta": e["correcta"],
-            "incorrectas": list(e["incorrectas"]), "dificultad": e["dificultad"]},
-            ensure_ascii=False)})
-    msgs.append({"role": "user", "content": "FRAGMENTO:\n" + fragmento})
+def chat(sistema, fragmento, previos=()):
+    msgs = [{"role": "system", "content": sistema}, *previos,
+            {"role": "user", "content": "FRAGMENTO:\n" + fragmento}]
     return tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+
+
+VARIANTES = {   # clave: (etiqueta, usa el modelo base, constructor del prompt)
+    "afinado": ("afinado (LoRA)", False, lambda f: chat(INSTRUCCION, f)),
+    "fewshot": ("base + few-shot", True, lambda f: chat(INSTRUCCION, f, FEWSHOT)),
+    "A": ("base A: mismo prompt", True, lambda f: chat(INSTRUCCION, f)),
+    "B": ("base B: + esquema", True, lambda f: chat(ESQUEMA, f)),
+    "C": ("base C: prompt del maestro", True, lambda f: chat(MAESTRO, f)),
+}
 
 
 def generar(prompts, usar_base, **muestreo):
@@ -158,42 +178,41 @@ def generar(prompts, usar_base, **muestreo):
     return textos, tokens_prompt, truncadas
 
 print("ejemplos de few-shot:", ejemplos["question_focus"].tolist())
+print("variantes:", [v[0] for v in VARIANTES.values()])
 ''')
 
 md(r"""
-## A. Calidad del contenido
+## A. Generación
 
-Se generan las 150 preguntas con cada modelo sobre los mismos fragmentos.
+Las cinco variantes generan sobre los mismos 150 fragmentos, todas con greedy.
 """)
 
 code(r'''
 casos = test_df.sample(150, random_state=13).reset_index(drop=True)
 fragmentos = casos["chunk_text"].tolist()
 
-t0 = time.time()
-sal_base, tok_base, _ = generar([prompt_base(f) for f in fragmentos], usar_base=True)
-seg_base = (time.time() - t0) / len(fragmentos)
+salidas, dicts, filas_forma = {}, {}, []
+for clave, (etiqueta, usar_base, construir) in VARIANTES.items():
+    t0 = time.time()
+    textos, toks, _ = generar([construir(f) for f in fragmentos], usar_base)
+    seg = (time.time() - t0) / len(fragmentos)
+    ds = [parsear(t) for t in textos]
+    salidas[clave], dicts[clave] = textos, ds
+    filas_forma.append({
+        "variante": etiqueta,
+        "tokens de prompt": round(sum(toks) / len(toks)),
+        "JSON valido": f"{sum(d is not None for d in ds)}/150",
+        "estructura completa": f"{sum(estructura_ok(d) for d in ds)}/150",
+        "descarto el fragmento (apto=false)": sum(1 for d in ds if d and d.get("apto") is False),
+        "segundos por pregunta (lotes de 8)": round(seg, 2)})
+    print(f"  {etiqueta}: listo en {seg * len(fragmentos) / 60:.1f} min", flush=True)
 
-t0 = time.time()
-sal_af, tok_af, _ = generar([prompt_afinado(f) for f in fragmentos], usar_base=False)
-seg_af = (time.time() - t0) / len(fragmentos)
-
-d_base = [parsear(s) for s in sal_base]
-d_af = [parsear(s) for s in sal_af]
-
-forma = pd.DataFrame({
-    "base + few-shot": {
-        "JSON valido": f"{sum(d is not None for d in d_base)}/150",
-        "estructura completa": f"{sum(estructura_ok(d) for d in d_base)}/150",
-        "tokens de prompt": round(sum(tok_base) / len(tok_base)),
-        "segundos por pregunta (lotes de 8)": round(seg_base, 2)},
-    "afinado": {
-        "JSON valido": f"{sum(d is not None for d in d_af)}/150",
-        "estructura completa": f"{sum(estructura_ok(d) for d in d_af)}/150",
-        "tokens de prompt": round(sum(tok_af) / len(tok_af)),
-        "segundos por pregunta (lotes de 8)": round(seg_af, 2)},
-})
+forma = pd.DataFrame(filas_forma).set_index("variante")
+print()
 print(forma.to_string())
+
+claves_A = Counter(k for d in dicts["A"] if d for k in d.keys())
+print("\nclaves que usa la variante A, que no conoce el esquema:", claves_A.most_common(8))
 ''')
 
 code(r'''
@@ -228,11 +247,12 @@ ESTRUCTURA_ROTA = {"_estructura_rota": True}   # no se juzga: cuenta como fallo
 def juzgar(args):
     idx, quien, fila, d = args
     if not estructura_ok(d):
-        return idx, quien, ESTRUCTURA_ROTA
+        return idx, quien, ESTRUCTURA_ROTA, None
     texto = (f"TEMA: {fila['question_focus']}\n\nFRAGMENTO:\n{fila['chunk_text']}\n\n"
              f"PREGUNTA: {d['pregunta']}\nCORRECTA: {d['correcta']}\n"
              + "\n".join(f"INCORRECTA: {x}" for x in d["incorrectas"]))
-    for intento in range(3):
+    motivo = None
+    for intento in range(5):
         try:
             r = client.chat.completions.create(
                 model=MODELO_JUEZ, temperature=0,
@@ -240,28 +260,33 @@ def juzgar(args):
                           {"role": "user", "content": texto}])
             v = parsear(r.choices[0].message.content)
             if v is not None:
-                return idx, quien, v
-        except Exception:
-            time.sleep(2 * (intento + 1))
-    return idx, quien, None                        # fallo de la API: se excluye
+                return idx, quien, v, None
+            motivo = "respuesta no parseable"
+        except Exception as exc:
+            motivo = type(exc).__name__
+        time.sleep(2 ** intento)                  # 1, 2, 4, 8, 16 segundos
+    return idx, quien, None, motivo              # tras 5 intentos: se excluye
 
 
+QUIENES = ["maestro"] + list(VARIANTES)
 tareas = []
 for i, fila in casos.iterrows():
     tareas.append((i, "maestro", fila, {"pregunta": fila["pregunta"], "correcta": fila["correcta"],
                                         "incorrectas": list(fila["incorrectas"])}))
-    tareas.append((i, "base", fila, d_base[i]))
-    tareas.append((i, "afinado", fila, d_af[i]))
+    for clave in VARIANTES:
+        tareas.append((i, clave, fila, dicts[clave][i]))
 
-print(f"juzgando {len(tareas)} preguntas con {MODELO_JUEZ}...", flush=True)
-veredictos = {"maestro": {}, "base": {}, "afinado": {}}
-with ThreadPoolExecutor(8) as pool:
+a_juzgar = sum(1 for t in tareas if estructura_ok(t[3]))
+print(f"{len(tareas)} preguntas, {a_juzgar} con estructura valida para el juez...", flush=True)
+veredictos = {q: {} for q in QUIENES}
+motivos = Counter()
+with ThreadPoolExecutor(6) as pool:
     for fut in as_completed([pool.submit(juzgar, t) for t in tareas]):
-        idx, quien, v = fut.result()
+        idx, quien, v, motivo = fut.result()
         veredictos[quien][idx] = v
-
-fallos_api = {q: sum(v is None for v in vs.values()) for q, vs in veredictos.items()}
-print("fallos de la API (se excluyen):", fallos_api)
+        if motivo:
+            motivos[f"{quien}: {motivo}"] += 1
+print("fallos del juez tras 5 intentos (se excluyen):", dict(motivos) or "ninguno")
 ''')
 
 code(r'''
@@ -272,22 +297,21 @@ def limpia(v):
                 and v.get("tema_correcto"))
 
 
-ETIQUETAS = {"maestro": "maestro (gpt-4o-mini)", "base": "base + few-shot",
-             "afinado": "afinado (LoRA)"}
+ETIQUETAS = {"maestro": "maestro (gpt-4o-mini)", **{k: v[0] for k, v in VARIANTES.items()}}
 filas = []
-for quien, etiqueta in ETIQUETAS.items():
+for quien in QUIENES:
     todas = [v for v in veredictos[quien].values() if v is not None]
     juzgadas = [v for v in todas if not v.get("_estructura_rota")]
     n = max(len(juzgadas), 1)
     filas.append({
-        "modelo": etiqueta,
+        "modelo": ETIQUETAS[quien],
         "estructura valida": f"{len(juzgadas)}/{len(todas)}",
         "correcta respaldada": f"{sum(bool(v.get('respaldo')) for v in juzgadas)/n*100:.1f}%",
         "sin distractor cierto": f"{sum(not v.get('distractor_verdadero', True) for v in juzgadas)/n*100:.1f}%",
         "una sola respuesta": f"{sum(bool(v.get('unica_respuesta')) for v in juzgadas)/n*100:.1f}%",
         "tema correcto": f"{sum(bool(v.get('tema_correcto')) for v in juzgadas)/n*100:.1f}%",
         "SIN DEFECTO (de las juzgadas)": f"{sum(limpia(v) for v in juzgadas)/n*100:.1f}%",
-        "SIN DEFECTO (de los 150 fragmentos)": f"{sum(limpia(v) for v in todas)/max(len(todas),1)*100:.1f}%",
+        "SIN DEFECTO (de los fragmentos)": f"{sum(limpia(v) for v in todas)/max(len(todas),1)*100:.1f}%",
     })
 
 calidad = pd.DataFrame(filas).set_index("modelo")
@@ -297,63 +321,100 @@ print(calidad.T.to_string())
 md(r"""
 ### Cómo leer la tabla
 
-Hay dos filas de «sin defecto» y la diferencia importa:
+Hay dos filas de «sin defecto», y la diferencia pesa mucho en las variantes que
+rompen la estructura:
 
-- **de las juzgadas** es la cifra comparable con el 78.4% del notebook 03, que
-  solo juzgaba preguntas con estructura válida;
-- **de los 150 fragmentos** cuenta como fallo una pregunta con la estructura
-  rota. Es la tasa que vive el usuario: de cada fragmento, ¿sale una pregunta
-  aprovechable?
+- **de las juzgadas** solo cuenta las preguntas con estructura válida. Es la cifra
+  comparable con el notebook 03, pero favorece a quien rompe muchas: si una
+  variante solo produce 10 preguntas válidas y las 10 salen bien, da 100%.
+- **de los fragmentos** cuenta como fallo cada estructura rota. Es la tasa que vive
+  el usuario: de cada fragmento, ¿sale una pregunta aprovechable? **Es la que hay
+  que mirar para comparar variantes.**
 
 ### La prueba pareada
 
-Como base y afinado respondieron sobre **los mismos** fragmentos, lo que decide
-es en cuántos fragmentos acierta uno y falla el otro (los pares discordantes).
-Los fragmentos donde los dos aciertan, o los dos fallan, no informan sobre la
-diferencia. La prueba de McNemar pregunta si esos discordantes se reparten de
-forma tan desigual que no puede ser azar.
+Como todos respondieron sobre **los mismos** fragmentos, lo que decide es en
+cuántos acierta uno y falla el otro: los pares discordantes. La prueba de McNemar
+pregunta si esos discordantes se reparten de forma tan desigual que no puede ser
+azar. Aquí se compara siempre **el afinado contra cada una de las otras fuentes**,
+contando la estructura rota como fallo.
 """)
 
 code(r'''
 from scipy.stats import binomtest
 
 validos = [i for i in range(len(casos))
-           if all(veredictos[q].get(i) is not None for q in ETIQUETAS)]
-ok = {q: {i: limpia(veredictos[q][i]) for i in validos} for q in ETIQUETAS}
+           if all(veredictos[q].get(i) is not None for q in QUIENES)]
+ok = {q: {i: limpia(veredictos[q][i]) for i in validos} for q in QUIENES}
 
+filas_p = []
+for otro in [q for q in QUIENES if q != "afinado"]:
+    solo_af = sum(ok["afinado"][i] and not ok[otro][i] for i in validos)
+    solo_otro = sum(ok[otro][i] and not ok["afinado"][i] for i in validos)
+    p = binomtest(solo_af, solo_af + solo_otro, 0.5).pvalue if solo_af + solo_otro else 1.0
+    filas_p.append({"afinado contra": ETIQUETAS[otro],
+                    "solo acierta el afinado": solo_af, "solo acierta el otro": solo_otro,
+                    "p (McNemar exacto)": round(p, 4)})
 
-def pareada(a, b):
-    solo_a = sum(ok[a][i] and not ok[b][i] for i in validos)
-    solo_b = sum(ok[b][i] and not ok[a][i] for i in validos)
-    p = binomtest(solo_a, solo_a + solo_b, 0.5).pvalue if solo_a + solo_b else 1.0
-    return {"comparacion": f"{a} contra {b}",
-            f"solo {a} acierta": solo_a, f"solo {b} acierta": solo_b, "p (McNemar exacto)": round(p, 4)}
-
-
-print(f"fragmentos con los tres veredictos: {len(validos)}\n")
-for a, b in (("afinado", "base"), ("afinado", "maestro"), ("base", "maestro")):
-    r = pareada(a, b)
-    vals = list(r.values())
-    print(f"{vals[0]:<22}  solo el primero: {vals[1]:>3}   solo el segundo: {vals[2]:>3}   p = {vals[3]}")
+pareadas = pd.DataFrame(filas_p).set_index("afinado contra")
+print(f"fragmentos con los seis veredictos: {len(validos)}\n")
+print(pareadas.to_string())
 print("\np < 0.05: la diferencia difícilmente es azar. p alto: no se distingue del ruido.")
 ''')
 
+md(r"""
+### Criterio por criterio
+
+Si el total no muestra diferencia, puede que un criterio concreto sí la tenga y
+quede diluido. Aquí solo entran los fragmentos donde **las dos** preguntas se
+pudieron juzgar, así que mide la calidad del contenido sin mezclarla con la
+estructura.
+""")
+
 code(r'''
-calidad.to_csv(DATA / "base_vs_afinado_calidad.csv")
+real = lambda v: v is not None and not v.get("_estructura_rota")
+BUENO = {"respaldo": True, "distractor_verdadero": False,
+         "unica_respuesta": True, "tema_correcto": True}
+
+filas_c = []
+for otro in ("fewshot", "A", "B", "C"):
+    pares = [(veredictos[otro].get(i), veredictos["afinado"].get(i)) for i in range(len(casos))]
+    pares = [(o, a) for o, a in pares if real(o) and real(a)]
+    fila = {"base": ETIQUETAS[otro], "pares juzgados": len(pares)}
+    for criterio, bueno in BUENO.items():
+        if bueno:
+            cumple = lambda v: bool(v.get(criterio))
+        else:
+            cumple = lambda v: v.get(criterio) is False
+        solo_af = sum(cumple(a) and not cumple(o) for o, a in pares)
+        solo_o = sum(cumple(o) and not cumple(a) for o, a in pares)
+        p = binomtest(solo_af, solo_af + solo_o, 0.5).pvalue if solo_af + solo_o else 1.0
+        fila[criterio] = f"{solo_af} contra {solo_o} (p={p:.2f})"
+    filas_c.append(fila)
+
+criterios = pd.DataFrame(filas_c).set_index("base")
+print("cada celda: fragmentos donde solo cumple el afinado contra donde solo cumple el base (p)\n")
+print(criterios.T.to_string())
+''')
+
+code(r'''
+forma.to_csv(DATA / "comparacion_prompts_forma.csv")
+calidad.to_csv(DATA / "comparacion_prompts_calidad.csv")
+pareadas.to_csv(DATA / "comparacion_prompts_pareadas.csv")
 
 detalle = []
 for i, fila in casos.iterrows():
-    detalle.append({
-        "chunk_uid": fila["chunk_uid"], "tema": fila["question_focus"],
-        "fragmento": fila["chunk_text"],
-        "maestro": {"pregunta": fila["pregunta"], "correcta": fila["correcta"],
-                    "veredicto": veredictos["maestro"].get(i)},
-        "base": {"salida": d_base[i] or sal_base[i], "veredicto": veredictos["base"].get(i)},
-        "afinado": {"salida": d_af[i] or sal_af[i], "veredicto": veredictos["afinado"].get(i)},
-    })
-json.dump(detalle, open(DATA / "base_vs_afinado_generaciones.json", "w", encoding="utf-8"),
+    reg = {"chunk_uid": fila["chunk_uid"], "tema": fila["question_focus"],
+           "fragmento": fila["chunk_text"],
+           "maestro": {"pregunta": fila["pregunta"], "correcta": fila["correcta"],
+                       "veredicto": veredictos["maestro"].get(i)}}
+    for clave in VARIANTES:
+        reg[clave] = {"salida": dicts[clave][i] or salidas[clave][i],
+                      "veredicto": veredictos[clave].get(i)}
+    detalle.append(reg)
+json.dump(detalle, open(DATA / "comparacion_prompts_generaciones.json", "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
-print("guardado: base_vs_afinado_calidad.csv y base_vs_afinado_generaciones.json (para revisar a mano)")
+print("guardado: comparacion_prompts_{forma,calidad,pareadas}.csv y _generaciones.json")
 ''')
 
 md(r"""
@@ -361,22 +422,23 @@ md(r"""
 
 El notebook 04 mostró que el modelo afinado da 60 de 60 JSON válidos en todas las
 temperaturas, incluida 1.0, y se atribuyó eso al fine-tuning. **Pero ese barrido
-corrió solo con el afinado**: no hubo control con el base. La atribución no
-estaba demostrada.
+corrió solo con el afinado**: no hubo control con el base.
 
-Aquí se hace el control. Los **mismos 20 fragmentos** del notebook 04
-(`random_state=42`), 3 repeticiones, las mismas temperaturas, ahora con el base
-y su few-shot.
+Aquí se hace el control, con el base y su few-shot. Los **mismos 20 fragmentos**
+del notebook 04 (`random_state=42`), 3 repeticiones y las mismas temperaturas,
+con semilla fija para que sea reproducible.
 """)
 
 code(r'''
 casos_b = test_df.sample(20, random_state=42)       # los mismos del notebook 04
 frag_b = casos_b["chunk_text"].tolist()
 REPS = 3
+construir_fs = VARIANTES["fewshot"][2]
 
 filas_b = []
 for temp in (0.7, 1.0):
-    prompts = [prompt_base(f) for f in frag_b] * REPS   # rep 1, rep 2, rep 3
+    torch.manual_seed(SEMILLA)
+    prompts = [construir_fs(f) for f in frag_b] * REPS   # rep 1, rep 2, rep 3
     textos, _, truncadas = generar(prompts, usar_base=True, do_sample=True,
                                    temperature=temp, top_p=0.9, top_k=50)
     ds = [parsear(t) for t in textos]
@@ -402,7 +464,7 @@ for conf in ("temp 0.7", "temp 1.0"):
 
 control = pd.DataFrame(filas_b).sort_values(["configuracion", "modelo"]).reset_index(drop=True)
 print(control.to_string(index=False))
-control.to_csv(DATA / "control_formato_base.csv", index=False)
+control.to_csv(DATA / "comparacion_prompts_control_formato.csv", index=False)
 ''')
 
 nb = {"cells": [], "nbformat": 4, "nbformat_minor": 5,
@@ -416,6 +478,6 @@ for i, (tipo, texto) in enumerate(celdas):
         c["outputs"], c["execution_count"] = [], None
     nb["cells"].append(c)
 
-json.dump(nb, io.open("notebooks/05_base_vs_afinado.ipynb", "w", encoding="utf-8"),
-          ensure_ascii=False, indent=1)
-print(f"notebook 05 armado: {len(celdas)} celdas, todas las de codigo compilan")
+SALIDA = "notebooks/05_afinado_contra_base.ipynb"
+json.dump(nb, io.open(SALIDA, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+print(f"{SALIDA}: {len(celdas)} celdas, todas las de codigo compilan")
