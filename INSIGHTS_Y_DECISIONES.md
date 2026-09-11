@@ -299,6 +299,44 @@ decidir qué módulos toca el LoRA, y `AutoModelForCausalLM` puede ni cargarlo.
 **Decisión: `Qwen/Qwen3-4B-Instruct-2507`.** La generación anterior, pero la
 herramienta correcta para esta tarea.
 
+### Revisado a fondo con el proyecto terminado
+
+Con el entrenamiento hecho se volvió a examinar `Qwen/Qwen3.5-4B`, instanciando
+su arquitectura sin descargar los pesos. Aparecieron diferencias que la primera
+verificación no había visto y que pesan más que la torre de visión:
+
+| Hecho | Detalle | Consecuencia |
+|---|---|---|
+| Arquitectura híbrida | de sus 32 capas de texto, **24 usan atención lineal** (regla delta con compuertas) y solo 8 atención completa | — |
+| Proyecciones con otros nombres | en las capas lineales la atención es `in_proj_qkv`, `in_proj_z`, `in_proj_a`, `in_proj_b`, `out_proj` | la configuración ganadora (`q/k/v/o_proj` + MLP) solo tocaría las MLP en el 75% de las capas. **El barrido del notebook 03 no se puede reutilizar** |
+| Sin kernels rápidos en esta máquina | `fla`, `causal_conv1d` y `triton` no están instalados; triton se distribuye oficialmente solo para Linux | `transformers` cae a la implementación en PyTorch puro en esas 24 capas. La penalización de velocidad **no se midió** |
+| Más grande | **5.17 B de parámetros**: 4.84 B de lenguaje + 0.33 B de visión (6.4%), 9.32 GB en disco | contra ~4.0 B y 8.04 GB del modelo elegido |
+| Otra clase de carga | se instancia con `AutoModelForImageTextToText` | todo el código del proyecto usa `AutoModelForCausalLM` |
+
+`transformers` 5.16.1 sí lo soporta: el obstáculo no es la compatibilidad, es el
+costo de adaptación.
+
+### ¿Daría mejores resultados?
+
+Probablemente poco en la cifra que importa. El alumno ya empata con su maestro
+(78.4% contra 79.3%, §5.b), lo que indica que el techo está en los datos de
+`gpt-4o-mini` y no en el modelo alumno: el 83% de «tema correcto» viene de las
+preguntas con las que se entrenó, y cualquier alumno aprende a reproducirlo.
+
+Donde un modelo más nuevo sí podría ayudar, **sin que esté medido**:
+- traducción y fluidez en español (errores tipo *nipple* → «lactancia»);
+- la auto-verificación, que la ejecuta el modelo base (§5.d): un base más capaz
+  verificaría mejor.
+
+**Decisión: no se cambia para la entrega.** Reabre el barrido, el entrenamiento,
+todas las evaluaciones y el código de carga, por una ganancia incierta.
+
+Si se quisiera probar, el diseño correcto es un piloto: una sola configuración,
+150 preguntas generadas, la misma rúbrica del juez, y comparar con el 78.4%.
+**El umbral debe fijarse antes:** con 150 preguntas por modelo, el intervalo al
+95% de la diferencia entre dos tasas cercanas al 78% es de **±9.4 puntos**, así
+que cualquier mejora menor a unos 10 puntos sería indistinguible del ruido.
+
 ## 4.2 Sin base vectorial
 
 El usuario elige de una lista, y `question_type` y `question_focus` ya son
@@ -792,9 +830,17 @@ y el formato no se rompe ni siquiera a temperatura 1.0.
 
 **«¿Por qué no usaron un modelo más nuevo?»**
 
-Se verificó contra el hub: toda la familia Qwen3.5 es multimodal, y la torre de
-visión es peso muerto para generar texto. Qwen3-4B es de solo texto y del mismo
-tamaño.
+Se examinó `Qwen3.5-4B` y hay tres razones, de menor a mayor peso:
+
+1. Es multimodal: 0.33 B de parámetros de visión que no se usarían.
+2. **24 de sus 32 capas usan atención lineal**, con proyecciones de otro nombre,
+   así que la configuración de LoRA elegida no se transfiere; y los kernels
+   rápidos de esa atención no están disponibles en esta máquina Windows.
+3. **El límite del proyecto está en los datos, no en el alumno.** El modelo
+   afinado ya empata con el maestro que generó sus datos (78.4% contra 79.3%).
+   Un alumno más nuevo no sube el techo que fija el maestro.
+
+Detalle y diseño del piloto que lo zanjaría, en §4.1.
 
 **«¿Por qué el corpus está en inglés y las preguntas en español?»**
 
