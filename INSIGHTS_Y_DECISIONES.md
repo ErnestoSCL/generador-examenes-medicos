@@ -890,6 +890,73 @@ roto. Lo mismo con el verificador y su contador en cero.
 
 ---
 
+# 7.b Cómo sustentar el fine-tuning en la exposición
+
+La pregunta que decide la exposición es «¿por qué fue bueno usar fine-tuning?».
+La respuesta tiene que resistir el notebook 05, que muestra que el afinado **no**
+escribe preguntas más correctas que el base con few-shot. Por eso la defensa se
+apoya solo en lo que sí se midió.
+
+## Las cuatro ventajas medidas
+
+| Ventaja | Evidencia | Dónde |
+|---|---|---|
+| **El comportamiento vive en los pesos, no en el prompt** | 137 tokens de prompt contra 695 del base con few-shot: 5.1 veces menos, sin ejemplos que elegir ni mantener | notebook 05 |
+| **Formato fiable** | 0 estructuras rotas en 330 generaciones, contra 12 del base; en la app, cada estructura rota es una generación perdida | notebooks 03, 04 y 05 |
+| **Calidad al nivel del maestro, en local** | 75.9% sin defectos contra 78.2% de `gpt-4o-mini`, sin diferencia significativa (p = 0.38), sin API ni costo por consulta | notebook 05 |
+| **Un especialista sin perder el generalista** | el mismo peso genera con el LoRA encendido y verifica con el LoRA apagado | §5.d |
+
+La cuarta es la más interesante de contar, porque salió de un fallo real. El
+afinado se especializó tanto que dejó de saber verificar: aprobaba preguntas
+rotas a propósito. Pero el LoRA es un módulo de 276 MB que se enciende y se
+apaga, así que el modelo base sigue intacto debajo. **Un fine-tuning completo
+habría reemplazado al modelo base; el LoRA le agregó una habilidad.**
+
+## Guion
+
+> Afinamos Qwen3-4B con LoRA para que la tarea —leer un fragmento médico en
+> inglés y escribir una pregunta en español con un formato fijo— quedara en los
+> pesos y no en el prompt. El modelo escribe preguntas del mismo nivel que
+> `gpt-4o-mini`, su maestro, corriendo en local, con un prompt cinco veces más
+> corto y sin romper nunca el formato. No lo presentamos como más preciso que el
+> modelo base: lo medimos y no lo es. Lo presentamos como un sistema más simple y
+> más fiable.
+
+## Preguntas y respuestas preparadas
+
+**«¿Y comparado con el base con few-shot?»**
+En contenido empatan: 75.9% contra 72.6%, prueba pareada p = 0.73. La ventaja es
+operativa: prompt cinco veces más corto y formato sin fallos.
+
+**«¿El afinado es mejor en algún aspecto del contenido?»**
+La única diferencia a su favor es «tema correcto» (82.8% contra 77.0%), pero con
+p = 0.31 es una tendencia, no un resultado. Mencionarla solo si la preguntan, y
+con esa salvedad.
+
+**«¿Es más rápido?»**
+No: 1.01 s contra 0.80 s por pregunta en lotes. La explicación probable es que el
+LoRA sin fusionar agrega cómputo en cada capa. Fusionarlo seguramente eliminaría
+esa diferencia, pero se perdería el modelo base que hace de verificador. Es una
+hipótesis y un compromiso de diseño, **no un dato medido**: presentarlo así.
+
+**«¿Entonces para qué entrenar?»**
+Para sacar la tarea del prompt y ponerla en los pesos: el sistema queda más
+simple, el formato no falla, y cada consulta cuesta cero, con la misma calidad
+que el modelo que generó los datos.
+
+## Lo que no hay que afirmar
+
+- Que el afinado escribe preguntas más correctas que el base.
+- Que la robustez del formato bajo muestreo se debe al fine-tuning: el base
+  también la tiene (§5.f).
+- Que el afinado es más rápido.
+
+Las tres se caen con los propios notebooks del proyecto, y un jurado que los lea
+vería la contradicción. La versión honesta es también la más sólida: demuestra
+que se midió en lugar de suponer.
+
+---
+
 # 8. Preguntas previsibles del jurado
 
 **«¿Esto no es simplemente destilar gpt-4o-mini en un modelo chico?»**
