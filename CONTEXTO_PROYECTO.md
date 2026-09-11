@@ -67,7 +67,8 @@ proyecto_ing_iagen/
 │   ├── medqa_clean.parquet      14,528 filas
 │   ├── chunks.parquet           28,294 fragmentos + tipo_es/tema_es  ← BD DE LA APP
 │   ├── muestra_api.parquet       5,250 fragmentos
-│   ├── mcq_crudo.jsonl           5,250 respuestas crudas del modelo
+│   ├── mcq_crudo.jsonl           5,250 respuestas crudas del modelo (versionado:
+│   │                             reconstruye el dataset sin llamar a la API)
 │   ├── mcq_train.parquet         3,614 preguntas   (eran 3,385 antes de
 │   ├── mcq_val.parquet             433 preguntas    recalibrar los filtros)
 │   ├── mcq_test.parquet            436 preguntas
@@ -78,7 +79,7 @@ proyecto_ing_iagen/
 │   ├── auditoria_examen.json         auditoría de un examen real + sonda
 │   ├── comparacion_temperatura.json  0.7 contra 1.0, mismos fragmentos
 │   └── comparacion_prompts_*         notebook 05: cinco variantes y control
-├── notebooks/  01 a 05  (los cinco ejecutados, con salidas)
+├── notebooks/  00 (los cinco en uno, preparado para Colab) y 01 a 05, todos con salidas
 ├── checkpoints/  checkpoint-900 (el mejor) y checkpoint-904
 ├── app/
 │   ├── adapter/         el LoRA entrenado, 276 MB + metricas_evaluacion.json

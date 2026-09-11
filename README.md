@@ -46,7 +46,23 @@ vectorial haría falta solo si el tema se escribiera en texto libre.
 
 ---
 
-## Cómo correrlo
+## Todo en un notebook, listo para Colab
+
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ErnestoSCL/generador-examenes-medicos/blob/main/notebooks/00_proyecto_completo_colab.ipynb)
+
+[`notebooks/00_proyecto_completo_colab.ipynb`](notebooks/00_proyecto_completo_colab.ipynb)
+reúne los cinco notebooks en un solo recorrido. **Se puede leer sin ejecutarlo**:
+trae guardadas las salidas de las ejecuciones completas. Para ejecutarlo en Colab:
+
+- Elige un entorno con GPU. La T4 gratuita alcanza para la prueba rápida: el
+  notebook pasa a float16 si la GPU no tiene bfloat16. Para reproducir todo
+  conviene una L4 o una A100.
+- Con la configuración por defecto (`PRUEBA_RAPIDA = True`, `USAR_API = False`)
+  no se gasta nada: el dataset se reconstruye con las respuestas originales de
+  `gpt-4o-mini` guardadas en `data/mcq_crudo.jsonl`, y queda idéntico al que se
+  usó para entrenar.
+
+## Cómo correrlo en local
 
 Hace falta una GPU con 12 GB o más. Está probado en una RTX 5070 Ti de 16 GB.
 
